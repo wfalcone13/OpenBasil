@@ -1,3 +1,3 @@
-class StaticPagesController < ApplicationController 
+class StaticPagesController < ApplicationController
   def root; end
 end
