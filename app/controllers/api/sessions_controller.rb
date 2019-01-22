@@ -7,16 +7,21 @@ class Api::SessionsController < ApplicationController
       params[:user][:password]
     )
 
-    if user 
+    if @user 
       login(@user)
-      render "api/users/show"  #where do I render??
+      render "api/users/show"  
     else
       render json: ["Invalid email/password combo"], status: 401
     end
   end
 
   def destroy
-    logout
-    redirect_to new_session_url
+    @user = current_user 
+    if @user 
+      logout
+      render "api/users/show"
+    else 
+      render json: ["Nobody signed in"], status: 404
+    end
   end
 end
