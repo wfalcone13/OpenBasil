@@ -40,10 +40,31 @@ class SessionForm extends React.Component {
 
   render(){
     return (
-      <div>
-        
+      <div className="login-form-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          Welcome to OpenBasil!
+          <br/>
+          Please {this.props.formType} or {this.props.navLink}
+          {this.renderErrors()}
+          <div className='login-form'>
+            <br/>
+            <label>
+              Email
+              <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input"/>
+            </label>
+            <br/>
+            <label>
+              Password 
+              <input type="password" value={this.state.password} onChange={this.update('password')} className='login-input'/>
+            </label>
+            <br/>
+            <input type="submit" value={this.props.formType} className="session-submit"/>
+          </div>
+        </form>
       </div>
     )
   }
 
 }
+
+export default SessionForm;
