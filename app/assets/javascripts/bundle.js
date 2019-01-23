@@ -336,7 +336,7 @@ var mapStateToProp = function mapStateToProp(_ref) {
 
 var mapStateToDispatch = function mapStateToDispatch(dispatch) {
   return {
-    processForm: function processForm(user) {
+    login: function login(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
     }
   };
@@ -414,7 +414,12 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processFrom(user);
+
+      if (this.props.formType === 'signup') {
+        this.props.processFrom(user);
+      } else {
+        this.props.login(user);
+      }
     }
   }, {
     key: "renderErrors",
