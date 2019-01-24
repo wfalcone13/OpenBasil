@@ -9,8 +9,8 @@
 .signup-form-box{
   outline: .5px solid black;
   padding: 27px ;
-  width: 400px;
-  height: 600px;
+  width: 450px;
+  height: 700px;
 
 }
 
@@ -71,16 +71,18 @@
 .social-signups{
   justify-content: space-around;
   display: flex;
-  margin-right: 20px;
-  margin-left: 15px;
+  margin-right: 49px;
+  margin-left: -2px;
 }
 
 .social-signups button{
   background: transparent;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  padding: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    height: 45px;
+    width: 190px;
 
 }
 
@@ -94,4 +96,24 @@
 
 .social-signup-box p{
   font-family: 'Maven Pro', sans-serif;
+}
+
+.signup-checks{
+  padding: 2px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.signup-disc{
+  padding-top: 19px;
+  font-size: .875rem;
+  background-color: transparent;
+  color: lightgrey;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 500;
+}
+
+.signup-disc a{
+  text-decoration: none;
+  color: #da3743;
+  background-color: transparent
 }

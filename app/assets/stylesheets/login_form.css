@@ -10,8 +10,8 @@
   .login-form-box{
   outline: 1px solid black;
   padding: 20px;
-  width: 340px;
-  height: 348px;
+  width: 413px;
+  height: 452px;
  }
 
  .login-form{
@@ -65,3 +65,46 @@
   text-align: end;
 }
 
+
+
+
+.social-logins{
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  margin-right: 22px;
+  margin-left: -4px
+}
+
+.social-logins button{
+  background: transparent;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  height: 45px;
+  width: 190px;
+
+}
+
+.social-logins img{
+    height: 23px;
+    width: auto;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px
+}
+
+.social-login-box p{
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.login-to-signup{
+  padding-top: 16px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.login-to-signup a{
+  text-decoration: none;
+  color: #da3743;
+}
