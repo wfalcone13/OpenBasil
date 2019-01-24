@@ -2,7 +2,7 @@
 
  .login-signup{
 
-  height: 35px;
+  height: auto;
   flex-direction: row;
   display: flex;
  }
