@@ -23,6 +23,14 @@ const App = () => {
 
       <AuthRoute path="/login" component={LoginFormContainer}/>
       <AuthRoute path="/signup" component={SignupFormContainer} />
+
+      <div className='main-container'>
+
+        <h2>Find your table for any occasion</h2> 
+      </div>
+
+
+
    
     </div>
 
