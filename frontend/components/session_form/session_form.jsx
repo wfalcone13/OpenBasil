@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
     this.props.processFrom(user)
     }else{
       this.props.login(user)
+      
     }
   }
 
