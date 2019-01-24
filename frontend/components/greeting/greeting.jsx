@@ -5,9 +5,9 @@ const Greeting = ({currentUser, logout}) => {
   const sessionLinks = () =>{
     return(
       <nav className='login-signup'>
-        <Link to="/signup">Sign Up</Link>
-          &nbsp;or&nbsp;
-        <Link to="/login">Sign In</Link>
+        <Link to="/signup" className="signup-button">Sign up</Link>
+          &nbsp;&nbsp;
+        <Link to="/login" className="login-button" >Sign in</Link>
       </nav>
     )
   }

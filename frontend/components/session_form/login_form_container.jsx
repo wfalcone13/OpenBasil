@@ -8,7 +8,7 @@ import SessionForm from './session_form';
 const mapStateToProp = ({errors}) => {
   return {
     errors: errors.session,
-    formType: 'login',
+    formType: 'sign in',
     navLink: <Link to="/signup">Sign Up Instead</Link>
   }
 }
@@ -19,4 +19,4 @@ const mapStateToDispatch = (dispatch) =>{
   }
 }
 
-export default connect(mapStateToProp, mapStateToDispatch)(SessionForm);
+export default connect(mapStateToProp, mapStateToDispatch)(SessionForm); 

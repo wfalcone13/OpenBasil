@@ -4,22 +4,29 @@ import {Route, Redirect, HashRouter, Switch} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
+import {AuthRoute} from '../util/route_util';
+import { Link } from 'react-router-dom';
 
 
 const App = () => {
   return (
 
     <div>
-      <header>
-        <h1>Weclome to Open Basil!</h1>
+      <header className="site-header">
+        <div className="right-bar">
+          <img src="http://brand.opentable.com/wp-content/uploads/2015/03/OTLogo_rationalizationhor-r1c-01.png" alt=""/>
+          <a href="/">OpenBasil</a>
+        </div>
         <GreetingContainer/>
+     
       </header>
 
-      <Route path="/login" component={LoginFormContainer}/>
-      <Route path="/signup" component={SignupFormContainer} />
+      <AuthRoute path="/login" component={LoginFormContainer}/>
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+   
     </div>
 
-
+    
   )
 }
 

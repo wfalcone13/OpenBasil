@@ -1,0 +1,48 @@
+.signup-button{
+  border: 2px solid #1c627a;
+  border-radius: 4px;
+  background-color: #237b98;
+  font-family: unset;
+  color: white;
+  font-size: .875rem;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.login-button{
+  font-family: unset;
+  color: black;
+  font-size: .975rem;
+  text-decoration: none;
+  padding-left: 11px;
+}
+
+
+
+
+.right-bar{
+  display: flex;
+  padding-left: 90px;
+  width: 300px;
+  flex-direction: row;
+  padding-top: 28px;
+ 
+}
+
+
+.right-bar img{
+  width: 4.75rem;
+  height: 3.375rem;
+}
+
+.site-header{
+  display: block;
+}
+
+.right-bar a{
+  padding-top: 3px;
+  padding-top: 28px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
