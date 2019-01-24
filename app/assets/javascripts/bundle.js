@@ -503,7 +503,17 @@ function (_React$Component) {
           type: "submit",
           value: this.props.formType,
           className: "signup-submit"
-        }, "value", "Create Account")))));
+        }, "value", "Create Account")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "social-signup-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Want Facebook to know where you eat?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "social-signups"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "",
+          alt: ""
+        }), "Continue with Facebook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "",
+          alt: ""
+        }), "Continue with Google"))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
@@ -524,7 +534,10 @@ function (_React$Component) {
           onChange: this.update('password'),
           className: "login-input",
           placeholder: "Password"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "",
+          className: "fpassword"
+        }, "Forgot Password?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
           type: "submit",
           value: this.props.formType,
           className: "login-submit"

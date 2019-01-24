@@ -66,6 +66,19 @@ class SessionForm extends React.Component {
             <input type="submit" value={this.props.formType} className="signup-submit" value="Create Account"/>
             </div>
         </form>
+          <div className="social-signup-box">
+              <p>Want Facebook to know where you eat?</p>
+              <div className="social-signups">
+                  <button>
+                    <img src="" alt=""/>
+                    Continue with Facebook
+                  </button>
+                  <button>
+                    <img src="" alt=""/>
+                    Continue with Google
+                  </button>
+              </div>
+          </div>
       </div>
 
       )
@@ -82,9 +95,11 @@ class SessionForm extends React.Component {
             <br/>
               <input type="password" value={this.state.password} onChange={this.update('password')} className='login-input' placeholder="Password" />
             <br/>
+              <a href="" className='fpassword'>Forgot Password?</a>
             <input type="submit" value={this.props.formType} className="login-submit" value='Sign In'/>
           </div>
         </form>
+        
       </div>
     )
   }}

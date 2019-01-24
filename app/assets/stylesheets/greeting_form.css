@@ -24,6 +24,7 @@
     height: auto;
     flex-direction: row;
     display: flex;
+    padding-right: 42px;
    }
 
 
