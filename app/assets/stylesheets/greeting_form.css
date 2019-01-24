@@ -7,6 +7,7 @@
   font-size: .875rem;
   text-decoration: none;
   padding: 9px;
+  display: block;
 }
 
 .login-button{
@@ -15,6 +16,8 @@
   font-size: .975rem;
   text-decoration: none;
   padding-left: 11px;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -22,27 +25,30 @@
 
 .right-bar{
   display: flex;
-  padding-left: 90px;
+  padding-left: 30px;
   width: 300px;
   flex-direction: row;
-  padding-top: 28px;
+
  
 }
 
 
 .right-bar img{
-  width: 4.75rem;
-  height: 3.375rem;
+  width: 4rem;
+  height: 3.975rem;
+  object-fit: cover;
 }
 
 .site-header{
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .right-bar a{
-  padding-top: 3px;
-  padding-top: 28px;
   text-decoration: none;
   color: black;
   font-size: 25px;
+  display: flex;
+  align-items: center;
 }

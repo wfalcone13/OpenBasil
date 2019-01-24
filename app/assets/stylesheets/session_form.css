@@ -1,10 +1,10 @@
 
 
  .login-signup{
-  position: absolute;
-  right: 90px;
-  /* width: 200px; */
+
   height: 35px;
+  flex-direction: row;
+  display: flex;
  }
 
  .login-form-container{
