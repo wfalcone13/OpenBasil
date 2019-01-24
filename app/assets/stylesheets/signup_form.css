@@ -12,7 +12,7 @@
   outline: 1px solid black;
   padding: 20px ;
   width: 340px;
-  height: 400px;
+  height: 500px;
   /* border-top: 1px solid #80808047; */
 
 }
@@ -30,10 +30,34 @@
   margin-top: 4px;
 }
 
+.location-input{
+  height: 50px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  font: bold
+}
+
+.signup-input::placeholder{
+   padding-left: 8px;
+   font-family: 'Roboto', sans-serif;
+   color: grey;
+   font-weight: bold;
+   font-size: 12px;
+}
+
 .signup-submit{
   margin-top: 10px;
-  background-color: red;
-  color: white;
+  background-color:  #da3743;
+  color: #fff;
   font-size: 18px;
-  height: 50px;
+  height: 57px;
+  font-family: 'Maven Pro', sans-serif;
+  border-radius: 5px;
+  font-weight: normal;
+}
+
+.signup-form-box h3 {
+  font-weight: normal;
+  font-family: 'Nanum Gothic', sans-serif;
+
 }

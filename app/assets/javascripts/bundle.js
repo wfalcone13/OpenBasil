@@ -453,7 +453,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
           className: "signup-form-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Welcome to OpenBasil!"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome to OpenBasil!"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "signup-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
@@ -485,7 +485,21 @@ function (_React$Component) {
           onChange: this.update('password'),
           className: "signup-input",
           placeholder: "Re-Enter password *"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          name: "Location",
+          className: "location-input"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "Location",
+          selected: true
+        }, "Primiary Dining Location *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "NYC"
+        }, "NYC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "Brooklyn"
+        }, "Brookly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "Australian"
+        }, "Australian"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "Im not telling you!"
+        }, "Im not telling you!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
           type: "submit",
           value: this.props.formType,
           className: "signup-submit"
@@ -496,7 +510,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
           className: "login-form-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please sign in"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Please sign in"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
