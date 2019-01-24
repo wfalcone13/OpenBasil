@@ -453,23 +453,25 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
           className: "signup-form-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Welcome to OpenBasil!"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Welcome to OpenBasil!"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "signup-form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.first_name,
-          className: "sign-input",
+          className: "signup-input",
           onChange: this.update('first_name'),
           placeholder: "First Name *"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.last_name,
-          className: "sign-input",
+          className: "signup-input",
           onChange: this.update('last_name'),
           placeholder: "Last Name *"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.email,
           onChange: this.update('email'),
-          className: "sign-input",
+          className: "signup-input",
           placeholder: "Enter email *"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
@@ -483,19 +485,18 @@ function (_React$Component) {
           onChange: this.update('password'),
           className: "signup-input",
           placeholder: "Re-Enter password *"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
           type: "submit",
           value: this.props.formType,
-          className: "session-submit",
-          placeholder: "Create Account"
-        })));
+          className: "signup-submit"
+        }, "value", "Create Account")))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
           className: "login-form-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please Sign in"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please sign in"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
@@ -509,11 +510,11 @@ function (_React$Component) {
           onChange: this.update('password'),
           className: "login-input",
           placeholder: "Password"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
           type: "submit",
           value: this.props.formType,
-          className: "session-submit"
-        }))));
+          className: "login-submit"
+        }, "value", "Sign In")))));
       }
     }
   }]);

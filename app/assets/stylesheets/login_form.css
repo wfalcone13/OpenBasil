@@ -1,0 +1,33 @@
+
+
+ .login-form-container{
+   display: flex;
+   justify-content: center;
+   margin-top: -43px;
+  }
+  
+  .login-form-box{
+  outline: 1px solid black;
+  padding: 20px;
+  width: 340px;
+  height: 348px;
+ }
+
+ .login-form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ }
+
+ .login-input{
+  height: 32px;
+ }
+
+
+ .login-submit{
+
+ }
+  
+
+
+

@@ -20,7 +20,11 @@
   align-items: center;
 }
 
-
+.login-signup{
+    height: auto;
+    flex-direction: row;
+    display: flex;
+   }
 
 
 .right-bar{
