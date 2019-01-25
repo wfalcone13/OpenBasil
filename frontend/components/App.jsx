@@ -17,7 +17,7 @@ const App = () => {
       <header className="site-header">
         <Link to="/" className="header-link">
         <div className="left-bar">
-          <img src="http://brand.opentable.com/wp-content/uploads/2015/03/OTLogo_rationalizationhor-r1c-01.png" alt=""/>
+            <img src="https://previews.123rf.com/images/lenm/lenm1410/lenm141000190/32749260-mascot-illustration-featuring-a-potted-basil-plant-giving-a-thumbs-up.jpg" alt=""/>
           <p>OpenBasil</p>
         </div>
         </Link>

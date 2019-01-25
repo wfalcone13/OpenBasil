@@ -43,9 +43,10 @@
 
 
 .left-bar img{
-  width: 4rem;
-  height: 3.975rem;
+  width: 49px;
+  height: 63px;
   object-fit: cover;
+  margin-right: 8px;
 }
 
 .site-header{
