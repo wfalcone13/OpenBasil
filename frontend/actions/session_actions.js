@@ -26,21 +26,21 @@ export const receiveErrors = (errors) => {
 
 export const login = (user) => dispatch => {
   return sessionAPIUtil.login(user)
-    .then(user => (dispatch(receiveCurrentUser(user)))), err => (
+    .then(user => (dispatch(receiveCurrentUser(user))), err => (
       dispatch(receiveErrors(err.responseJSON))
-    )
+    ))
 }
 
 export const logout = () => dispatch => {
   return sessionAPIUtil.logout()
-    .then((user) => (dispatch(logoutCurrentUser())))
+    .then(() => (dispatch(logoutCurrentUser())))
 }
 
 export const signup = (user) => dispatch => {
   return sessionAPIUtil.signup(user)
-    .then( user => (dispatch(receiveCurrentUser(user)))), err => (
+    .then( user => (dispatch(receiveCurrentUser(user))), err => (
       dispatch(receiveErrors(err.responseJSON))
-    )
+    ))
 }
 
 
