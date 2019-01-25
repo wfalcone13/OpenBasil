@@ -157,7 +157,6 @@ var receiveErrors = function receiveErrors(errors) {
 };
 var login = function login(user) {
   return function (dispatch) {
-    debugger;
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -176,9 +175,9 @@ var signup = function signup(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
-    }), function (err) {
+    }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
-    };
+    });
   };
 };
 
@@ -555,9 +554,12 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "session-errors-ul"
+      }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
+          key: "error-".concat(i),
+          className: "session-error"
         }, error);
       }));
     }
@@ -609,6 +611,9 @@ function (_React$Component) {
           name: "Location",
           className: "location-input"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "Location",
+          selected: true
+        }, "Primiary Dining Location *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "NYC"
         }, "NYC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Brooklyn"

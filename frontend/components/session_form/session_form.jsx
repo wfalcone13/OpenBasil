@@ -36,9 +36,9 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="session-errors-ul">
         {this.props.errors.map((error, i) => {
-          return <li key={`error-${i}`}>
+          return <li key={`error-${i}`} className="session-error">
             {error}
           </li>
         } )}
@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
             <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder=" Enter password *" />
             <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder="Re-Enter password *" />
               <select name="Location" className='location-input'>
-                {/* <option value="Location" selected>Primiary Dining Location *</option> */}
+                <option value="Location" selected>Primiary Dining Location *</option>
                 <option value="NYC">NYC</option>
                 <option value="Brooklyn">Brookly</option>
                 <option value="Australian">Australia</option>

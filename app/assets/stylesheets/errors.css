@@ -1,0 +1,8 @@
+
+.session-errors-ul{
+  list-style-type: none;
+}
+
+.session-error{
+  color: red;
+}

@@ -25,7 +25,6 @@ export const receiveErrors = (errors) => {
 }
 
 export const login = (user) => dispatch => {
-  debugger
   return sessionAPIUtil.login(user)
     .then(user => (dispatch(receiveCurrentUser(user))), err => (
       dispatch(receiveErrors(err.responseJSON))
@@ -39,9 +38,9 @@ export const logout = () => dispatch => {
 
 export const signup = (user) => dispatch => {
   return sessionAPIUtil.signup(user)
-    .then( user => (dispatch(receiveCurrentUser(user)))), err => (
+    .then( user => (dispatch(receiveCurrentUser(user))), err => (
       dispatch(receiveErrors(err.responseJSON))
-    )
+    ))
 }
 
 
