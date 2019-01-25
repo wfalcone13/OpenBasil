@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import {login, signup, logout} from './actions/session_actions';
 import configureStore from '../frontend/store/store'
 import Root from './components/root';
+import {fetchRestaurants, fetchRestaurant} from './util/restaurant_api_util'
 
 document.addEventListener("DOMContentLoaded", ()=>{
+
+  window.fetchRestaurants = fetchRestaurants;
+  window.fetchRestaurant = fetchRestaurant
 
 let store;
 if (window.currentUser) {

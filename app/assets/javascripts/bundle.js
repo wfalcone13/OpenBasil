@@ -777,6 +777,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _frontend_store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../frontend/store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _util_restaurant_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/restaurant_api_util */ "./frontend/util/restaurant_api_util.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -784,7 +785,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
+  window.fetchRestaurants = _util_restaurant_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchRestaurants"];
+  window.fetchRestaurant = _util_restaurant_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchRestaurant"];
   var store;
 
   if (window.currentUser) {
@@ -1073,6 +1077,32 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/restaurant_api_util.js":
+/*!**********************************************!*\
+  !*** ./frontend/util/restaurant_api_util.js ***!
+  \**********************************************/
+/*! exports provided: fetchRestaurants, fetchRestaurant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurants", function() { return fetchRestaurants; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurant", function() { return fetchRestaurant; });
+var fetchRestaurants = function fetchRestaurants() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/restaurants'
+  });
+};
+var fetchRestaurant = function fetchRestaurant(id) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/restaurants/".concat(id)
+  });
+};
 
 /***/ }),
 
