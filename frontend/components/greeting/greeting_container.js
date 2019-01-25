@@ -3,10 +3,10 @@ import {logout} from '../../actions/session_actions'
 import {openModal} from '../../actions/modal_actions';
 import Greeting from './greeting'
 
-const mapStateToProps = ({ session }) => {
-  return{
-    currentUser: session.currentUser
-  }
+const mapStateToProps = ({ session, entities: {users} }) => {
+ return {
+   currentUser: users[session.id]
+ }
 }
 
 const mapDispatchToProps = (dispatch) => {

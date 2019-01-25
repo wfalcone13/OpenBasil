@@ -22,8 +22,8 @@ const Greeting = ({currentUser, logout, openModal}) => {
       </hgroup>
     )
   }
-
-  return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
+ 
+  return (currentUser ? personalGreeting(currentUser,logout) : sessionLinks());
 
 }
 

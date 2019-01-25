@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       first_name: '',
       last_name: '',
       password: '',
-      primary_location: ''
+      // primary_location: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
             <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder=" Enter password *"  name='password'/>
             <input type="password"  readOnly={this.update('password')} className='signup-input' placeholder="Re-Enter password *" name='confirmPassword'/>
               <select name="Location" className='location-input'>
-                <option defaultValue="this.primary_location" >Primiary Dining Location *</option>
+                <option readOnly="primary_location" >Primiary Dining Location *</option>
                 <option value="NYC">NYC</option>
                 <option value="Brooklyn">Brooklyn</option>
                 <option value="Australian">Australia</option>
