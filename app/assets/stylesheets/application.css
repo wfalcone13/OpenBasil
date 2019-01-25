@@ -44,6 +44,7 @@
   width: auto;
   align-items: center;
   justify-content: center;
+  filter: brightness(68%);
  }
 
  .main-container h2{
