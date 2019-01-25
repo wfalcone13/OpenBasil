@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
     }
   }
 
-  
+ 
 
   renderErrors() {
     return(
@@ -46,6 +46,8 @@ class SessionForm extends React.Component {
       </ul>
     )
   }
+
+ 
 
 
   render(){
@@ -62,25 +64,18 @@ class SessionForm extends React.Component {
             <input type="text" value={this.state.last_name} className="signup-input" onChange={this.update('last_name')} placeholder="Last Name *"/>
             <input type="text" value={this.state.email} onChange={this.update('email')} className="signup-input" placeholder="Enter email *" />
             <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder=" Enter password *"  name='password'/>
-            <input type="password"  readOnly={this.update('password')} className='signup-input' placeholder="Re-Enter password *" name='confirmPassword'/>
+            {/* <input type="password"  readOnly={this.update('password')} className='signup-input' placeholder="Re-Enter password *" name='confirmPassword'/> */}
               <select name="Location" className='location-input'>
-                <option readOnly="primary_location" >Primiary Dining Location *</option>
+                <option readOnly="primary_location" >Primary Dining Location *</option>
                 <option value="NYC">NYC</option>
                 <option value="Brooklyn">Brooklyn</option>
                 <option value="Australian">Australia</option>
                 <option value="Im not telling you!">Im not telling you!</option>
               </select>  
-            <label className="signup-checks"> 
-              <input type="checkbox"/>
-              I am an Admin Professional who books for others
-            </label> 
-              <label className="signup-checks">
-              <input type="checkbox" />
-              Remember me
-            </label> 
-
+            
             <input type="submit" value={this.props.formType} className="signup-submit" value="Create Account"/>
             </div>
+              <p onClick={() => this.props.demoLog().then(() => this.props.closeModal())}>Demo Login</p>
           <div className="social-signup-box">
               <p>Want Facebook to know where you eat?</p>
               <div className="social-signups">

@@ -15,11 +15,7 @@ const mapStateToProp = ({errors}) => {
 const mapStateToDispatch = (dispatch) =>{
   return {
     login: (user) => dispatch(login(user)),
-    otherForm: (
-      <button onClick={ () => dispatch(openModal('signup'))}>
-        Sign up
-      </button>
-    ),
+    demoLog: ()=> dispatch(login({email:'demo@gmail.com', password: '123456'})),
     closeModal: () => dispatch(closeModal())
   }
 }

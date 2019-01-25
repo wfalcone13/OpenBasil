@@ -468,11 +468,12 @@ var mapStateToDispatch = function mapStateToDispatch(dispatch) {
     login: function login(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      onClick: function onClick() {
-        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('signup'));
-      }
-    }, "Sign up"),
+    demoLog: function demoLog() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
+        email: 'demo@gmail.com',
+        password: '123456'
+      }));
+    },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
@@ -576,6 +577,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       if (this.props.formType === 'signup') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "signup-form-container"
@@ -612,18 +615,12 @@ function (_React$Component) {
           className: "signup-input",
           placeholder: " Enter password *",
           name: "password"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "password",
-          readOnly: this.update('password'),
-          className: "signup-input",
-          placeholder: "Re-Enter password *",
-          name: "confirmPassword"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
           name: "Location",
           className: "location-input"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           readOnly: "primary_location"
-        }, "Primiary Dining Location *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        }, "Primary Dining Location *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "NYC"
         }, "NYC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Brooklyn"
@@ -631,19 +628,17 @@ function (_React$Component) {
           value: "Australian"
         }, "Australia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Im not telling you!"
-        }, "Im not telling you!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          className: "signup-checks"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "checkbox"
-        }), "I am an Admin Professional who books for others"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          className: "signup-checks"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "checkbox"
-        }), "Remember me"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
+        }, "Im not telling you!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
           type: "submit",
           value: this.props.formType,
           className: "signup-submit"
-        }, "value", "Create Account"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "value", "Create Account"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          onClick: function onClick() {
+            return _this3.props.demoLog().then(function () {
+              return _this3.props.closeModal();
+            });
+          }
+        }, "Demo Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "social-signup-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Want Facebook to know where you eat?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "social-signups"
@@ -750,11 +745,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     signup: function signup(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      onClick: function onClick() {
-        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('login'));
-      }
-    }, "Sign in"),
+    demoLog: function demoLog() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
+        email: 'demo@gmail.com',
+        password: '123456'
+      }));
+    },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
