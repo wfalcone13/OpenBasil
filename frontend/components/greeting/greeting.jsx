@@ -6,7 +6,7 @@ const Greeting = ({currentUser, logout, openModal}) => {
     return(
       
       <nav className='login-signup'>
-        <button onClick={() => openModal('signup')} className='signup-button'>Sign up</button>
+        <button onClick={() => openModal('signup')} className='signup-button'>Sing up</button>
         <button onClick={() => openModal('login')} className='login-button'>Sign in</button>
       </nav>
     )
@@ -22,7 +22,7 @@ const Greeting = ({currentUser, logout, openModal}) => {
       </hgroup>
     )
   }
- 
+ debugger
   return (currentUser ? personalGreeting(currentUser,logout) : sessionLinks());
 
 }
