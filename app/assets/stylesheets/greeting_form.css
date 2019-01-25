@@ -8,6 +8,7 @@
   text-decoration: none;
   padding: 9px;
   display: block;
+  margin-right: 10px;
 }
 
 .login-button{
@@ -18,6 +19,9 @@
   padding-left: 11px;
   display: flex;
   align-items: center;
+  background: transparent;
+  border: none;
+
 }
 
 .login-signup{
@@ -28,17 +32,17 @@
    }
 
 
-.right-bar{
+.left-bar{
   display: flex;
   padding-left: 30px;
   width: 300px;
   flex-direction: row;
-
+  align-items: center;
  
 }
 
 
-.right-bar img{
+.left-bar img{
   width: 4rem;
   height: 3.975rem;
   object-fit: cover;
@@ -50,7 +54,11 @@
   align-items: center;
 }
 
-.right-bar a{
+.header-link{
+  text-decoration: none;
+}
+
+.left-bar p{
   text-decoration: none;
   color: black;
   font-size: 25px;

@@ -8,10 +8,10 @@
   }
   
   .login-form-box{
-  outline: 1px solid black;
   padding: 20px;
   width: 413px;
   height: 452px;
+  background-color: white;
  }
 
  .login-form{

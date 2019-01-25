@@ -7,11 +7,10 @@
 
 
 .signup-form-box{
-  outline: .5px solid black;
   padding: 27px ;
   width: 450px;
   height: 700px;
-
+  background-color: white;
 }
 
 .signup-form{

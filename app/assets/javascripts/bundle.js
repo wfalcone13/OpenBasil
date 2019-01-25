@@ -217,11 +217,13 @@ var App = function App() {
     to: "/",
     className: "header-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "right-bar"
+    className: "left-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "http://brand.opentable.com/wp-content/uploads/2015/03/OTLogo_rationalizationhor-r1c-01.png",
     alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OpenBasil"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OpenBasil"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Find your table for any occasion")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -253,13 +255,15 @@ var Greeting = function Greeting(_ref) {
       className: "login-signup"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       onClick: function onClick() {
-        return openModal('login');
-      }
-    }, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: function onClick() {
         return openModal('signup');
-      }
-    }, "Sign up"));
+      },
+      className: "signup-button"
+    }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: function onClick() {
+        return openModal('login');
+      },
+      className: "login-button"
+    }, "Sign in"));
   };
 
   var personalGreeting = function personalGreeting() {
@@ -568,7 +572,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome to OpenBasil!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           onClick: this.props.closeModal,
           className: "close-x"
-        }, "X"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "signup-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
@@ -652,7 +656,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Please sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           onClick: this.props.closeModal,
           className: "close-x"
-        }, "X"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
