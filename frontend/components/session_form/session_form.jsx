@@ -13,25 +13,26 @@ class SessionForm extends React.Component {
       password: ''
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
-    })
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state)
+    const user = Object.assign({}, this.state);
     if (this.props.formType === 'signup'){
-    this.props.processFrom(user)
+      this.props.signup(user).then(this.props.closeModal);
     }else{
-      this.props.login(user)
-      
+      this.props.login(user).then(this.props.closeModal);
     }
   }
+
+  
 
   renderErrors() {
     return(
@@ -62,7 +63,7 @@ class SessionForm extends React.Component {
             <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder=" Enter password *" />
             <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder="Re-Enter password *" />
               <select name="Location" className='location-input'>
-                <option value="Location" selected>Primiary Dining Location *</option>
+                {/* <option value="Location" selected>Primiary Dining Location *</option> */}
                 <option value="NYC">NYC</option>
                 <option value="Brooklyn">Brookly</option>
                 <option value="Australian">Australia</option>

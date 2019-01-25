@@ -157,16 +157,17 @@ var receiveErrors = function receiveErrors(errors) {
 };
 var login = function login(user) {
   return function (dispatch) {
+    debugger;
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
-    }), function (err) {
+    }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
-    };
+    });
   };
 };
 var logout = function logout() {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function () {
       return dispatch(logoutCurrentUser());
     });
   };
@@ -546,9 +547,9 @@ function (_React$Component) {
       var user = Object.assign({}, this.state);
 
       if (this.props.formType === 'signup') {
-        this.props.processFrom(user);
+        this.props.signup(user).then(this.props.closeModal);
       } else {
-        this.props.login(user);
+        this.props.login(user).then(this.props.closeModal);
       }
     }
   }, {
@@ -608,9 +609,6 @@ function (_React$Component) {
           name: "Location",
           className: "location-input"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "Location",
-          selected: true
-        }, "Primiary Dining Location *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "NYC"
         }, "NYC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Brooklyn"
@@ -734,7 +732,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    processFrom: function processFrom(user) {
+    signup: function signup(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     },
     otherForm: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
@@ -928,6 +926,8 @@ __webpack_require__.r(__webpack_exports__);
       return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
+      return [];
+
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["CLOSE_MODAL"]:
       return [];
 
@@ -948,10 +948,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 var _nullUser = Object.freeze({
-  id: null
+  currentUser: null
 });
 
 var sessionReducer = function sessionReducer() {
@@ -961,9 +964,10 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return {
-        id: action.currentUser.id
-      };
+      var currentUser = action.currentUser;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, {
+        currentUser: currentUser
+      });
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullUser;
@@ -1095,11 +1099,11 @@ var Auth = function Auth(_ref) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    loggedIn: Boolean(state.session.id)
+    loggedIn: Boolean(state.session.currentUser)
   };
 };
 
-var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(Auth));
+var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Auth));
 
 /***/ }),
 
