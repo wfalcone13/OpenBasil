@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link} from 'react-router-dom';
+
+
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -51,6 +53,7 @@ class SessionForm extends React.Component {
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <h3>Welcome to OpenBasil!</h3>
+          <div onClick={this.props.closeModal} className='close-x'>X</div>
           {this.renderErrors()}
           <div className="signup-form">
             <input type="text" value={this.state.first_name} className="signup-input" onChange={this.update('first_name')} placeholder='First Name *' />
@@ -107,6 +110,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <h3>Please sign in</h3>
+          <div onClick={this.props.closeModal} className='close-x'>X</div>
           {this.renderErrors()}
           <div className='login-form'>
               <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input" placeholder="Email"/>
@@ -142,4 +146,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
