@@ -524,7 +524,8 @@ function (_React$Component) {
       email: '',
       first_name: '',
       last_name: '',
-      password: ''
+      password: '',
+      primary_location: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
@@ -600,24 +601,24 @@ function (_React$Component) {
           value: this.state.password,
           onChange: this.update('password'),
           className: "signup-input",
-          placeholder: " Enter password *"
+          placeholder: " Enter password *",
+          name: "password"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
-          value: this.state.password,
-          onChange: this.update('password'),
+          readOnly: this.update('password'),
           className: "signup-input",
-          placeholder: "Re-Enter password *"
+          placeholder: "Re-Enter password *",
+          name: "confirmPassword"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
           name: "Location",
           className: "location-input"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "Location",
-          selected: true
+          defaultValue: "this.primary_location"
         }, "Primiary Dining Location *"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "NYC"
         }, "NYC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Brooklyn"
-        }, "Brookly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        }, "Brooklyn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Australian"
         }, "Australia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: "Im not telling you!"

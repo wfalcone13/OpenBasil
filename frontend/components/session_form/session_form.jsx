@@ -10,7 +10,8 @@ class SessionForm extends React.Component {
       email: '',
       first_name: '',
       last_name: '',
-      password: ''
+      password: '',
+      primary_location: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -60,12 +61,12 @@ class SessionForm extends React.Component {
             <input type="text" value={this.state.first_name} className="signup-input" onChange={this.update('first_name')} placeholder='First Name *' />
             <input type="text" value={this.state.last_name} className="signup-input" onChange={this.update('last_name')} placeholder="Last Name *"/>
             <input type="text" value={this.state.email} onChange={this.update('email')} className="signup-input" placeholder="Enter email *" />
-            <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder=" Enter password *" />
-            <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder="Re-Enter password *" />
+            <input type="password" value={this.state.password} onChange={this.update('password')} className='signup-input' placeholder=" Enter password *"  name='password'/>
+            <input type="password"  readOnly={this.update('password')} className='signup-input' placeholder="Re-Enter password *" name='confirmPassword'/>
               <select name="Location" className='location-input'>
-                <option value="Location" selected>Primiary Dining Location *</option>
+                <option defaultValue="this.primary_location" >Primiary Dining Location *</option>
                 <option value="NYC">NYC</option>
-                <option value="Brooklyn">Brookly</option>
+                <option value="Brooklyn">Brooklyn</option>
                 <option value="Australian">Australia</option>
                 <option value="Im not telling you!">Im not telling you!</option>
               </select>  
