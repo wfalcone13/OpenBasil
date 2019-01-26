@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import {login, signup, logout} from './actions/session_actions';
 import configureStore from '../frontend/store/store'
 import Root from './components/root';
-import {fetchRestaurants, fetchRestaurant} from './util/restaurant_api_util'
+import {fetchRestaurants, fetchRestaurant} from './actions/restaurant_actions'
 
 document.addEventListener("DOMContentLoaded", ()=>{
-
-  window.fetchRestaurants = fetchRestaurants;
-  window.fetchRestaurant = fetchRestaurant
+  
 
 let store;
 if (window.currentUser) {
@@ -23,6 +21,11 @@ if (window.currentUser) {
 } else {
   store = configureStore();
 }
+
+  window.dispatch = store.dispatch;
+  window.getState = store.dispatch;
+  window.fetchRestaurants = fetchRestaurants;
+  window.fetchRestaurant = fetchRestaurant;
 
 const root = document.getElementById('root');
 ReactDOM.render(<Root store={store} />, root)

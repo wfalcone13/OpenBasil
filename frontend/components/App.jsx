@@ -4,6 +4,7 @@ import {Route, Redirect, HashRouter, Switch, Link} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
+import RestaurantIndexContainer from '../components/restaurants/restaurant_index_container' 
 import Modal from './modal/modal'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
@@ -22,7 +23,6 @@ const App = () => {
         </div>
         </Link>
         <GreetingContainer/>
-     
       </header>
 
       <div className='main-container'>
@@ -30,7 +30,7 @@ const App = () => {
         <h2>Find your table for any occasion</h2> 
       </div>
 
-
+       <RestaurantIndexContainer/>
 
    
     </div>
