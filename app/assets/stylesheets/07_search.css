@@ -1,0 +1,44 @@
+.search-bar-container{
+  background-image: url('https://d37219swed47g7.cloudfront.net/media/images/reviews/lilia/banners/1457463861.68.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+};
+
+
+.search-option{
+  display: flex;
+  color: black;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.search-option h3{
+
+}
+
+.so-options{
+  display: flex;
+  flex-direction: row
+}
+
+.so-options button{
+  height: 45px;
+  width: 193px;
+  background-color: #f1f1f1;
+}
+
+.search-field{
+  margin-left: 10px;
+
+}
+
+.search-field input{
+   height: 40px;
+  width: 215px;
+}

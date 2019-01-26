@@ -14,42 +14,4 @@
  *= require_self
  */
 
- html, body {
-   height: 100%; 
- }
-
-
- body{
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 100%;
-   font-weight: 500;
-   padding: 0;
-   margin: 0;
-   cursor: default;
-   background: #f7f7f7d3;
- }
-
-
- header a{
-   font-family: 'Patua One', cursive;
- }
-
- .main-container{
-  display: flex;
-  background-image: url('https://d37219swed47g7.cloudfront.net/media/images/reviews/lilia/banners/1457463861.68.jpg');
-  background-size: auto;
-  background-size: cover;
-  background-position: center;
-  height: 445px;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  filter: brightness(68%);
- }
-
- .main-container h2{
-  color: white;
-  font-size: 35px;
-  font-family: 'Maven Pro', sans-serif;
-  font-weight: bold;
- }
+ 

@@ -7,7 +7,7 @@ import SignupFormContainer from './session_form/signup_form_container'
 import RestaurantIndexContainer from '../components/restaurants/restaurant_index_container' 
 import Modal from './modal/modal'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
-
+import SearchContainer from './search/search_container'
 
 
 const App = () => {
@@ -25,12 +25,9 @@ const App = () => {
         <GreetingContainer/>
       </header>
 
-      <div className='main-container'>
-
-        <h2>Find your table for any occasion</h2> 
-      </div>
-
-       <RestaurantIndexContainer/>
+ 
+      <SearchContainer/>
+     
 
    
     </div>
