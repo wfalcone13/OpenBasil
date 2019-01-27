@@ -26,7 +26,8 @@ const App = () => {
       </header>
 
  
-      <SearchContainer/>
+      <RestaurantIndexContainer/>
+      {/* <SearchContainer/> */}
      
 
    

@@ -1,13 +1,14 @@
 import React from 'react';
 import RestaurantIndexItem from './restaurant_index_item'; 
 
-class RestaurantIndex extends React.Component { 
+class RestaurantIndex extends React.Component {
+
   componentDidMount(){
     this.props.fetchRestaurants()
   }
 
-  render(){
-
+  render (){
+    debugger
     return (
       <div>
         <ul>
@@ -19,7 +20,7 @@ class RestaurantIndex extends React.Component {
         </ul>
       </div>
     )
+    }
   }
-}
 
 export default RestaurantIndex

@@ -3,6 +3,7 @@ import { fetchRestaurants, fetchRestaurant } from '../../actions/restaurant_acti
 import Search from './search';
 
 const mapStateToProps = state =>{
+  debugger
   return {
     restaurants: Object.values(state.entities.restaurants) 
   
