@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   /* background-image: url("https://www.nakeddogbrooklyn.com/img/slide_inside.jpg"); */
-  background-image: url("https://static.highsnobiety.com/wp-content/uploads/2016/10/26120833/Butler-Cafe-South-Williamburg-05.jpg");
+  /* background-image: url("https://static.highsnobiety.com/wp-content/uploads/2016/10/26120833/Butler-Cafe-South-Williamburg-05.jpg"); */
+  background-image: url("https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg");
   background-size: cover;
   background-position: center;
   height: 380px;
@@ -20,7 +21,8 @@
   font-size: 41px;
   font-family: 'Maven Pro', sans-serif;
   font-weight: bold;
-  margin-bottom: 48px;
+  margin-bottom: 23px;
+
 }
 
 .search-bar-main{
@@ -51,7 +53,7 @@
 }
 
 .search-bar-number input{
-  height: 43px;
+  height: 41px;
   border: none;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -62,8 +64,8 @@
 }
 
 .search-bar input{
-  height: 43px;
-  width: 200px;
+  height: 41px;
+  width: 290px;
   border-radius: 4px;
   border: none;
 }

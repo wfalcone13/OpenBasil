@@ -31,7 +31,7 @@ const App = () => {
       </div> */}
  
       < Route exact path='/rests' component={RestaurantIndexContainer}/>
-      <SearchContainer/>
+      < Route exact path ='/' component={SearchContainer}/>
      
 
    
