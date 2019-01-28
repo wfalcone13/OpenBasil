@@ -65,6 +65,7 @@
   font-size: 25px;
   display: flex;
   align-items: center;
+  font-family: 'Patua One', cursive;
 }
 
 .header-right{

@@ -273,7 +273,11 @@ var App = function App() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://previews.123rf.com/images/lenm/lenm1410/lenm141000190/32749260-mascot-illustration-featuring-a-potted-basil-plant-giving-a-thumbs-up.jpg",
     alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OpenBasil"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_restaurants_restaurant_index_container__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OpenBasil"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/rests",
+    component: _components_restaurants_restaurant_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_9__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -492,25 +496,20 @@ var RestaurantIndex =
 function (_React$Component) {
   _inherits(RestaurantIndex, _React$Component);
 
-  function RestaurantIndex(props) {
-    var _this;
-
+  function RestaurantIndex() {
     _classCallCheck(this, RestaurantIndex);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantIndex).call(this, props));
-    _this.props = props.restaurants;
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantIndex).apply(this, arguments));
   }
 
   _createClass(RestaurantIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      props.fetchRestaurants();
+      this.props.fetchRestaurants();
     }
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.restaurants.map(function (restaurant) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           restaurant: restaurant,
@@ -544,7 +543,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     restaurants: Object.values(state.entities.restaurants)
   };
@@ -637,10 +635,40 @@ __webpack_require__.r(__webpack_exports__);
 
 var Search = function Search(_ref) {
   var restaurants = _ref.restaurants;
-  debugger;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurants_restaurant_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    restaurants: restaurants
-  }));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "search-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find your table for any occasion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "search-bar-main"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    action: "",
+    className: "search-date"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "date",
+    name: "date"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    action: "",
+    className: "search-time"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "time",
+    name: "time"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    action: "",
+    className: "search-bar-number"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "number",
+    name: "number",
+    min: "1",
+    max: "15"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    action: "",
+    className: "search-bar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    name: "search",
+    placeholder: "Search...."
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "search-button"
+  }, "Let's go"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
@@ -664,7 +692,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     restaurants: Object.values(state.entities.restaurants)
   };
@@ -1166,7 +1193,6 @@ var restaurantReducer = function restaurantReducer() {
 
   switch (action.type) {
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANTS"]:
-      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.restaurants);
 
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:

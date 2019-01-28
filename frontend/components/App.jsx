@@ -25,9 +25,13 @@ const App = () => {
         <GreetingContainer/>
       </header>
 
+      {/* <div className='main-container'>
+
+        <h1>Find your table for any occasion</h1>
+      </div> */}
  
-      <RestaurantIndexContainer/>
-      {/* <SearchContainer/> */}
+      < Route exact path='/rests' component={RestaurantIndexContainer}/>
+      <SearchContainer/>
      
 
    

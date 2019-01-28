@@ -2,17 +2,14 @@ import React from 'react';
 import RestaurantIndexItem from './restaurant_index_item'; 
 
 class RestaurantIndex extends React.Component {
-  constructor(props){
-    super(props)
-    this.props = props.restaurants
-  }
+ 
 
   componentDidMount(){
-    props.fetchRestaurants()
+    this.props.fetchRestaurants()
   }
 
   render (){
-    debugger
+    
     return (
       <div>
         <ul>
