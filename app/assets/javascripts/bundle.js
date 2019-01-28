@@ -514,12 +514,12 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.restaurants.map(function (restaurant) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.restaurants.map(function (restaurant) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           restaurant: restaurant,
           key: restaurant.id
         });
-      })));
+      }))));
     }
   }]);
 
@@ -582,7 +582,7 @@ __webpack_require__.r(__webpack_exports__);
 var RestaurantIndexItem = function RestaurantIndexItem(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/api/restaurants/".concat(props.restaurant.id)
-  }, props.restaurant.name));
+  }, props.restaurant.name), props.restaurant.location, props.restaurant.photo);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RestaurantIndexItem);

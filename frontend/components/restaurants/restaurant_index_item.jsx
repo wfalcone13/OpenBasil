@@ -7,6 +7,8 @@ import {Link} from 'react-router-dom';
       return (
       <div>
         <Link to={`/api/restaurants/${props.restaurant.id}`}>{props.restaurant.name}</Link>
+        {props.restaurant.location}
+        {props.restaurant.photo}
      
       </div>
       )
