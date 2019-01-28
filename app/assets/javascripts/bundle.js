@@ -492,16 +492,20 @@ var RestaurantIndex =
 function (_React$Component) {
   _inherits(RestaurantIndex, _React$Component);
 
-  function RestaurantIndex() {
+  function RestaurantIndex(props) {
+    var _this;
+
     _classCallCheck(this, RestaurantIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantIndex).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantIndex).call(this, props));
+    _this.props = props.restaurants;
+    return _this;
   }
 
   _createClass(RestaurantIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchRestaurants();
+      props.fetchRestaurants();
     }
   }, {
     key: "render",
