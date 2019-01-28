@@ -18,6 +18,7 @@ class RestaurantIndex extends React.Component {
             return <RestaurantIndexItem restaurant={restaurant}
             key={restaurant.id}
             />
+            
           })}
           </li>
         </ul>

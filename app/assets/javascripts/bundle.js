@@ -582,7 +582,9 @@ __webpack_require__.r(__webpack_exports__);
 var RestaurantIndexItem = function RestaurantIndexItem(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/api/restaurants/".concat(props.restaurant.id)
-  }, props.restaurant.name), props.restaurant.location, props.restaurant.photo);
+  }, props.restaurant.name), props.restaurant.location, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.restaurant.photoURL
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RestaurantIndexItem);
@@ -1197,7 +1199,7 @@ var restaurantReducer = function restaurantReducer() {
 
   switch (action.type) {
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANTS"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.restaurants);
+      return action.restaurants;
 
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.restaurant.id, action.restaurant));
