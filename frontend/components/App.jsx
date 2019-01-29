@@ -4,11 +4,11 @@ import {Route, Redirect, HashRouter, Switch, Link} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
-import RestaurantIndexContainer from '../components/restaurants/restaurant_index_container' 
+import PopularIndexContainer from './popular_restaurants/popular_index_container' 
 import Modal from './modal/modal'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SearchContainer from './search/search_container'
-import PopularIndex from '../components/popular_rests/popular_index'
+import { logoutCurrentUser } from '../actions/session_actions';
 
 const App = () => {
   return (
@@ -27,12 +27,14 @@ const App = () => {
 
  
       < Route exact path ='/' component={SearchContainer}/>
-
-      {/* <h2 className="pop-h2">Popular restaurants in (location)</h2> */}
-      < Route exact path='/' component={RestaurantIndexContainer}/>
-      {/* <Route exact path ='/' component={PopularIndex} /> */}
+   
+      {/* <h2 className="pop-h2">Popular restaurants in</h2> */}
+      < Route exact path='/' component={PopularIndexContainer}/>
+    
      
 
+
+      <h2 className="bottom">Bottom of Page</h2>
    
     </div>
 

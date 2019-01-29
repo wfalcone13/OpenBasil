@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-  class RestaurantIndexItem extends React.Component{
+  class PopularIndexItem extends React.Component{
       constructor(props){
         super(props)
       }
@@ -14,7 +14,7 @@ import {Link} from 'react-router-dom';
         <Link to={`/api/restaurants/${this.props.restaurant.id}`}>{this.props.restaurant.name}</Link>
         <div className="ratings">
           <p>Rating {this.props.restaurant.rating}</p>
-          <p>Review Count {this.props.restaurant.review_count}</p>
+          <p>Reviews {this.props.restaurant.review_count}</p>
         </div>
           <div className="ratings"><p>Price {this.props.restaurant.price}</p>
           {this.props.restaurant.location.split(',')[1]}
@@ -33,4 +33,4 @@ import {Link} from 'react-router-dom';
 
 
 
-export default RestaurantIndexItem
+export default PopularIndexItem
