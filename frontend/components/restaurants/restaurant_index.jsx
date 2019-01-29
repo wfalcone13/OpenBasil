@@ -11,9 +11,12 @@ class RestaurantIndex extends React.Component {
   render (){
     
     return (
-      <div>
+      <div className="pop-comp">
+        <h2 className="pop-h2">Popular restaurants in (location)</h2>
+
+      <div className="res-box">
         <ul>
-          <li>
+          <li className="pop-res-info">
           {this.props.restaurants.map(restaurant => {
             return <RestaurantIndexItem restaurant={restaurant}
             key={restaurant.id}
@@ -22,6 +25,7 @@ class RestaurantIndex extends React.Component {
           })}
           </li>
         </ul>
+      </div>
       </div>
     )
     }

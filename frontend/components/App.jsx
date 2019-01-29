@@ -25,13 +25,11 @@ const App = () => {
         <GreetingContainer/>
       </header>
 
-      {/* <div className='main-container'>
-
-        <h1>Find your table for any occasion</h1>
-      </div> */}
  
-      < Route exact path='/rests' component={RestaurantIndexContainer}/>
       < Route exact path ='/' component={SearchContainer}/>
+
+      {/* <h2 className="pop-h2">Popular restaurants in (location)</h2> */}
+      < Route exact path='/' component={RestaurantIndexContainer}/>
       {/* <Route exact path ='/' component={PopularIndex} /> */}
      
 

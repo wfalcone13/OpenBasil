@@ -6,9 +6,11 @@
   color: white;
   font-size: .875rem;
   text-decoration: none;
-  padding: 9px;
+  padding: 7px;
   display: block;
   margin-right: 10px;
+  width: 70px;
+  height: 33px;
 }
 
 .login-button{
@@ -127,3 +129,5 @@
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+
