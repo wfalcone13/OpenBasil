@@ -72,7 +72,8 @@ class RestaurantShow extends React.Component{
             <p>{this.props.restaurant.review_count} reviews</p>
           </div>
           <div className="quick-facs-money">
-            
+
+
           </div>
         </div>
       </div>  
