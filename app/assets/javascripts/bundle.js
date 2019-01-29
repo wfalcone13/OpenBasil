@@ -251,6 +251,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./search/search_container */ "./frontend/components/search/search_container.js");
+/* harmony import */ var _components_popular_rests_popular_index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/popular_rests/popular_index */ "./frontend/components/popular_rests/popular_index.jsx");
+/* harmony import */ var _components_popular_rests_popular_index__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_popular_rests_popular_index__WEBPACK_IMPORTED_MODULE_10__);
+
 
 
 
@@ -459,6 +462,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Modal));
+
+/***/ }),
+
+/***/ "./frontend/components/popular_rests/popular_index.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/popular_rests/popular_index.jsx ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

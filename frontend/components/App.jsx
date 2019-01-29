@@ -8,7 +8,7 @@ import RestaurantIndexContainer from '../components/restaurants/restaurant_index
 import Modal from './modal/modal'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SearchContainer from './search/search_container'
-
+import PopularIndex from '../components/popular_rests/popular_index'
 
 const App = () => {
   return (
@@ -32,6 +32,7 @@ const App = () => {
  
       < Route exact path='/rests' component={RestaurantIndexContainer}/>
       < Route exact path ='/' component={SearchContainer}/>
+      {/* <Route exact path ='/' component={PopularIndex} /> */}
      
 
    
