@@ -1,5 +1,5 @@
 import React from 'react';
-import RestaurantIndex from '../restaurants/restaurant_index';
+// import RestaurantIndex from '../restaurants/restaurant_index';
 import SearchField from "react-search-field";
 
 const Search = ({restaurants}) => {

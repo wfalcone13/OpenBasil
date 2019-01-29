@@ -4,10 +4,12 @@ import {Route, Redirect, HashRouter, Switch, Link} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
-import RestaurantIndexContainer from '../components/restaurants/restaurant_index_container' 
+import PopularIndexContainer from './popular_restaurants/popular_index_container' 
 import Modal from './modal/modal'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SearchContainer from './search/search_container'
+import { logoutCurrentUser } from '../actions/session_actions';
+import RestaurantShowContainer from './restaurants/restaurant_show_containter'
 
 
 const App = () => {
@@ -25,15 +27,14 @@ const App = () => {
         <GreetingContainer/>
       </header>
 
-      {/* <div className='main-container'>
-
-        <h1>Find your table for any occasion</h1>
-      </div> */}
- 
-      < Route exact path='/rests' component={RestaurantIndexContainer}/>
+      < Route path='/restaurants/:restaurantId' component={RestaurantShowContainer}/>
       < Route exact path ='/' component={SearchContainer}/>
+      < Route exact path='/' component={PopularIndexContainer}/>
+    
      
 
+
+      <h2 className="bottom">Bottom of Page</h2>
    
     </div>
 

@@ -2,17 +2,20 @@
   border: 2px solid #1c627a;
   border-radius: 4px;
   background-color: #237b98;
-  font-family: unset;
+  font-family: 'Sarabun', sans-serif;
   color: white;
-  font-size: .875rem;
+  font-size: 12px;
   text-decoration: none;
-  padding: 9px;
+  padding: 7px;
   display: block;
-  margin-right: 10px;
+  margin-right: 1px;
+  width: 70px;
+  height: 33px;
+  font-weight: initial;
 }
 
 .login-button{
-  font-family: unset;
+  font-family: 'Sarabun', sans-serif;
   color: black;
   font-size: .975rem;
   text-decoration: none;
@@ -21,6 +24,7 @@
   align-items: center;
   background: transparent;
   border: none;
+  margin-right: 4px;
 
 }
 
@@ -29,6 +33,7 @@
     flex-direction: row;
     display: flex;
     padding-right: 42px;
+    align-items: center;
    }
 
 
@@ -127,3 +132,5 @@
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+

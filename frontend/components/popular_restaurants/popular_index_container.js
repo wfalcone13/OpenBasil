@@ -1,11 +1,12 @@
 import {connect} from 'react-redux';
 import { fetchRestaurants, fetchRestaurant} from '../../actions/restaurant_actions';
-import RestaurantIndex from './restaurant_index'
+import PopularIndex from './popular_index'
 
 const mapStateToProps = state => {
   
   return {
-    restaurants: Object.values(state.entities.restaurants) 
+    restaurants: Object.values(state.entities.restaurants),
+    currentUser: state.entities.users[state.session.id]  
   };
 };
 
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch =>{
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(PopularIndex)
