@@ -252,6 +252,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./search/search_container */ "./frontend/components/search/search_container.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./restaurants/restaurant_show_containter */ "./frontend/components/restaurants/restaurant_show_containter.js");
+
 
 
 
@@ -276,6 +278,9 @@ var App = function App() {
     src: "https://previews.123rf.com/images/lenm/lenm1410/lenm141000190/32749260-mascot-illustration-featuring-a-potted-basil-plant-giving-a-thumbs-up.jpg",
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OpenBasil"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/restaurants/:restaurantId",
+    component: _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
     component: _search_search_container__WEBPACK_IMPORTED_MODULE_9__["default"]
@@ -325,7 +330,9 @@ var Greeting = function Greeting(_ref) {
         return openModal('login');
       },
       className: "login-button"
-    }, "Sign in"));
+    }, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fas fa-search"
+    }));
   };
 
   var personalGreeting = function personalGreeting() {
@@ -518,6 +525,15 @@ function (_React$Component) {
       this.props.fetchRestaurants();
     }
   }, {
+    key: "greetingLocation",
+    value: function greetingLocation() {
+      if (currentUser) {
+        return this.props.currentUser.primary_location;
+      } else {
+        return 'New York';
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -526,7 +542,7 @@ function (_React$Component) {
         className: "border-h2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "pop-h2"
-      }, "Popular restaurants in ", this.props.currentUser.primary_location)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Popular restaurants near New York")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "pop-res-info"
@@ -633,7 +649,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.restaurant.photoURL
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/api/restaurants/".concat(this.props.restaurant.id)
+        to: "/restaurants/".concat(this.props.restaurant.id)
       }, this.props.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ratings"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Rating ", this.props.restaurant.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Reviews ", this.props.restaurant.review_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -649,85 +665,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/restaurants/restaurant_index.jsx":
-/*!**************************************************************!*\
-  !*** ./frontend/components/restaurants/restaurant_index.jsx ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _restaurant_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./restaurant_index_item */ "./frontend/components/restaurants/restaurant_index_item.jsx");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var RestaurantIndex =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(RestaurantIndex, _React$Component);
-
-  function RestaurantIndex() {
-    _classCallCheck(this, RestaurantIndex);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantIndex).apply(this, arguments));
-  }
-
-  _createClass(RestaurantIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchRestaurants();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      debugger;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pop-comp"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "res-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "pop-res-info"
-      }, this.props.restaurants.slice(0, 5).map(function (restaurant) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          restaurant: restaurant,
-          key: restaurant.id
-        });
-      })))));
-    }
-  }]);
-
-  return RestaurantIndex;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (RestaurantIndex);
-
-/***/ }),
-
-/***/ "./frontend/components/restaurants/restaurant_index_item.jsx":
-/*!*******************************************************************!*\
-  !*** ./frontend/components/restaurants/restaurant_index_item.jsx ***!
-  \*******************************************************************/
+/***/ "./frontend/components/restaurants/restaurant_show.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/restaurants/restaurant_show.jsx ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -757,38 +698,115 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var RestaurantIndexItem =
+var RestaurantShow =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(RestaurantIndexItem, _React$Component);
+  _inherits(RestaurantShow, _React$Component);
 
-  function RestaurantIndexItem(props) {
-    _classCallCheck(this, RestaurantIndexItem);
+  function RestaurantShow(props) {
+    _classCallCheck(this, RestaurantShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantIndexItem).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
   }
 
-  _createClass(RestaurantIndexItem, [{
+  _createClass(RestaurantShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchRestaurant(this.props.match.params.restaurantId);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "res-info"
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rests-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rests-photos"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://www.nycgo.com/images/venues/6681/lilia-assorted-dishes-1__x_large.jpg",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://static01.nyt.com/images/2016/03/30/dining/30REST-LILIA-slide-31ZE/30REST-LILIA-slide-31ZE-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.restaurant.photoURL
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/api/restaurants/".concat(this.props.restaurant.id)
-      }, this.props.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ratings"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Rating ", this.props.restaurant.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Review Count ", this.props.restaurant.review_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ratings"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Price ", this.props.restaurant.price), this.props.restaurant.location.split(',')[1]));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdkYtjC41svvTzdM3KOb9xwS3QF0_IiuSrLy2PE-dnPBak2CUF",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe8OIWRqHvMwS7rLY1QfciEj5iP7LYxUB4tN5JDbqSq6t3j7wx",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "data:image/jpeg;base64,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",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdkYtjC41svvTzdM3KOb9xwS3QF0_IiuSrLy2PE-dnPBak2CUF",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe8OIWRqHvMwS7rLY1QfciEj5iP7LYxUB4tN5JDbqSq6t3j7wx",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-5"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHGXTB9T-brq66xilTkpuB2vAePqVuKYBxxvKEjrDvo1RYr9D",
+        alt: ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rests-links"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "rest-links-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Specials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Twitter")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.restaurant.name)));
     }
   }]);
 
-  return RestaurantIndexItem;
+  return RestaurantShow;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (RestaurantIndexItem);
+/* harmony default export */ __webpack_exports__["default"] = (RestaurantShow);
+
+/***/ }),
+
+/***/ "./frontend/components/restaurants/restaurant_show_containter.js":
+/*!***********************************************************************!*\
+  !*** ./frontend/components/restaurants/restaurant_show_containter.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+/* harmony import */ var _restaurant_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurant_show */ "./frontend/components/restaurants/restaurant_show.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    restaurant: state.entities.restaurants[ownProps.match.params.restaurantId] || {}
+  };
+};
+
+var mapDistpatchToProps = function mapDistpatchToProps(dispatch) {
+  return {
+    fetchRestaurant: function fetchRestaurant(id) {
+      return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["fetchRestaurant"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDistpatchToProps)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -833,10 +851,9 @@ var Root = function Root(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _restaurants_restaurant_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../restaurants/restaurant_index */ "./frontend/components/restaurants/restaurant_index.jsx");
-/* harmony import */ var react_search_field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-search-field */ "./node_modules/react-search-field/dist/index.min.js");
-/* harmony import */ var react_search_field__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_search_field__WEBPACK_IMPORTED_MODULE_2__);
-
+/* harmony import */ var react_search_field__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-search-field */ "./node_modules/react-search-field/dist/index.min.js");
+/* harmony import */ var react_search_field__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_search_field__WEBPACK_IMPORTED_MODULE_1__);
+ // import RestaurantIndex from '../restaurants/restaurant_index';
 
 
 
@@ -1388,8 +1405,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -1403,7 +1418,7 @@ var restaurantReducer = function restaurantReducer() {
       return action.restaurants;
 
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.restaurant.id, action.restaurant));
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.restaurant);
 
     default:
       return state;

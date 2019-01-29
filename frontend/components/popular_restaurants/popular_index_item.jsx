@@ -7,11 +7,14 @@ import {Link} from 'react-router-dom';
         super(props)
       }
 
+  
+    
     render(){
+      
       return (
       <div className='res-info'>
         <img src={this.props.restaurant.photoURL}/>
-        <Link to={`/api/restaurants/${this.props.restaurant.id}`}>{this.props.restaurant.name}</Link>
+        <Link to={`/restaurants/${this.props.restaurant.id}`}>{this.props.restaurant.name}</Link>
         <div className="ratings">
           <p>Rating {this.props.restaurant.rating}</p>
           <p>Reviews {this.props.restaurant.review_count}</p>

@@ -9,6 +9,8 @@ import Modal from './modal/modal'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SearchContainer from './search/search_container'
 import { logoutCurrentUser } from '../actions/session_actions';
+import RestaurantShowContainer from './restaurants/restaurant_show_containter'
+
 
 const App = () => {
   return (
@@ -25,10 +27,8 @@ const App = () => {
         <GreetingContainer/>
       </header>
 
- 
+      < Route path='/restaurants/:restaurantId' component={RestaurantShowContainer}/>
       < Route exact path ='/' component={SearchContainer}/>
-   
-      {/* <h2 className="pop-h2">Popular restaurants in</h2> */}
       < Route exact path='/' component={PopularIndexContainer}/>
     
      

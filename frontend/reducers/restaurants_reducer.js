@@ -7,7 +7,7 @@ const restaurantReducer = (state  = {}, action) => {
     case RECEIVE_RESTAURANTS:
       return action.restaurants
     case RECEIVE_RESTAURANT:
-      return merge({}, state, {[action.restaurant.id]:action.restaurant})
+      return merge({}, state, action.restaurant)
     default:
       return state;
   }
