@@ -1,9 +1,7 @@
 .search-container{
   display: flex;
   flex-direction: column;
-  /* background-image: url("https://www.nakeddogbrooklyn.com/img/slide_inside.jpg"); */
-  /* background-image: url("https://static.highsnobiety.com/wp-content/uploads/2016/10/26120833/Butler-Cafe-South-Williamburg-05.jpg"); */
-  background-image: url("https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg);
   background-size: cover;
   background-position: center;
   height: 380px;

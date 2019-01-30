@@ -1675,10 +1675,10 @@ var fetchReservation = function fetchReservation(id) {
     url: "/api/reservations/".concat(id)
   });
 };
-var createReservation = function createReservation(restaurant_id, reservation) {
+var createReservation = function createReservation(reservation) {
   return $.ajax({
     method: 'POST',
-    url: "/api/restaurants/".concat(restaurant_id, "/reservations"),
+    url: '/api/reservations',
     data: {
       reservation: reservation
     }
