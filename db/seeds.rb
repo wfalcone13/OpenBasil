@@ -18,24 +18,24 @@ rest_4 = Restaurant.new({name: 'Brano', category: 'New Italian', long: 40.710734
 rest_5 = Restaurant.new({name: "Joe's Pizza", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "150 E 14th St, New York, NY 10003", price: 1, rating: 5, review_count: 500 })
 
 
-file1 = File.open('/Users/william_falcone/Desktop/rest_pics/lilia.jpeg')
+file1 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/lilia.jpeg')
 rest_1.photo.attach(io: file1, filename: 'lilia.jpeg')
 rest_1.save!
 
-file2 = File.open('/Users/william_falcone/Desktop/rest_pics/best_pizza.jpeg')
+file2 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/best_pizza.jpeg')
 rest_2.photo.attach(io: file2, filename: 'best_pizza.jpeg')
 rest_2.save!
 
-file3 = File.open('/Users/william_falcone/Desktop/rest_pics/naked_dog.jpeg')
+file3 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/naked_dog.jpeg')
 rest_3.photo.attach(io: file3, filename: 'naked_dog.jpeg')
 rest_3.save!
 
-file4 = File.open('/Users/william_falcone/Desktop/rest_pics/barano.jpeg')
+file4 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/barano.jpeg')
 rest_4.photo.attach(io: file4, filename: 'barano.jpeg')
 rest_4.save!
 
 
-file5 = File.open('/Users/william_falcone/Desktop/rest_pics/joessm.jpg')
+file5 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/joessm.jpg')
 rest_5.photo.attach(io: file5, filename: 'joessm.jpg')
 rest_5.save!
 
