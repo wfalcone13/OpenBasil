@@ -10,6 +10,8 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SearchContainer from './search/search_container'
 import { logoutCurrentUser } from '../actions/session_actions';
 import RestaurantShowContainer from './restaurants/restaurant_show_containter'
+import topNear from '../components/additional/top_near'
+import featureInt from '../components/additional/featured_internation'
 
 
 const App = () => {
@@ -30,7 +32,8 @@ const App = () => {
       < Route path='/restaurants/:restaurantId' component={RestaurantShowContainer}/>
       < Route exact path ='/' component={SearchContainer}/>
       < Route exact path='/' component={PopularIndexContainer}/>
-    
+      < Route exact path='/' component={topNear} />
+      < Route exact path='/' component={featureInt} />
      
 
 

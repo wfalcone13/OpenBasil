@@ -15,11 +15,17 @@ import {Link} from 'react-router-dom';
       <div className='res-info'>
         <img src={this.props.restaurant.photoURL}/>
         <Link to={`/restaurants/${this.props.restaurant.id}`}>{this.props.restaurant.name}</Link>
-        <div className="ratings">
-          <p>Rating {this.props.restaurant.rating}</p>
-          <p>Reviews {this.props.restaurant.review_count}</p>
+        <div className="star-ratings">
+            <p>
+              <i className="far fa-star"></i>
+              <i className="far fa-star"></i>
+              <i className="far fa-star"></i>
+              </p>
+          <p className='star-ps'>Reviews {this.props.restaurant.review_count}</p>
         </div>
-          <div className="ratings"><p>Price {this.props.restaurant.price}</p>
+          <div className="ratings">
+            {this.props.restaurant.category}
+          <p>$$$</p>
           {this.props.restaurant.location.split(',')[1]}
          </div> 
      
