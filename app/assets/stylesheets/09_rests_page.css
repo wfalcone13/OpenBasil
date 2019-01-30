@@ -86,6 +86,7 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  margin-right: 185px;
 }
 
 .quick-facs-rating{
@@ -101,4 +102,24 @@
 
 .quick-facs-reviews p{
   margin-left: 5px;
+}
+
+
+.quick-facs-money{
+  margin-left: 14px;
+  display: flex;
+}
+
+.quick-facs-money p{
+  margin-left: 9px;
+}
+
+.quick-facs-cat{
+  display: flex;
+  margin-left: 14px;
+}
+
+.quick-facs-cat p{
+  margin-left: 9px;
+
 }

@@ -785,7 +785,13 @@ function (_React$Component) {
         className: "far fa-comment-alt"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.restaurant.review_count, " reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quick-facs-money"
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-money-bill"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", this.props.restaurant.price * 7, " to $", this.props.restaurant.price * 9)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quick-facs-cat"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-utensils"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Italian"))));
     }
   }]);
 
