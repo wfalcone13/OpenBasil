@@ -34,6 +34,12 @@ class Api::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
   end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    render :index
+  end
  
 
   private
