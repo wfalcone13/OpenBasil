@@ -18,6 +18,7 @@ class Api::ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
+    render :show
   end
 
   def update
