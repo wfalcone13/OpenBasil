@@ -1,0 +1,143 @@
+.top-c{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.top-c-head{
+  display: flex;
+  width: 1000px;
+  height: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+.top-c-head p{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #2d333f;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.top-buckets{
+  display: flex;
+  height: 182px;
+  margin-top: 25px;
+}
+
+
+.cat-1{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3.amazonaws.com/open-basil-dev/topCs/download.jpg');
+  margin-right: 10px; 
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.cat-1 p{
+  color: white;
+  padding-left: 41px;
+  padding-right: 31px;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.cat-2{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3.amazonaws.com/open-basil-dev/topCs/download.jpg');
+  margin-right: 10px; 
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.cat-2 p{
+  color: white;
+  padding-left: 41px;
+  padding-right: 31px;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.cat-3{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3.amazonaws.com/open-basil-dev/topCs/download.jpg');
+  margin-right: 10px; 
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.cat-3 p{
+  color: white;
+  padding-left: 41px;
+  padding-right: 31px;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.cat-4{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3.amazonaws.com/open-basil-dev/topCs/download.jpg');
+  margin-right: 10px; 
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.cat-4 p{
+  color: white;
+  padding-left: 41px;
+  padding-right: 31px;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.cat-5{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3.amazonaws.com/open-basil-dev/topCs/download.jpg');
+  border: none;
+  height: 182px;
+  width: 93px;
+  border-radius: 3px;
+}
+
+.feat-main{
+  margin-top: 45px;
+  width: 996px;
+  margin-left: 81px;
+}
+
+.feat-p{
+  border-bottom: 1px solid lightgray;
+}
+
+.feat-p p{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #2d333f;
+  font-family: 'Maven Pro', sans-serif;
+  margin-bottom: 11px;
+}
+
+.feat-background{
+  background-image: url('https://s3.amazonaws.com/open-basil-dev/topCs/Screen+Shot+2019-01-30+at+5.46.48+PM.png');
+  height: 518px;
+  width: 962px;
+  margin-top: 19px;
+  margin-left: 8px;
+}

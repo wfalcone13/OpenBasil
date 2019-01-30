@@ -253,6 +253,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./search/search_container */ "./frontend/components/search/search_container.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./restaurants/restaurant_show_containter */ "./frontend/components/restaurants/restaurant_show_containter.js");
+/* harmony import */ var _components_additional_top_near__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/additional/top_near */ "./frontend/components/additional/top_near.jsx");
+/* harmony import */ var _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/additional/featured_internation */ "./frontend/components/additional/featured_internation.jsx");
+
+
 
 
 
@@ -288,12 +292,84 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _popular_restaurants_popular_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/",
+    component: _components_additional_top_near__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/",
+    component: _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "bottom"
   }, "Bottom of Page"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/additional/featured_internation.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/additional/featured_internation.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var featureInt = function featureInt() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "feat-main"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "feat-p"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Featured International Areas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "feat-background"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (featureInt);
+
+/***/ }),
+
+/***/ "./frontend/components/additional/top_near.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/additional/top_near.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var topNear = function topNear() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "top-c"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "top-c-head"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Top Cusines near Manhattan ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "top-buckets"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "cat-1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best American Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "cat-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best New Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "cat-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Old Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "cat-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Best Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "cat-5"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (topNear);
 
 /***/ }),
 
@@ -542,11 +618,13 @@ function (_React$Component) {
         className: "border-h2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "pop-h2"
-      }, "Popular restaurants near New York")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Recently viewed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "res-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "pop-res-info"
-      }, this.props.restaurants.slice(0, 5).map(function (restaurant) {
+      }, this.props.restaurants.slice(0, 4).map(function (restaurant) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_popular_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           restaurant: restaurant,
           key: restaurant.id
@@ -651,10 +729,18 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(this.props.restaurant.id)
       }, this.props.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "star-ratings"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-star"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-star"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-star"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "star-ps"
+      }, "Reviews ", this.props.restaurant.review_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ratings"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Rating ", this.props.restaurant.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Reviews ", this.props.restaurant.review_count)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ratings"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Price ", this.props.restaurant.price), this.props.restaurant.location.split(',')[1]));
+      }, this.props.restaurant.category, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$$$"), this.props.restaurant.location.split(',')[1]));
     }
   }]);
 
