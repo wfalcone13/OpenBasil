@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import {login, signup, logout} from './actions/session_actions';
 import configureStore from '../frontend/store/store'
 import Root from './components/root';
-import {fetchRestaurants, fetchRestaurant} from './actions/restaurant_actions'
+import {fetchReservations, fetchReservation, 
+  createReservation, updateReservation, 
+  deleteReservation}  from './util/reservation_api_util'
 
 document.addEventListener("DOMContentLoaded", ()=>{
   
@@ -24,8 +26,12 @@ if (window.currentUser) {
 
   window.dispatch = store.dispatch;
   window.getState = store.dispatch;
-  window.fetchRestaurants = fetchRestaurants;
-  window.fetchRestaurant = fetchRestaurant;
+  window.fetchReservations = fetchReservations;
+  window.fetchReservation = fetchReservation;
+  window.createReservation = createReservation;
+  window.updateReservation = updateReservation;
+  window.deleteReservation = deleteReservation;
+
 
 const root = document.getElementById('root');
 ReactDOM.render(<Root store={store} />, root)

@@ -1302,7 +1302,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _frontend_store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../frontend/store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+/* harmony import */ var _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/reservation_api_util */ "./frontend/util/reservation_api_util.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -1331,8 +1331,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.dispatch = store.dispatch;
   window.getState = store.dispatch;
-  window.fetchRestaurants = _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_5__["fetchRestaurants"];
-  window.fetchRestaurant = _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_5__["fetchRestaurant"];
+  window.fetchReservations = _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchReservations"];
+  window.fetchReservation = _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchReservation"];
+  window.createReservation = _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_5__["createReservation"];
+  window.updateReservation = _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_5__["updateReservation"];
+  window.deleteReservation = _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_5__["deleteReservation"];
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: store
@@ -1643,6 +1646,59 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/reservation_api_util.js":
+/*!***********************************************!*\
+  !*** ./frontend/util/reservation_api_util.js ***!
+  \***********************************************/
+/*! exports provided: fetchReservations, fetchReservation, createReservation, updateReservation, deleteReservation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchReservations", function() { return fetchReservations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchReservation", function() { return fetchReservation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReservation", function() { return createReservation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateReservation", function() { return updateReservation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteReservation", function() { return deleteReservation; });
+var fetchReservations = function fetchReservations() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/reservations'
+  });
+};
+var fetchReservation = function fetchReservation(id) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/reservations/".concat(id)
+  });
+};
+var createReservation = function createReservation(restaurant_id, reservation) {
+  return $.ajax({
+    method: 'POST',
+    url: "/api/restaurants/".concat(restaurant_id, "/reservations"),
+    data: {
+      reservation: reservation
+    }
+  });
+};
+var updateReservation = function updateReservation(reservation) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "/api/reservations/".concat(reservation.id),
+    data: {
+      reservation: reservation
+    }
+  });
+};
+var deleteReservation = function deleteReservation(id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "/api/reservations/".concat(id)
+  });
+};
 
 /***/ }),
 
