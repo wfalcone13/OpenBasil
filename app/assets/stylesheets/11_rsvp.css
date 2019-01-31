@@ -95,3 +95,81 @@
 .booked-info{
 
 }
+
+.top-bar{
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  justify-content: center;
+  padding-left: 150px;
+}
+
+.whole-page{
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar h1{
+  font-size: 28px
+}
+
+.top-bar p{
+  font-size: 15px;
+  color: gray;
+}
+
+
+.all-rsvps{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-rsvps h2{
+  margin-bottom: 41px;
+  margin-right: 247px;
+}
+
+.namebox{
+  display: flex;
+  height: 130px;
+  width: 400px;
+  border-top: 1px solid lightgray;
+  padding-top: 14px;
+}
+
+.name-photo{
+  margin-right: 8px;
+}
+
+.name-photo img{
+  height: 64px;
+  width: 80px;
+  border: none;
+  border-radius: 3px;
+}
+
+.rsvp-info-box{
+
+}
+
+.rsvp-info-box p{
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.rsvp-buttons-change{
+  margin-top: 10px;
+}
+
+.rsvp-buttons-change a{
+  text-decoration: none;
+  margin-right: 3px;
+  margin-left: 3px;
+  font-size: 14px;
+  color: #237b98;
+}

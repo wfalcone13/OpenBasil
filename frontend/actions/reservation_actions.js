@@ -4,10 +4,11 @@ export const RECEIVE_ALL_RESERVATIONS = 'RECEIVE_ALL_RESERVATIONS';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 
-const receiveAllReservations = (reservations) => {
+const receiveAllReservations = ({ reservations, restaurants}) => {
   return{
     type: RECEIVE_ALL_RESERVATIONS,
-    reservations: reservations
+    reservations,
+    restaurants
   }
 }
 

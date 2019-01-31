@@ -5,6 +5,7 @@ import RestaurantShow from './restaurant_show'
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     restaurant: state.entities.restaurants[ownProps.match.params.restaurantId] || {}
   }
