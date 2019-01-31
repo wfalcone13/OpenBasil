@@ -18,8 +18,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-top: 1px solid #80808047;
-  border-bottom: 1px solid #80808047;
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
   padding-bottom: 29px; 
   padding-top: 8px;
   margin-bottom: 9px;

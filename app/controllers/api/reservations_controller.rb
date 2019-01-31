@@ -32,7 +32,8 @@ class Api::ReservationsController < ApplicationController
   end
 
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations
+    @reserved_restaurants = current_user.reserved_restaurants
   end
 
   def destroy

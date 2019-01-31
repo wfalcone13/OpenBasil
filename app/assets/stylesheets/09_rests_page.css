@@ -53,7 +53,7 @@
   background: white;
   margin-top: 140px;
   border-radius: 3px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 .rest-links-list{
@@ -75,7 +75,7 @@
 
 .rest-info h2{
   font-size: 45px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
   width: 552px;
   padding-bottom: 28px;
   font-family: 'Maven Pro', sans-serif;

@@ -1,0 +1,200 @@
+.res-form-box{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.res-border{
+  border: 1px solid rgba(0,0,0,.08);
+  width: 273px;
+  height: 200px;
+}
+
+.res-form-info{
+}
+
+.res-form-info h3{
+  margin-left: 50px;
+  margin-bottom: 11px;
+  font-size: 18px;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bolder;
+  margin-top: 7px;
+}
+
+.res-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.seating-inputs{
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  width: 235px;
+  margin-left: 12px;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+
+.seating-inputs p {
+  margin-bottom: 6px;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.seating-inputs input{
+  border: none;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.d-t-section{
+  display: flex;
+  margin-top: 8px;
+  width: 235px;
+  margin-left: 12px;
+}
+
+.date-section{
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+
+.date-section input{
+  border: none;
+  margin-top: 4px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  margin-right: 10px;
+
+}
+
+
+.time-section{
+  font-size: 13px;
+}
+
+.time-section input{
+  border: none;
+  margin-top: 4px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.submit-rsvp{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 6px;
+  height: 45px;
+  background: #da3743;
+  color: white;
+  font-size: 14px;
+}
+
+.extr-info{
+
+}
+
+.booked-info{
+
+}
+
+.whole-page{
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar{
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  justify-content: center;
+  padding-left: 150px;
+}
+
+
+.top-bar h1{
+  font-size: 28px
+}
+
+.top-bar p{
+  font-size: 15px;
+  color: gray;
+}
+
+.bottom-side{
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-left{
+  width: 367px;
+  background-color: whitesmoke;
+}
+
+.bottom-right{
+  width: 363px;
+  background-color: whitesmoke;
+}
+
+.middle-bottom{
+  height: 50px;
+  background-color: whitesmoke;
+}
+
+.middle-top{
+  height: 25px;
+  background-color: whitesmoke;
+}
+.all-rsvps{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-rsvps h2{
+  margin-bottom: 41px;
+  margin-right: 247px;
+  padding-left: 27px;
+}
+
+.namebox{
+  display: flex;
+  height: 130px;
+  width: 400px;
+  border-top: 1px solid rgba(0,0,0,.08);
+  padding-top: 14px;
+}
+
+.name-photo{
+  margin-right: 8px;
+}
+
+.name-photo img{
+  height: 64px;
+  width: 80px;
+  border: none;
+  border-radius: 3px;
+}
+
+.rsvp-info-box{
+
+}
+
+.rsvp-info-box p{
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.rsvp-buttons-change{
+  margin-top: 10px;
+}
+
+.rsvp-buttons-change a{
+  text-decoration: none;
+  margin-right: 3px;
+  margin-left: 3px;
+  font-size: 14px;
+  color: #237b98;
+}

@@ -5,13 +5,13 @@ json.reservation do
 end
 
 json.user do
-    json.set! reservation.user.id do
-        json.extract! reservation.user, :reservation_ids
+    json.set! @reservation.user.id do
+        json.extract! @reservation.user, :reservation_ids
     end
 end
 
 json.restaurant do
-    json.set! reservation.restaurant.id do
-        json.extract! reservation.restaurant, :reservation_ids
+    json.set! @reservation.restaurant.id do
+        json.extract! @reservation.restaurant, :reservation_ids
     end
 end

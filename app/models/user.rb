@@ -5,6 +5,12 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true }
 
   has_many :reservations
+
+  has_many :reserved_restaurants,
+  through: :reservations,
+  source: :restaurant
+
+
   
   after_initialize :ensure_session_token 
   

@@ -15,8 +15,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-top: 1px solid #80808047;
-  border-bottom: 1px solid #80808047;
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
   padding-bottom: 22px; 
   padding-top: 1px;
   margin-bottom: 10px;
@@ -79,12 +79,12 @@
 
 .social-signups button{
   background: transparent;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    padding: 7px;
-    height: 45px;
-    width: 190px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  height: 45px;
+  width: 190px;
 
 }
 

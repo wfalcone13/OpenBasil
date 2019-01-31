@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom';
   
     
     render(){
-      
+
       return (
       <div className='res-info'>
         <img src={this.props.restaurant.photoURL}/>
