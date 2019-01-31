@@ -43,6 +43,9 @@ class ReservationIndex extends React.Component{
                   </li>
                 </ul>
             </div>
+            <div className='middle-bottom'>
+
+            </div>
         </div>
         <div className='bottom-right'>
 

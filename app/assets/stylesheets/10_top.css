@@ -9,7 +9,7 @@
   display: flex;
   width: 1000px;
   height: 40px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 .top-c-head p{
@@ -122,7 +122,7 @@
 }
 
 .feat-p{
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 .feat-p p{

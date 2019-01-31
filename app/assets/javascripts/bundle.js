@@ -1089,7 +1089,9 @@ function (_React$Component) {
           key: reservation.id,
           restaurant: _this.props.restaurants[reservation.restaurant_id] || {}
         });
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-bottom"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-right"
       })));
     }

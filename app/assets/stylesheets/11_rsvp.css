@@ -4,7 +4,7 @@
 }
 
 .res-border{
-  border: 1px solid lightgray;
+  border: 1px solid rgba(0,0,0,.08);
   width: 273px;
   height: 200px;
 }
@@ -27,10 +27,10 @@
 }
 
 .seating-inputs{
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
   width: 235px;
   margin-left: 12px;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid rgba(0,0,0,.08);
 }
 
 
@@ -62,7 +62,7 @@
 .date-section input{
   border: none;
   margin-top: 4px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
   margin-right: 10px;
 
 }
@@ -75,7 +75,7 @@
 .time-section input{
   border: none;
   margin-top: 4px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 .submit-rsvp{
@@ -96,20 +96,21 @@
 
 }
 
-.top-bar{
-  height: 70px;
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  justify-content: center;
-  padding-left: 150px;
-}
-
 .whole-page{
   display: flex;
   flex-direction: column;
 }
+
+.top-bar{
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  justify-content: center;
+  padding-left: 150px;
+}
+
 
 .top-bar h1{
   font-size: 28px
@@ -120,7 +121,30 @@
   color: gray;
 }
 
+.bottom-side{
+  display: flex;
+  flex-direction: row;
+}
 
+.bottom-left{
+  width: 367px;
+  background-color: whitesmoke;
+}
+
+.bottom-right{
+  width: 363px;
+  background-color: whitesmoke;
+}
+
+.middle-bottom{
+  height: 50px;
+  background-color: whitesmoke;
+}
+
+.middle-top{
+  height: 25px;
+  background-color: whitesmoke;
+}
 .all-rsvps{
   display: flex;
   justify-content: center;
@@ -132,13 +156,14 @@
 .all-rsvps h2{
   margin-bottom: 41px;
   margin-right: 247px;
+  padding-left: 27px;
 }
 
 .namebox{
   display: flex;
   height: 130px;
   width: 400px;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid rgba(0,0,0,.08);
   padding-top: 14px;
 }
 
