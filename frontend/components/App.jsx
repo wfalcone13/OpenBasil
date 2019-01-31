@@ -40,7 +40,6 @@ const App = () => {
       < Route exact path='/' component={featureInt} />
      
 
-
       <h2 className="bottom">Bottom of Page</h2>
    
     </div>
