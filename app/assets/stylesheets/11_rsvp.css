@@ -1,0 +1,97 @@
+.res-form-box{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.res-border{
+  border: 1px solid lightgray;
+  width: 273px;
+  height: 200px;
+}
+
+.res-form-info{
+}
+
+.res-form-info h3{
+  margin-left: 50px;
+  margin-bottom: 11px;
+  font-size: 18px;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bolder;
+  margin-top: 7px;
+}
+
+.res-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.seating-inputs{
+  border-bottom: 1px solid lightgray;
+  width: 235px;
+  margin-left: 12px;
+  border-top: 1px solid lightgray;
+}
+
+
+.seating-inputs p {
+  margin-bottom: 6px;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.seating-inputs input{
+  border: none;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.d-t-section{
+  display: flex;
+  margin-top: 8px;
+  width: 235px;
+  margin-left: 12px;
+}
+
+.date-section{
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+
+.date-section input{
+  border: none;
+  margin-top: 4px;
+  border-bottom: 1px solid lightgray;
+  margin-right: 10px;
+
+}
+
+
+.time-section{
+  font-size: 13px;
+}
+
+.time-section input{
+  border: none;
+  margin-top: 4px;
+  border-bottom: 1px solid lightgray;
+}
+
+.submit-rsvp{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 6px;
+  height: 45px;
+  background: #da3743;
+  color: white;
+  font-size: 14px;
+}
+
+.extr-info{
+
+}
+
+.booked-info{
+
+}

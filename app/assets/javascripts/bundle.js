@@ -342,6 +342,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./restaurants/restaurant_show_containter */ "./frontend/components/restaurants/restaurant_show_containter.js");
 /* harmony import */ var _components_additional_top_near__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/additional/top_near */ "./frontend/components/additional/top_near.jsx");
 /* harmony import */ var _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/additional/featured_internation */ "./frontend/components/additional/featured_internation.jsx");
+/* harmony import */ var _components_reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/reservations/reservation_create_container */ "./frontend/components/reservations/reservation_create_container.jsx");
+
 
 
 
@@ -371,6 +373,9 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OpenBasil"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/restaurants/:restaurantId",
     component: _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/restaurants/:restaurantId",
+    component: _components_reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_14__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
@@ -835,6 +840,179 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PopularIndexItem);
+
+/***/ }),
+
+/***/ "./frontend/components/reservations/reservation_create_container.jsx":
+/*!***************************************************************************!*\
+  !*** ./frontend/components/reservations/reservation_create_container.jsx ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _reservation_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reservation_form */ "./frontend/components/reservations/reservation_form.jsx");
+/* harmony import */ var _actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/reservation_actions */ "./frontend/actions/reservation_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    reservation: {
+      reservation_time: '',
+      reservation_date: '',
+      seating_number: ''
+    }
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createReservation: function createReservation(reservation) {
+      return dispatch(Object(_actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__["createReservation"])(reservation));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_reservation_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/reservations/reservation_form.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/reservations/reservation_form.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+var ReservationForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ReservationForm, _React$Component);
+
+  function ReservationForm(props) {
+    var _this;
+
+    _classCallCheck(this, ReservationForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationForm).call(this, props));
+    _this.state = _this.props.reservation;
+
+    _this.updateResDate.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
+    _this.updateResSeat.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
+    _this.updateResTime.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
+    return _this;
+  }
+
+  _createClass(ReservationForm, [{
+    key: "updateResTime",
+    value: function updateResTime(e) {
+      this.setState({
+        reservation_time: e.target.value
+      });
+    }
+  }, {
+    key: "updateResDate",
+    value: function updateResDate(e) {
+      this.setState({
+        reservation_date: e.target.value
+      });
+    }
+  }, {
+    key: "updateResSeat",
+    value: function updateResSeat(e) {
+      this.setState({
+        reservation_seating: e.target.value
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "res-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "res-border"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "res-form-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Make a Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: function onSubmit() {
+          return _this2.props.action(_this2.state);
+        },
+        className: "res-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "seating-inputs"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Party Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.updateResSeat,
+        type: "number",
+        value: this.state.reservation_seating,
+        placeholder: "For 4"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-t-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "date-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.updateResDate,
+        type: "date",
+        value: this.state.reservation_date,
+        placeholder: "Wed"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "time-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.updateResTime,
+        type: "time",
+        value: this.state.reservation_time,
+        placeholder: "7:00 PM"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "hidden",
+        value: this.props.currentUser
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "hidden",
+        value: this.props.restaurantId
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        name: "",
+        value: "Find Table",
+        className: "submit-rsvp"
+      })))));
+    }
+  }]);
+
+  return ReservationForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ReservationForm);
 
 /***/ }),
 
