@@ -855,13 +855,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _reservation_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reservation_form */ "./frontend/components/reservations/reservation_form.jsx");
 /* harmony import */ var _actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/reservation_actions */ "./frontend/actions/reservation_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     reservation: {
+      user_id: state.session.id,
+      restaurant_id: ownProps.match.params.restaurantId,
       reservation_time: '',
       reservation_date: '',
       seating_number: ''
@@ -902,13 +907,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -924,13 +929,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationForm).call(this, props));
     _this.state = _this.props.reservation;
-
-    _this.updateResDate.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-
-    _this.updateResSeat.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-
-    _this.updateResTime.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-
     return _this;
   }
 
@@ -952,8 +950,13 @@ function (_React$Component) {
     key: "updateResSeat",
     value: function updateResSeat(e) {
       this.setState({
-        reservation_seating: e.target.value
+        seating_number: e.target.value
       });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      this.props.createReservation(this.state);
     }
   }, {
     key: "render",
@@ -968,39 +971,30 @@ function (_React$Component) {
         className: "res-form-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Make a Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: function onSubmit() {
-          return _this2.props.action(_this2.state);
+          return _this2.props.createReservation(_this2.state);
         },
         className: "res-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "seating-inputs"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Party Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.updateResSeat,
+        onChange: this.updateResSeat.bind(this),
         type: "number",
-        value: this.state.reservation_seating,
         placeholder: "For 4"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "d-t-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "date-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.updateResDate,
+        onChange: this.updateResDate.bind(this),
         type: "date",
-        value: this.state.reservation_date,
         placeholder: "Wed"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "time-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.updateResTime,
+        onChange: this.updateResTime.bind(this),
         type: "time",
-        value: this.state.reservation_time,
         placeholder: "7:00 PM"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "hidden",
-        value: this.props.currentUser
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "hidden",
-        value: this.props.restaurantId
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         name: "",
         value: "Find Table",
