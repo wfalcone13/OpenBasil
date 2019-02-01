@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
     }
 
   })
-  debugger
   return{
     user_email: state.entities.users[state.session.id].email,
     // restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],

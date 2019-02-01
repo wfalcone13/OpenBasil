@@ -30,3 +30,51 @@
   background: #da3743;
   color: white;
 }
+
+.all-reviews{
+  margin-top: 40px;
+  margin-right: 197px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.all-reviews-lis{
+  display: flex;
+  justify-content: center;
+  width: 420px;
+}
+
+.all-reviews li{
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+
+.user-review{
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  margin-bottom: 20px;
+}
+
+.user-rev-email{
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+
+.user-rev-info{
+  margin-left: 7px;
+  margin-bottom: 10px;
+}
+
+.user-rev-info p{
+  margin-bottom: 5px;
+}
+
+.user-rev-info div{
+  margin-top: 5px;
+}

@@ -10,7 +10,6 @@ const mapStateToProps = ({session, entities: { users, reservations, restaurants 
   let rsvps = [];
   reservationIds.forEach(id => {
    const res = reservations[id];
-  //  res[rest] = state.entities.restaurants[res[restaurant_id]]
     if (res){
       rsvps.push(res);
     }    

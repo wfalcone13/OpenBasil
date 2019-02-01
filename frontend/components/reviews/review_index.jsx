@@ -12,8 +12,8 @@ class ReviewIndex extends React.Component{
 
   render(){
     return(
-      <div>
-        <ul>
+      <div className="all-reviews">
+        <ul className="all-reviews-lis">
           <li>
             {this.props.reviews.map(review => {
               return <ReviewIndexItem review={review}
