@@ -10,6 +10,8 @@ class User < ApplicationRecord
   through: :reservations,
   source: :restaurant
 
+  has_many :reviews
+
 
   
   after_initialize :ensure_session_token 

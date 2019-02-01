@@ -7,6 +7,7 @@ namespace :api, defaults: {format: :json} do
   resource :session, only: [:create, :destroy]
   resources :restaurants, only: [:create, :show, :index] 
   resources :reservations, only: [:create, :index, :edit, :show, :destroy, :update]
+  resources :reviews, only: [:create, :index]
 end
 
   root to: "static_pages#root"

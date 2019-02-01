@@ -1,0 +1,32 @@
+.review-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+  margin-right: 190px;
+}
+
+.review-box h3{
+  font-size: 19px;
+}
+
+.rev-form{
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  margin-top: 12px;
+}
+
+.rev-form input{
+  height: 18px;
+  margin-bottom: 7px;
+}
+
+.review-body{
+
+}
+
+.review-sub{
+  background: #da3743;
+  color: white;
+}
