@@ -37,6 +37,7 @@ class ReservationIndex extends React.Component{
                       return <ReservationIndexItem reservation={reservation} 
                       key={reservation.id}
                       restaurant={this.props.restaurants[reservation.restaurant_id] || {}}
+                        deleteReservation={this.props.deleteReservation}
                       />
                       
                     })}

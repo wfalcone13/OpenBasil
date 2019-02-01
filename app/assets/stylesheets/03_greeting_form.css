@@ -76,7 +76,13 @@
 .header-right{
   display: flex;
   align-items: center;
-  padding-right: 13px;
+  margin-right: 25px;
+}
+
+.header-right a{
+  text-decoration: none;
+  color: gray;
+  margin-right: 9px;
 }
 
 .name-display{

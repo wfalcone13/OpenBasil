@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ReservationIndex from './reservation_index';
-import {fetchReservation, fetchReservations} from '../../actions/reservation_actions'
+import { fetchReservation, fetchReservations, deleteReservation} from '../../actions/reservation_actions'
 import {fetchRestaurants} from '../../actions/restaurant_actions'
 import {withRouter} from 'react-router-dom'
 
@@ -29,7 +29,8 @@ const mapDispatchToProps = dispatch => {
   return{
     fetchRestaurants: () => dispatch(fetchRestaurants()),
     fetchReservation: id => dispatch(fetchReservation(id)),
-    fetchReservations: () => dispatch(fetchReservations())
+    fetchReservations: () => dispatch(fetchReservations()),
+    deleteReservation: (id) => dispatch(deleteReservation(id))
   }
 }
 

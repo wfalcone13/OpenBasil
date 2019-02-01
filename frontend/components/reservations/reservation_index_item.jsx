@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect, withRouter } from 'react-router-dom'
+
 
 let month = ['0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 let days = ['Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday','Friday','Saturday']
@@ -7,6 +8,8 @@ let days = ['Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday','Friday','Satu
 class ReservationIndexItem extends React.Component{
   constructor(props){
     super(props)
+    this.state = this.props.reservation
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   dateFormat(date){
@@ -14,6 +17,12 @@ class ReservationIndexItem extends React.Component{
     const mth = month[parseInt(date_arr[1])];
     const day = days[Math.floor(Math.random() * days.length)];
     return day  + ",  " + mth + " " + date_arr[2] + ",   "+ date_arr[0] +", ";
+  }
+
+  handleDelete(e){
+    e.preventDefault();
+    this.props.deleteReservation(this.props.reservation.id).then(result =>{
+      this.props.history.push(`resvp/`)});
   }
 
  
@@ -31,8 +40,9 @@ class ReservationIndexItem extends React.Component{
             <div className='rsvp-buttons-change'>
               <a href="">View</a>
               <a href="">Modify</a>
-              <a href="">Cancel</a>
-
+              {/* <a href="">Cancel</a> */}
+            {/* <button onClick={() => deleteReservation(this.props.reservation.id)}>Cancel</button> */}
+              <button onClick={this.handleDelete}>Cancel</button>
 
               
             </div>

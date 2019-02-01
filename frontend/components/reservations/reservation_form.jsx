@@ -22,10 +22,8 @@ class ReservationForm extends React.Component {
   }
 
   handleSubmit(e){
-    debugger
     e.preventDefault()
     this.props.createReservation(this.state).then(result => {
-      debugger
       this.props.history.push(`/resvp/`)});
   }
 

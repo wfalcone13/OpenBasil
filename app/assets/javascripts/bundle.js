@@ -514,7 +514,11 @@ var Greeting = function Greeting(_ref) {
   var personalGreeting = function personalGreeting() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "header-right"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "resvp"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "far fa-calendar-alt"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       className: "name-display"
     }, "Hi, ", currentUser.first_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "nav-dropdown"
@@ -863,6 +867,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _reservation_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reservation_form */ "./frontend/components/reservations/reservation_form.jsx");
 /* harmony import */ var _actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/reservation_actions */ "./frontend/actions/reservation_actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
 
 
 
@@ -887,7 +893,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_reservation_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_reservation_form__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 
@@ -966,11 +972,8 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      debugger;
       e.preventDefault();
       this.props.createReservation(this.state).then(function (result) {
-        debugger;
-
         _this2.props.history.push("/resvp/");
       });
     }
@@ -1094,7 +1097,8 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           reservation: reservation,
           key: reservation.id,
-          restaurant: _this.props.restaurants[reservation.restaurant_id] || {}
+          restaurant: _this.props.restaurants[reservation.restaurant_id] || {},
+          deleteReservation: _this.props.deleteReservation
         });
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-bottom"
@@ -1165,6 +1169,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchReservations: function fetchReservations() {
       return dispatch(Object(_actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__["fetchReservations"])());
+    },
+    deleteReservation: function deleteReservation(id) {
+      return dispatch(Object(_actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__["deleteReservation"])(id));
     }
   };
 };
@@ -1195,13 +1202,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -1214,9 +1221,14 @@ function (_React$Component) {
   _inherits(ReservationIndexItem, _React$Component);
 
   function ReservationIndexItem(props) {
+    var _this;
+
     _classCallCheck(this, ReservationIndexItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ReservationIndexItem).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationIndexItem).call(this, props));
+    _this.state = _this.props.reservation;
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
   }
 
   _createClass(ReservationIndexItem, [{
@@ -1226,6 +1238,16 @@ function (_React$Component) {
       var mth = month[parseInt(date_arr[1])];
       var day = days[Math.floor(Math.random() * days.length)];
       return day + ",  " + mth + " " + date_arr[2] + ",   " + date_arr[0] + ", ";
+    }
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.deleteReservation(this.props.reservation.id).then(function (result) {
+        _this2.props.history.push("resvp/");
+      });
     }
   }, {
     key: "render",
@@ -1245,8 +1267,8 @@ function (_React$Component) {
         href: ""
       }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, "Modify"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
+      }, "Modify"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleDelete
       }, "Cancel"))));
     }
   }]);
@@ -1313,7 +1335,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rests-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
