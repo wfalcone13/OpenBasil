@@ -40,8 +40,6 @@ class ReservationIndexItem extends React.Component{
             <div className='rsvp-buttons-change'>
               <a href="">View</a>
               <a href="">Modify</a>
-              {/* <a href="">Cancel</a> */}
-            {/* <button onClick={() => deleteReservation(this.props.reservation.id)}>Cancel</button> */}
               <button onClick={this.handleDelete}>Cancel</button>
 
               

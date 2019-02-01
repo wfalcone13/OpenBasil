@@ -1093,7 +1093,9 @@ function (_React$Component) {
         className: "middle-top"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-rsvps"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.rsvps.map(function (reservation) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "full-rs-list"
+      }, this.props.rsvps.map(function (reservation) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           reservation: reservation,
           key: reservation.id,
@@ -1437,7 +1439,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     restaurant: state.entities.restaurants[ownProps.match.params.restaurantId] || {}
   };

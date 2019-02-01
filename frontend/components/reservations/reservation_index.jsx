@@ -32,7 +32,7 @@ class ReservationIndex extends React.Component{
               <div className='all-rsvps'>
                 <h2>Upcoming Reservations</h2>
                 <ul>
-                  <li>   
+                  <li className='full-rs-list'>   
                     {this.props.rsvps.map(reservation => {
                       return <ReservationIndexItem reservation={reservation} 
                       key={reservation.id}
