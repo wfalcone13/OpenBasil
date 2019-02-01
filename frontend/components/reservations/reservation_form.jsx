@@ -31,6 +31,14 @@ class ReservationForm extends React.Component {
     
     return(
       <div className='res-form-box'>
+        <div className='rest-review-box'>
+          <div className="rest-review-text">
+            <p>This is a description about the Restaurant. If
+              I had more time I would make this randomly generate for each
+              restaurant. But do people read these?
+            </p>
+          </div>
+        </div>
         <div className='res-border'>
           <div className='res-form-info'> 
             <h3>Make a Reservation</h3>

@@ -47,7 +47,7 @@ const App = () => {
      
 
 
-      <h2 className="bottom">Bottom of Page</h2>
+      {/* <h2 className="bottom">Bottom of Page</h2> */}
    
     </div>
 

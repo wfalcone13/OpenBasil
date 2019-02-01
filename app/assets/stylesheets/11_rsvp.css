@@ -1,12 +1,27 @@
 .res-form-box{
   display: flex;
   justify-content: flex-end;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 34px;
 }
+
 
 .res-border{
   border: 1px solid rgba(0,0,0,.08);
   width: 273px;
   height: 200px;
+}
+
+
+.rest-review-box{
+  margin-left: 260px;
+}
+
+.rest-review-text{
+  height: 100px;
+  width: 400px;
+  padding-left: 76px;
 }
 
 .res-form-info{

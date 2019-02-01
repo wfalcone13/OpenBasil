@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) =>{
   
   return{
     reservation: { user_id: state.session.id, restaurant_id: ownProps.match.params.restaurantId,  
-      reservation_time: '', reservation_date: '', seating_number: ''}
+      reservation_time: '', reservation_date: '', seating_number: ''},
+      
    
 
   }

@@ -465,9 +465,7 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "bottom"
-  }, "Bottom of Page"));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -523,11 +521,11 @@ var topNear = function topNear() {
     className: "top-buckets"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "cat-1"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best American Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Pasta Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "cat-2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best New Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Pizza Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "cat-3"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Old Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Red Sauce Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "cat-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Best Restaurants Around you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "cat-5"
@@ -1062,6 +1060,10 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-review-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-review-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This is a description about the Restaurant. If I had more time I would make this randomly generate for each restaurant. But do people read these?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-form-info"
