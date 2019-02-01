@@ -38,8 +38,8 @@ class ReservationIndexItem extends React.Component{
               <p>{this.dateFormat(this.props.reservation.reservation_date)} {this.props.reservation.reservation_time.slice(11, 16)}</p>
               <p>Table for {this.props.reservation.seating_number} people</p>
             <div className='rsvp-buttons-change'>
-              <a href="">View</a>
-              <a href="">Modify</a>
+            <Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link>
+              <a href="`">Modify</a>
               <button onClick={this.handleDelete}>Cancel</button>
 
               

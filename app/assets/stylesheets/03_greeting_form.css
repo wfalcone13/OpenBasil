@@ -2,7 +2,7 @@
   border: 2px solid #1c627a;
   border-radius: 4px;
   background-color: #237b98;
-  font-family: 'Sarabun', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-size: 12px;
   text-decoration: none;
@@ -15,7 +15,7 @@
 }
 
 .login-button{
-  font-family: 'Sarabun', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: black;
   font-size: .975rem;
   text-decoration: none;
@@ -104,7 +104,7 @@
 }
 
 .drop-content{
-   display: none;
+  display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;

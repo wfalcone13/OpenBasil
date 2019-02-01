@@ -736,7 +736,7 @@ function (_React$Component) {
         className: "border-h2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "pop-h2"
-      }, "Recently viewed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Popular restaurants in New York")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "res-ul"
@@ -1279,10 +1279,10 @@ function (_React$Component) {
         className: "rsvp-info-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.dateFormat(this.props.reservation.reservation_date), " ", this.props.reservation.reservation_time.slice(11, 16)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Table for ", this.props.reservation.seating_number, " people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rsvp-buttons-change"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/restaurants/".concat(this.props.restaurant.id)
       }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
+        href: "`"
       }, "Modify"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleDelete
       }, "Cancel"))));
@@ -1528,13 +1528,15 @@ var Search = function Search(_ref) {
     className: "search-date"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "date",
-    name: "date"
+    name: "date",
+    defaultValue: "2019-02-22"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     action: "",
     className: "search-time"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "time",
-    name: "time"
+    name: "time",
+    defaultValue: "10:00"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     action: "",
     className: "search-bar-number"
@@ -1542,14 +1544,15 @@ var Search = function Search(_ref) {
     type: "number",
     name: "number",
     min: "1",
-    max: "15"
+    max: "15",
+    defaultValue: "2"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     action: "",
     className: "search-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     name: "search",
-    placeholder: "Search...."
+    placeholder: "  New York City...."
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "search-button"
   }, "Let's go"))));

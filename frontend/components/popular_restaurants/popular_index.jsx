@@ -35,7 +35,7 @@ class PopularIndex extends React.Component {
     return (
       <div className="pop-comp">
         <div className='border-h2'>
-        <h2 className="pop-h2">Recently viewed</h2>
+        <h2 className="pop-h2">Popular restaurants in New York</h2>
         </div>
       <div className="res-box">
         <ul className="res-ul">

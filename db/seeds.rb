@@ -47,33 +47,33 @@ rest_5.photo.attach(io: file5, filename: 'joessm.jpg')
 rest_5.save!
 
 file7 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/john_s.0.0.jpg')
-rest_7.photo.attach(io: file5, filename: 'john_s.0.0.jpg')
+rest_7.photo.attach(io: file7, filename: 'john_s.0.0.jpg')
 rest_7.save!
 
 file8 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/Screen_Shot_2018_03_02_at_1.25.00_PM.0.0.png')
-rest_8.photo.attach(io: file5, filename: 'Screen_Shot_2018_03_02_at_1.25.00_PM.0.0.png')
+rest_8.photo.attach(io: file8, filename: 'Screen_Shot_2018_03_02_at_1.25.00_PM.0.0.png')
 rest_8.save!
 
 file9 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/sorbillo.jpg')
-rest_9.photo.attach(io: file5, filename: 'sorbillo.jpg')
+rest_9.photo.attach(io: file9, filename: 'sorbillo.jpg')
 rest_9.save!
 
 
 file10 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/ruby.jpg')
-rest_10.photo.attach(io: file5, filename: 'ruby.jpg')
+rest_10.photo.attach(io: file10, filename: 'ruby.jpg')
 rest_10.save!
 
 
 file11 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/misi.jpg')
-rest_11.photo.attach(io: file5, filename: 'misi.jpg')
+rest_11.photo.attach(io: file11, filename: 'misi.jpg')
 rest_11.save!
 
 file6 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/via_car.jpeg')
-rest_6.photo.attach(io: file5, filename: 'via_car.jpeg')
+rest_6.photo.attach(io: file6, filename: 'via_car.jpeg')
 rest_6.save!
 
 file12 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/roberts.jpeg')
-rest_12.photo.attach(io: file5, filename: 'roberts.jpeg')
+rest_12.photo.attach(io: file12, filename: 'roberts.jpeg')
 rest_12.save!
 
 
