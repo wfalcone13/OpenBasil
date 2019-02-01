@@ -1,10 +1,11 @@
 import React from 'react';
+import {Redirect, withRouter} from 'react-router-dom'
 
 class ReservationForm extends React.Component {
   constructor(props){
     super(props);
     this.state = this.props.reservation;
-
+    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
@@ -20,8 +21,12 @@ class ReservationForm extends React.Component {
     this.setState({seating_number: e.target.value})
   }
 
-  handleSubmit(){
-    this.props.createReservation(this.state)
+  handleSubmit(e){
+    debugger
+    e.preventDefault()
+    this.props.createReservation(this.state).then(result => {
+      debugger
+      this.props.history.push(`/resvp/`)});
   }
 
   render(){
@@ -31,7 +36,7 @@ class ReservationForm extends React.Component {
         <div className='res-border'>
           <div className='res-form-info'> 
             <h3>Make a Reservation</h3>
-            <form onSubmit={() => this.props.createReservation(this.state)} className='res-form'>
+            <form onSubmit={this.handleSubmit} className='res-form'>
               <div className='seating-inputs'>
                 <p>Party Size</p>
                 <input onChange={this.updateResSeat.bind(this)} type="number"  placeholder="For 4"/>

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ReservationIndex from './reservation_index';
 import {fetchReservation, fetchReservations} from '../../actions/reservation_actions'
 import {fetchRestaurants} from '../../actions/restaurant_actions'
+import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = ({session, entities: { users, reservations, restaurants }}) => {
@@ -32,5 +33,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReservationIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReservationIndex))
 
