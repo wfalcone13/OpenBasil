@@ -3,7 +3,7 @@ import PopularIndexItem from './popular_index_item';
 import { logoutCurrentUser } from '../../actions/session_actions';
 
 class PopularIndex extends React.Component {
- 
+  
 
   componentDidMount(){
     this.props.fetchRestaurants()
@@ -19,6 +19,17 @@ class PopularIndex extends React.Component {
     }
   }
 
+  shuffleRests(rest){
+      let j, x, i;
+      for (i = rest.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = rest[i];
+        rest[i] = rest[j];
+        rest[j] = x;
+      }
+      return rest;
+  }
+
   render (){
     
     return (
@@ -29,7 +40,7 @@ class PopularIndex extends React.Component {
       <div className="res-box">
         <ul className="res-ul">
           <li className="pop-res-info">
-          {this.props.restaurants.slice(0,4).map(restaurant => {
+          {this.shuffleRests(this.props.restaurants).slice(0,4).map(restaurant => {
             return <PopularIndexItem restaurant={restaurant}
             key={restaurant.id}
             />

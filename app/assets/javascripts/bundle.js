@@ -714,6 +714,20 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "shuffleRests",
+    value: function shuffleRests(rest) {
+      var j, x, i;
+
+      for (i = rest.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = rest[i];
+        rest[i] = rest[j];
+        rest[j] = x;
+      }
+
+      return rest;
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -728,7 +742,7 @@ function (_React$Component) {
         className: "res-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "pop-res-info"
-      }, this.props.restaurants.slice(0, 4).map(function (restaurant) {
+      }, this.shuffleRests(this.props.restaurants).slice(0, 4).map(function (restaurant) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_popular_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           restaurant: restaurant,
           key: restaurant.id
