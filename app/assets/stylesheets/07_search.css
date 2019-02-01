@@ -10,6 +10,7 @@
   filter: brightness(95%);
   align-items: center;
   margin-top: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .search-container h1{
@@ -17,7 +18,8 @@
   align-items: center;
   color: white;
   font-size: 41px;
-  font-family: 'Maven Pro', sans-serif;
+  /* font-family: 'Maven Pro', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   margin-bottom: 23px;
 
@@ -35,6 +37,7 @@
   width: 160px;
   border-top: none;
   border-bottom: none;
+  color:black;
 }
 
 .search-date input{
@@ -42,12 +45,16 @@
   border-bottom-left-radius: 4px;
   border-right: 1px solid lightgray;
   border-left: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:black;
 }
 
 .search-time input{
   border: none;
   height: 43px;
   border-right: 1px solid lightgray;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:black;
 }
 
 .search-bar-number input{
@@ -55,10 +62,13 @@
   border: none;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:black;
 }
 
 .search-bar{
   margin-left: 22px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .search-bar input{
@@ -66,6 +76,8 @@
   width: 290px;
   border-radius: 4px;
   border: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  color:black;
 }
 
 .search-button{

@@ -20,12 +20,12 @@
 }
 
 .photos-1 img{
-  height: 91px;
-  width: 125px;
+  height: 126px;
+  width: 149px;
 }
 
 .photos-2 img{
-  height: 186px;
+  height: 256px;
 }
 
 .rests-photos div{
@@ -37,11 +37,11 @@
 }
 
 .photos-3 img{
-  height: 186px;
+  height: 256px;
 }
 
 .photos-5 img{
-  height: 186px;
+  height: 256px;
 }
 
 .rests-links{
@@ -51,7 +51,7 @@
   align-items: center;
   position: relative;
   background: white;
-  margin-top: 140px;
+  margin-top: 212px;
   border-radius: 3px;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
@@ -78,7 +78,7 @@
   border-bottom: 1px solid rgba(0,0,0,.08);
   width: 552px;
   padding-bottom: 28px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
 }
 
@@ -91,7 +91,7 @@
 
 .quick-facs-rating{
   margin-left: 7px;
-  font-family: Helvetica,Arial,sans-serif, Color Symbol;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .quick-facs-reviews{

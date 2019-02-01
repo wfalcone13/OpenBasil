@@ -3,10 +3,11 @@ import * as restaurantAPIUtil from '../util/restaurant_api_util';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
 export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
 
-export const receiveRestaurant = (restaurant) =>{
+export const receiveRestaurant = ({restaurant, reviews}) =>{
   return{
     type: RECEIVE_RESTAURANT,
-    restaurant: restaurant
+    restaurant,
+    reviews
   }
 }
 

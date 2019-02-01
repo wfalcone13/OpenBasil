@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import ReservationIndex from './reservation_index';
-import {fetchReservation, fetchReservations} from '../../actions/reservation_actions'
+import { fetchReservation, fetchReservations, deleteReservation} from '../../actions/reservation_actions'
 import {fetchRestaurants} from '../../actions/restaurant_actions'
+import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = ({session, entities: { users, reservations, restaurants }}) => {
@@ -9,7 +10,6 @@ const mapStateToProps = ({session, entities: { users, reservations, restaurants 
   let rsvps = [];
   reservationIds.forEach(id => {
    const res = reservations[id];
-  //  res[rest] = state.entities.restaurants[res[restaurant_id]]
     if (res){
       rsvps.push(res);
     }    
@@ -28,9 +28,10 @@ const mapDispatchToProps = dispatch => {
   return{
     fetchRestaurants: () => dispatch(fetchRestaurants()),
     fetchReservation: id => dispatch(fetchReservation(id)),
-    fetchReservations: () => dispatch(fetchReservations())
+    fetchReservations: () => dispatch(fetchReservations()),
+    deleteReservation: (id) => dispatch(deleteReservation(id))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReservationIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReservationIndex))
 

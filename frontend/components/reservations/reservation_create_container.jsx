@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import ReservationForm from './reservation_form'
 import {createReservation} from '../../actions/reservation_actions'
+import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = (state, ownProps) =>{
@@ -19,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReservationForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReservationForm))
