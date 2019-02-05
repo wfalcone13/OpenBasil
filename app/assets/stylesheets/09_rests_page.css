@@ -7,14 +7,15 @@
 }
 
 .rests-photo{
- 
+ display: flex;
 }
 
 .rests-photo img{
-  height: 325px;
-  width: 1304px;
+  height: 350px;
+  width: 628px;
   filter: brightness(78%)
 }
+
 
 
 
@@ -31,7 +32,7 @@
 .rest-info-display{
   display: flex;
   flex-direction: column;
-  width: 568px;
+  width: 573px;
   margin-left: 38px;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }

@@ -570,7 +570,7 @@ var Greeting = function Greeting(_ref) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "header-right"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      to: "resvp"
+      to: "/resvp"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "far fa-calendar-alt"
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1420,8 +1420,16 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rests-photo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://s3.amazonaws.com/open-basil-dev/toptop/pasta.jpg",
+        alt: "",
+        className: "photo-one"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.restaurant.photoURL,
         alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://s3.amazonaws.com/open-basil-dev/toptop/pizza.jpg",
+        alt: "",
+        className: "photo-one"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-rsvp-review"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

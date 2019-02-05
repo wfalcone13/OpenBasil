@@ -16,7 +16,7 @@ const Greeting = ({currentUser, logout, openModal}) => {
   const personalGreeting = () => {
     return(
       <div className="header-right">
-        <Link to='resvp'><i className="far fa-calendar-alt"></i></Link>
+        <Link to='/resvp'><i className="far fa-calendar-alt"></i></Link>
         <p className="name-display">Hi, {currentUser.first_name}</p>
         <div className="nav-dropdown">
           <button className="drop-b">⌄</button>

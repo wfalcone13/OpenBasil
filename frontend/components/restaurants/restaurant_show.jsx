@@ -23,8 +23,10 @@ class RestaurantShow extends React.Component{
     
       <div className="rests-container">
 
-        <div className='rests-photo'>
+        <div className='rests-photo' >
+          <img src="https://s3.amazonaws.com/open-basil-dev/toptop/pasta.jpg" alt="" className="photo-one"/>
             <img src={this.props.restaurant.photoURL} alt=""/>
+          <img src="https://s3.amazonaws.com/open-basil-dev/toptop/pizza.jpg" alt="" className="photo-one"/>
         </div>
 
         <div className="rest-info-rsvp-review">
