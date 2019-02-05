@@ -400,11 +400,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./restaurants/restaurant_show_containter */ "./frontend/components/restaurants/restaurant_show_containter.js");
 /* harmony import */ var _components_additional_top_near__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/additional/top_near */ "./frontend/components/additional/top_near.jsx");
 /* harmony import */ var _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/additional/featured_internation */ "./frontend/components/additional/featured_internation.jsx");
-/* harmony import */ var _components_reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/reservations/reservation_create_container */ "./frontend/components/reservations/reservation_create_container.jsx");
-/* harmony import */ var _components_reservations_reservation_index_container__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/reservations/reservation_index_container */ "./frontend/components/reservations/reservation_index_container.jsx");
-/* harmony import */ var _components_reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/reviews/review_create_contianer */ "./frontend/components/reviews/review_create_contianer.jsx");
-/* harmony import */ var _components_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/reviews/review_index_container */ "./frontend/components/reviews/review_index_container.jsx");
-
+/* harmony import */ var _components_reservations_reservation_index_container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/reservations/reservation_index_container */ "./frontend/components/reservations/reservation_index_container.jsx");
+/* harmony import */ var _components_reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/reviews/review_create_contianer */ "./frontend/components/reviews/review_create_contianer.jsx");
+/* harmony import */ var _components_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/reviews/review_index_container */ "./frontend/components/reviews/review_index_container.jsx");
 
 
 
@@ -439,16 +437,10 @@ var App = function App() {
     component: _restaurants_restaurant_show_containter__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/restaurants/:restaurantId",
-    component: _components_reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_14__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/restaurants/:restaurantId",
-    component: _components_reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_16__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/restaurants/:restaurantId",
-    component: _components_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_17__["default"]
+    component: _components_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_16__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/resvp",
-    component: _components_reservations_reservation_index_container__WEBPACK_IMPORTED_MODULE_15__["default"]
+    component: _components_reservations_reservation_index_container__WEBPACK_IMPORTED_MODULE_14__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
@@ -1060,10 +1052,6 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "rest-review-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "rest-review-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This is a description about the Restaurant. If I had more time I would make this randomly generate for each restaurant. But do people read these?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-form-info"
@@ -1378,6 +1366,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reservations/reservation_create_container */ "./frontend/components/reservations/reservation_create_container.jsx");
+/* harmony import */ var _reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reviews/review_index_container */ "./frontend/components/reviews/review_index_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1399,6 +1389,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+var tags = ['Special Occasion', 'Fun', 'Good Food', 'Great Service', 'Yum!'];
+
 var RestaurantShow =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1416,55 +1409,28 @@ function (_React$Component) {
       this.props.fetchRestaurant(this.props.match.params.restaurantId);
     }
   }, {
+    key: "topTags",
+    value: function topTags() {//this will be to generate tags depending on rating and category
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rests-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "rests-photos"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photos-1"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://www.nycgo.com/images/venues/6681/lilia-assorted-dishes-1__x_large.jpg",
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://static01.nyt.com/images/2016/03/30/dining/30REST-LILIA-slide-31ZE/30REST-LILIA-slide-31ZE-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
-        alt: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photos-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.restaurant.photoURL
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photos-1"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdkYtjC41svvTzdM3KOb9xwS3QF0_IiuSrLy2PE-dnPBak2CUF",
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe8OIWRqHvMwS7rLY1QfciEj5iP7LYxUB4tN5JDbqSq6t3j7wx",
-        alt: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photos-3"
+        className: "rests-photo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.restaurant.photoURL,
         alt: ""
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photos-1"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdkYtjC41svvTzdM3KOb9xwS3QF0_IiuSrLy2PE-dnPBak2CUF",
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe8OIWRqHvMwS7rLY1QfciEj5iP7LYxUB4tN5JDbqSq6t3j7wx",
-        alt: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photos-5"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHGXTB9T-brq66xilTkpuB2vAePqVuKYBxxvKEjrDvo1RYr9D",
-        alt: ""
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info-rsvp-review"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info-display"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rests-links"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "rest-links-list"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Specials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Twitter")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Specials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Twitter"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-cont"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info"
@@ -1492,7 +1458,21 @@ function (_React$Component) {
         className: "quick-facs-cat"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-utensils"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Italian"))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Italian"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-tags"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-tag-head"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Top Tags:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-tag-option"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Special Occasion")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-tag-option"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Yum!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-tag-option"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Good Food"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-descrip"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.name, " is a neighborhood, ", this.props.restaurant.category, "  inspired restaurant. We use the best ingredients and provide a great atmosphere. Looking forward to hosting you soon!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "resvp-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
   }]);
 

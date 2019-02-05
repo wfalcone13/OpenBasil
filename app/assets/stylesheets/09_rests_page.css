@@ -2,46 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 41px;
+  margin-top: 10px;
   
 }
 
-.rests-photos{
+.rests-photo{
+ 
+}
+
+.rests-photo img{
+  height: 325px;
+  width: 1304px;
+  filter: brightness(78%)
+}
+
+
+
+.rest-info-rsvp-review{
   display: flex;
   flex-direction: row;
-  height: 190px;
-  width: 100%;
-  position: absolute;
+  width: 1000px;
 }
 
-.photos-1{
+.resvp-container{
+  width: 386px;
+}
+
+.rest-info-display{
   display: flex;
   flex-direction: column;
-}
-
-.photos-1 img{
-  height: 126px;
-  width: 149px;
-}
-
-.photos-2 img{
-  height: 256px;
-}
-
-.rests-photos div{
-  height: 100px;
-}
-
-.rests-photos div img{
-  border: 2px solid 
-}
-
-.photos-3 img{
-  height: 256px;
-}
-
-.photos-5 img{
-  height: 256px;
+  width: 568px;
+  margin-left: 38px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 .rests-links{
@@ -51,7 +43,7 @@
   align-items: center;
   position: relative;
   background: white;
-  margin-top: 212px;
+  margin-top: -51px;
   border-radius: 3px;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
@@ -122,4 +114,35 @@
 .quick-facs-cat p{
   margin-left: 9px;
 
+}
+
+.rest-tags{
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.rest-tag-head{
+  margin-right: 7px;
+}
+
+.rest-tag-option{
+  width: auto;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 9px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 2px;
+  margin-right: 7px;
+}
+
+.rest-tag-option p{
+  padding: 10px;
+}
+
+.rest-descrip div{
+  margin-top: 25px;
+  margin-bottom: 26px;
+  font-size: 19px;
 }
