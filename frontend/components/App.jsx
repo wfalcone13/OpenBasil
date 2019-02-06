@@ -12,7 +12,6 @@ import { logoutCurrentUser } from '../actions/session_actions';
 import RestaurantShowContainer from './restaurants/restaurant_show_containter'
 import topNear from '../components/additional/top_near'
 import featureInt from '../components/additional/featured_internation'
-import ReservationCreateContainer from '../components/reservations/reservation_create_container'
 import ReservationIndex from '../components/reservations/reservation_index_container'
 import ReviewCreateContainer from '../components/reviews/review_create_contianer'
 import ReviewIndexContainer from '../components/reviews/review_index_container'
@@ -33,8 +32,7 @@ const App = () => {
       </header>
 
       < Route path='/restaurants/:restaurantId' component={RestaurantShowContainer}/>
-      < Route path='/restaurants/:restaurantId' component={ReservationCreateContainer} />
-      < Route path='/restaurants/:restaurantId' component={ReviewCreateContainer} />
+      {/* < Route path='/restaurants/:restaurantId' component={ReviewCreateContainer} /> */}
       < Route path='/restaurants/:restaurantId' component={ReviewIndexContainer} />
 
 
