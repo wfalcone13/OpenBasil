@@ -8,10 +8,11 @@ class ReviewIndexItem extends React.Component{
 
 
   render(){
+    debugger
     return(
       <div className="user-review">
         <div className="user-rev-email">
-          {this.props.user_email}
+          {this.props.review.email}
         </div>
         <div className="user-rev-info">
           <p>Title: {this.props.review.title}</p>

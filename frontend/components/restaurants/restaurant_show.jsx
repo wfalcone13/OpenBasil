@@ -11,6 +11,7 @@ class RestaurantShow extends React.Component{
   }
 
   componentDidMount(){
+    // 
     this.props.fetchRestaurant(this.props.match.params.restaurantId)
   }
 

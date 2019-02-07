@@ -1406,6 +1406,7 @@ function (_React$Component) {
   _createClass(RestaurantShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      // 
       this.props.fetchRestaurant(this.props.match.params.restaurantId);
     }
   }, {
@@ -1737,8 +1738,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-reviews"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1746,8 +1746,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.reviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           review: review,
-          key: review.id,
-          user_email: _this.props.user_email
+          key: review.id // user_email={this.props.user_email}
+
         });
       }))));
     }
@@ -1777,6 +1777,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   var restaurant = state.entities.restaurants[ownProps.match.params.restaurantId] || {
     review_ids: []
   };
@@ -1790,8 +1791,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     }
   });
   return {
-    user_email: state.entities.users[state.session.id].email,
-    // restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
     reviews: reviewInfo
   };
 };
@@ -1853,11 +1852,12 @@ function (_React$Component) {
   _createClass(ReviewIndexItem, [{
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-review"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-email"
-      }, this.props.user_email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.review.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title: ", this.props.review.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.review.body)));
     }
