@@ -11,6 +11,10 @@ json.reviews do
   @restaurant.reviews.each do |review|
     json.set! review.id do 
     json.extract! review, :id, :user_id, :restaurant_id, :body, :stars, :title
+    json.email review.user.email
+    json.user_first review.user.first_name[0]
+    json.user_last review.user.first_name[0]
+
     end
   end
 end

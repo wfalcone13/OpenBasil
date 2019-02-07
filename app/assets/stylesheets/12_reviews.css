@@ -58,18 +58,20 @@
   display: flex;
   border-bottom: 1px solid rgba(0,0,0,.08);
   margin-bottom: 20px;
+  align-items: center
 }
 
 .user-rev-email{
-  margin-right: 5px;
+  margin-right: 15px;
   display: flex;
+  flex-direction: column; 
   align-items: center;
+  margin-bottom: 23px;
 }
 
 
 .user-rev-info{
   margin-left: 7px;
-  margin-bottom: 10px;
 }
 
 .user-rev-info p{
@@ -78,4 +80,10 @@
 
 .user-rev-info div{
   margin-top: 5px;
+}
+
+#red-circ{
+  color: red;
+  font-size: 45px;
+  margin-bottom: 5px;
 }

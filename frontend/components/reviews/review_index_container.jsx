@@ -3,6 +3,7 @@ import ReviewIndex from './review_index'
 import { fetchReviews} from '../../actions/review_actions'
 
 const mapStateToProps = (state, ownProps) => {
+  
   const restaurant = state.entities.restaurants[ownProps.match.params.restaurantId] || { review_ids: []}
   const reviewIds = restaurant.review_ids;
   let reviewInfo = [];
@@ -12,10 +13,10 @@ const mapStateToProps = (state, ownProps) => {
       reviewInfo.push(rev);
     }
 
-  })
+  }
+  )
+  
   return{
-    user_email: state.entities.users[state.session.id].email,
-    // restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
     reviews: reviewInfo 
   }
 }

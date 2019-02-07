@@ -11,6 +11,7 @@ class ReviewIndex extends React.Component{
   }
 
   render(){
+    
     return(
       <div className="all-reviews">
         <ul className="all-reviews-lis">
@@ -18,7 +19,7 @@ class ReviewIndex extends React.Component{
             {this.props.reviews.map(review => {
               return <ReviewIndexItem review={review}
               key={review.id}
-                user_email={this.props.user_email}
+                // user_email={this.props.user_email}
               
               />
             })}

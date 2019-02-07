@@ -25,6 +25,16 @@ class ReservationIndexItem extends React.Component{
       this.props.history.push(`resvp/`)});
   }
 
+  timeFormat() {
+    let hour = this.props.reservation.reservation_time.slice(11,13)
+
+    if (parseInt(hour) > 12) {
+      return ( parseInt(hour) % 12) + ":" +this.props.reservation.reservation_time.slice(14,16) + " PM"
+    } else {
+      return this.props.reservation.reservation_time.slice(11,16)
+    }
+  }
+
  
 
   render(){
@@ -35,7 +45,7 @@ class ReservationIndexItem extends React.Component{
           </div>
             <div className='rsvp-info-box'>
               <p>{this.props.restaurant.name}</p>
-              <p>{this.dateFormat(this.props.reservation.reservation_date)} {this.props.reservation.reservation_time.slice(11, 16)}</p>
+              <p>{this.dateFormat(this.props.reservation.reservation_date)} {this.timeFormat()}</p>
               <p>Table for {this.props.reservation.seating_number} people</p>
             <div className='rsvp-buttons-change'>
             <Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link>

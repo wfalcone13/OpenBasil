@@ -20,6 +20,9 @@ const topNear = () => {
         <div className="cat-4">
           <p>Best Best Restaurants Around you</p>
         </div>
+        <div className="cat-4">
+          <p>Best Best Restaurants Around you</p>
+        </div>
         <div className="cat-5">
         </div>
       </div>

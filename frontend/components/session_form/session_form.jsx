@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
             
             <input type="submit" value={this.props.formType} className="signup-submit" value="Create Account"/>
             </div>
-              <p onClick={() => this.props.demoLog().then(() => this.props.closeModal())}>Demo Login</p>
+              <button onClick={() => this.props.demoLog().then(() => this.props.closeModal())} className='demo-log'>Demo Login</button>
           <div className="social-signup-box">
               <p>Want Facebook to know where you eat?</p>
               <div className="social-signups">
@@ -133,7 +133,7 @@ class SessionForm extends React.Component {
             </div>
           </div>
           <div className='login-to-signup'>
-            New to OpenBasil? <Link to='/signup'>Create an account</Link>
+             Need a login? <button onClick={() => this.props.demoLog().then(() => this.props.closeModal())}>Demo Login</button>            
           </div>
         </form>
         

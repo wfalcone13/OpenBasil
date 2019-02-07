@@ -70,6 +70,16 @@
 
 }
 
+.demo-log{
+  background-color: #da3743;
+  color: #fff;
+  font-size: 15px;
+  height: 36px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 5px;
+  font-weight: normal;
+}
+
 .social-signups{
   justify-content: space-around;
   display: flex;
@@ -99,7 +109,7 @@
 .social-signup-box p{
   font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 9px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .signup-checks{
