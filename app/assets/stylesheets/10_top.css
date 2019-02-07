@@ -7,7 +7,7 @@
 
 .top-c-head{
   display: flex;
-  width: 1000px;
+  width: 1082px;
   height: 40px;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
@@ -22,7 +22,7 @@
 
 .top-buckets{
   display: flex;
-  height: 182px;
+  height: 160px;
   margin-top: 25px;
 }
 
@@ -34,7 +34,7 @@
   align-items: center;
   border: none;
   border-radius: 6px;
-  width: 200px;
+  width: 180px;
 }
 
 .cat-1 p{
@@ -54,7 +54,7 @@
   align-items: center;
   border: none;
   border-radius: 6px;
-  width: 200px;
+  width: 180px;
 }
 
 .cat-2 p{
@@ -74,7 +74,7 @@
   align-items: center;
   border: none;
   border-radius: 6px;
-  width: 200px;
+  width: 180px;
 }
 
 .cat-3 p{
@@ -94,7 +94,7 @@
   align-items: center;
   border: none;
   border-radius: 6px;
-  width: 200px;
+  width: 180px;
 }
 
 .cat-4 p{
@@ -110,7 +110,7 @@
 .cat-5{
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3.amazonaws.com/open-basil-dev/topCs/download.jpg');
   border: none;
-  height: 182px;
+  height: 160px;
   width: 93px;
   border-radius: 3px;
 }
@@ -123,8 +123,8 @@
 
 .feat-p{
   border-bottom: 1px solid rgba(0,0,0,.08);
-  margin-left: 255px;
-  width: 990px;
+  margin-left: 180px;
+  width: 1094px;
 }
 
 .feat-p p{

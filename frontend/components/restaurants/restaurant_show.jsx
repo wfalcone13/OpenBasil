@@ -15,9 +15,44 @@ class RestaurantShow extends React.Component{
     this.props.fetchRestaurant(this.props.match.params.restaurantId)
   }
 
-  topTags(){
-    //this will be to generate tags depending on rating and category
+  starRender() {
+    switch (this.props.restaurant.rating) {
+      case 1:
+        return <p> <i className="fas fa-star" id="res-stars" ></i > </p>;
+      case 2:
+        return (<p>
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+        </p>)
+      case 3:
+        return (<p>
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+        </p>)
+      case 4:
+        return (<p>
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+        </p>)
+      case 5:
+        return (<p>
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="res-stars" ></i >
+        </p>)
+      default:
+        break;
+    }
+
   }
+
+
+  
 
   render(){
     return (
@@ -58,10 +93,7 @@ class RestaurantShow extends React.Component{
             <div className='rest-quick-facts'>
 
               <div>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
+                {this.starRender()}
               </div>
 
               <div className="quick-facs-rating">

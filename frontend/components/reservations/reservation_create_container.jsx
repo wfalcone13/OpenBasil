@@ -2,6 +2,8 @@ import {connect} from 'react-redux';
 import ReservationForm from './reservation_form'
 import {createReservation} from '../../actions/reservation_actions'
 import {withRouter} from 'react-router-dom'
+import { openModal } from '../../actions/modal_actions';
+
 
 
 const mapStateToProps = (state, ownProps) =>{
@@ -17,7 +19,8 @@ const mapStateToProps = (state, ownProps) =>{
 
 const mapDispatchToProps = dispatch => {
   return{
-    createReservation: reservation => dispatch(createReservation(reservation))
+    createReservation: reservation => dispatch(createReservation(reservation)),
+    openModal: modal => dispatch(openModal(modal))
   }
 }
 

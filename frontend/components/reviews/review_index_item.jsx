@@ -13,7 +13,7 @@ class ReviewIndexItem extends React.Component{
       <div className="user-review">
 
         <div className="user-rev-email">
-          <i class="fas fa-circle" id='red-circ'>
+          <i className="fas fa-circle" id='red-circ'>
           {/* <p>{this.props.review.user_first}{this.props.review.user_last}</p> */}
           </i>
           {this.props.review.email}

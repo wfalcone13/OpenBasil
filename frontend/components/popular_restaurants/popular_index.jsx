@@ -40,7 +40,7 @@ class PopularIndex extends React.Component {
       <div className="res-box">
         <ul className="res-ul">
           <li className="pop-res-info">
-          {this.shuffleRests(this.props.restaurants).slice(0,4).map(restaurant => {
+          {this.shuffleRests(this.props.restaurants).slice(0,5).map(restaurant => {
             return <PopularIndexItem restaurant={restaurant}
             key={restaurant.id}
             />

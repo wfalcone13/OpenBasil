@@ -23,8 +23,14 @@ class ReservationForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
+    if(this.props.reservation.user_id === null){
+      
+      this.props.openModal('login')
+    }else{
+
     this.props.createReservation(this.state).then(result => {
       this.props.history.push(`/resvp/`)});
+    }
   }
 
   render(){

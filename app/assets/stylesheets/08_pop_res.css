@@ -28,7 +28,8 @@
 }
 
 .res-ul{
-  margin-right: 80px;
+  margin-right: 60px;
+  width: 1087px;
 }
 
 .res-info a{
@@ -43,6 +44,8 @@
 .res-box{
   display: flex;
   justify-content: space-evenly;
+  width: 1165px;
+  margin-left: 60px;
 }
 
 .star-ratings{
@@ -82,7 +85,7 @@
 
 .border-h2{
   display: flex;
-  width: 1000px;
+  width: 1072px;
   border-top: 1px solid rgba(0,0,0,.08);
   border-bottom: 1px solid rgba(0,0,0,.08);
   margin-top: 30px;
@@ -98,4 +101,8 @@
   margin-bottom: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   
+}
+
+#res-stars{
+  color: #da3743
 }

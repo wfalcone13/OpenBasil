@@ -11,6 +11,36 @@ class ReservationIndex extends React.Component{
   }
 
 
+  // todayDate(){
+  //   let today = new Date();
+  //   return today
+  // }
+
+  timeFormat(){
+    let hour = this.props.reservations.reservation_time[0]
+    if(hour > 12){
+      return (hour + 12) + this.props.reservations.reservation_time[1]
+    } else {
+      return this.props.reservations.reservation_time
+    }
+  }
+
+  upcomingtResv(resDate){
+    debugger
+    let today = new Date()
+    // let mnth = (today.getMonth())+1;
+    // let yar = today.getFullYear();
+    // let rsvpMonth = resDate.split("-")[1];
+    // console.log(resDate.split("-")[1])
+    // let rsvpYear = resDate.split("-")[1];
+    // console.log(resDate.split("-")[1])
+    // rsvpYear < yar && rsvpMonth <=mnth
+
+    let rsvpDate = new Date(resDate);
+    console.log(rsvpDate);
+    rsvpDate >= today;
+    console.log(rsvpDate >= today)
+  }
 
 
  
@@ -31,6 +61,7 @@ class ReservationIndex extends React.Component{
               </div>
               <div className='all-rsvps'>
                 <h2>Upcoming Reservations</h2>
+                  {/* {this.todayDate()} */}
                 <ul>
                   <li className='full-rs-list'>   
                     {this.props.rsvps.map(reservation => {
