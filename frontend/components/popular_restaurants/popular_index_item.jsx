@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
   class PopularIndexItem extends React.Component{
       constructor(props){
         super(props)
+        
       }
 
     starRender(){
