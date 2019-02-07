@@ -11,7 +11,7 @@ class ReviewIndex extends React.Component{
   }
 
   render(){
-    debugger
+    
     return(
       <div className="all-reviews">
         <ul className="all-reviews-lis">

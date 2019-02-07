@@ -1738,7 +1738,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-reviews"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1777,7 +1776,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   var restaurant = state.entities.restaurants[ownProps.match.params.restaurantId] || {
     review_ids: []
   };
@@ -1852,12 +1850,14 @@ function (_React$Component) {
   _createClass(ReviewIndexItem, [{
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-review"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-email"
-      }, this.props.review.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        class: "fas fa-circle",
+        id: "red-circ"
+      }), this.props.review.email, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title: ", this.props.review.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.review.body)));
     }
@@ -2021,7 +2021,8 @@ var mapStateToProp = function mapStateToProp(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'login'
+    formType: 'login',
+    signup: 'signup'
   };
 };
 
@@ -2194,12 +2195,13 @@ function (_React$Component) {
           type: "submit",
           value: this.props.formType,
           className: "signup-submit"
-        }, "value", "Create Account"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, "value", "Create Account"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this3.props.demoLog().then(function () {
               return _this3.props.closeModal();
             });
-          }
+          },
+          className: "demo-log"
         }, "Demo Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "social-signup-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Want Facebook to know where you eat?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2259,9 +2261,13 @@ function (_React$Component) {
           alt: ""
         }), "Continue with Google"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-to-signup"
-        }, "New to OpenBasil? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signup"
-        }, "Create an account"))));
+        }, "Need a login? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this3.props.demoLog().then(function () {
+              return _this3.props.closeModal();
+            });
+          }
+        }, "Demo Login"))));
       }
     }
   }]);

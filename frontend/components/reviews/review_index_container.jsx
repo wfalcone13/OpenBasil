@@ -3,7 +3,7 @@ import ReviewIndex from './review_index'
 import { fetchReviews} from '../../actions/review_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   const restaurant = state.entities.restaurants[ownProps.match.params.restaurantId] || { review_ids: []}
   const reviewIds = restaurant.review_ids;
   let reviewInfo = [];
