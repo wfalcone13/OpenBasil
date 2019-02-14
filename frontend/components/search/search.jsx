@@ -6,6 +6,7 @@ const Search = ({restaurants}) => {
   
 
   return(
+    <div>
     <div className="search-container">
       <h1>Find your table for any occasion</h1>
       <div className="search-bar-main">
@@ -28,6 +29,7 @@ const Search = ({restaurants}) => {
           <button className="search-button">Let's go</button>
         </form>
       </div>
+    </div>
     </div>
   )
 }

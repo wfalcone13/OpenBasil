@@ -8,6 +8,8 @@ namespace :api, defaults: {format: :json} do
   resources :restaurants, only: [:create, :show, :index] 
   resources :reservations, only: [:create, :index, :edit, :show, :destroy, :update]
   resources :reviews, only: [:create, :index]
+  get 'search', to: 'restaurants#search'
+
 end
 
   root to: "static_pages#root"

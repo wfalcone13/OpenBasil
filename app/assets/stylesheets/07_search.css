@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg);
+  animation-name: change-photo;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 380px;
@@ -11,6 +18,36 @@
   align-items: center;
   margin-top: 5px;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+@keyframes change-photo{
+  0% {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;
+  } 
+
+  25% {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;
+  } 
+
+  50%{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;
+  }
+
+  100%{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;
+  }
 }
 
 .search-container h1{
