@@ -1,0 +1,29 @@
+.foot-box{
+  background: #333;
+  width: auto;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  color: darkgrey;
+  padding-right: 40px;
+  padding-left: 40px;    
+  padding-top: 24px;
+}
+
+.foot-box div{
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-box p{
+  color: white;
+  margin-bottom: 10px;
+}
+
+.foot-box a{
+  text-decoration: none;
+  color: darkgrey;
+  margin-bottom: 3px;
+}
+
+

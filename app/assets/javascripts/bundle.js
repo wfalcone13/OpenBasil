@@ -457,7 +457,19 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__["default"]
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "foot-box"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Discover Will"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.linkedin.com/in/wfalcone/"
+  }, "LinkedIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/wfalcone13"
+  }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://wfalcone13.github.io/"
+  }, "Professional Site")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OPENBASIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/wfalcone13/OpenBasil"
+  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "More"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://wfalcone13.github.io/JerryShakedown/"
+  }, "Check out my game!")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);

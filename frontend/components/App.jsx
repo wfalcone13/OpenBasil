@@ -42,11 +42,25 @@ const App = () => {
       < Route exact path='/' component={PopularIndexContainer}/>
       < Route exact path='/' component={topNear} />
       < Route exact path='/' component={featureInt} />
-     
-
-
-      {/* <h2 className="bottom">Bottom of Page</h2> */}
    
+      <footer>
+        <div className="foot-box">
+          <div>
+            <p>Discover Will</p>
+            <a href="https://www.linkedin.com/in/wfalcone/">LinkedIn</a>
+            <a href="https://github.com/wfalcone13">GitHub</a>
+            <a href="https://wfalcone13.github.io/">Professional Site</a>
+          </div>
+          <div>
+            <p>OPENBASIL</p>
+            <a href="https://github.com/wfalcone13/OpenBasil">About</a>
+          </div>
+          <div>
+            <p>More</p>
+            <a href="https://wfalcone13.github.io/JerryShakedown/">Check out my game!</a>
+          </div>
+        </div>
+      </footer>
     </div>
 
     
