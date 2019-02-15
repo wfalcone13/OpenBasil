@@ -17,13 +17,13 @@ class Api::RestaurantsController < ApplicationController
   end
 
   def search
-    @search_q - params[:query].downcase
+    @search_q = params[:query].downcase
     @restaurants = Restaurant.all.select do |rest|
       name = rest.name.downcase
       category = rest.category.downcase
       address = rest.location.downcase
       city = rest.location.split(',')[1].downcase
-      (name.include?(@search_q) || category.include?(search_q) || address.include?(search_q) ||city.include?(search_q))
+      (name.include?(@search_q) || category.include?(@search_q) || address.include?(@search_q) ||city.include?(@search_q))
     end
 
     if @restaurants != []

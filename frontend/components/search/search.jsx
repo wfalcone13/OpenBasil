@@ -1,10 +1,28 @@
 import React from 'react';
 // import RestaurantIndex from '../restaurants/restaurant_index';
-import SearchField from "react-search-field";
+import {withRouter} from 'react-router-dom';
 
-const Search = ({restaurants}) => {
-  
 
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {query: ''};
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update(field){
+    return (e) => this.setState({ [field]: e.target.value});
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.search(this.state.query.toLowerCase()).then(() => {
+      this.props.history.push("/search")
+    })
+  }
+
+render(){
   return(
     <div>
     <div className="search-container">
@@ -24,14 +42,15 @@ const Search = ({restaurants}) => {
           <input type="number" name="number" min='1' max='15' defaultValue="2"/>
         </form>  
 
-        <form action="" className="search-bar">
-          <input type="text" name="search" placeholder="  New York City...."/>
+        <form action="" className="search-bar" onSubmit={this.handleSubmit}>
+          <input type="text" name="search" placeholder="  New York City...." value={this.state.query} onChange={this.update('query')}/>
           <button className="search-button">Let's go</button>
         </form>
       </div>
     </div>
     </div>
   )
+  }
 }
 
-export default Search;
+export default withRouter(Search);

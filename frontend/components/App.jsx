@@ -15,6 +15,8 @@ import featureInt from '../components/additional/featured_internation'
 import ReservationIndex from '../components/reservations/reservation_index_container'
 import ReviewCreateContainer from '../components/reviews/review_create_contianer'
 import ReviewIndexContainer from '../components/reviews/review_index_container'
+import search from './search/search';
+import SearchResults from '../components/search/search_show_container'
 
 const App = () => {
   return (
@@ -39,6 +41,7 @@ const App = () => {
       < Route path='/resvp' component={ReservationIndex} />
 
       < Route exact path ='/' component={SearchContainer}/>
+      < Route path='/search' component={SearchResults}/>
       < Route exact path='/' component={PopularIndexContainer}/>
       < Route exact path='/' component={topNear} />
       < Route exact path='/' component={featureInt} />

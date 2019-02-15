@@ -10,5 +10,5 @@ export default combineReducers({
   restaurants: restaurantReducer,
   reservations: reservationReducer,
   reviews: reviewReducer,
-  search: searchReducer 
+  // search: searchReducer 
 })

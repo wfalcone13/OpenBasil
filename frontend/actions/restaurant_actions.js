@@ -1,4 +1,5 @@
 import * as restaurantAPIUtil from '../util/restaurant_api_util';
+import * as searchAPIUtil from '../util/search_api_util';
 
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
 export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
@@ -29,6 +30,10 @@ export const fetchRestaurant = (id) => dispatch => {
     .then(restaurant => dispatch(receiveRestaurant(restaurant)))
 }
 
-
+export const searchRestaurants = (query) => dispatch =>{
+  return searchAPIUtil.searchRestaurants(query).then(
+    restaurants => dispatch(receiveRestaurants(restaurants))
+  )
+}
 
 
