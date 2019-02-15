@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SearchResultItem extends React.Component{
   constructor(props){
@@ -67,20 +68,21 @@ class SearchResultItem extends React.Component{
 
 
   render(){
+    debugger
     return(
-      <div>
-        <div>
-          <img src={this.props.rest.photoURL}/>
+      <div className='rest-result'>
+        <div className='img-result'>
+          <Link to={`/restaurants/${this.props.rest.id}`}><img src={this.props.rest.photoURL}/></Link>
         </div>
-        <div>
-          <div>
-            {this.props.rest.name}
+        <div className='info-result'>
+          <div className='info-name'>
+            <Link to={`/restaurants/${this.props.rest.id}`}> {this.props.rest.name}</Link>
           </div>
-          <div>
+          <div className='rat-result'>
             {this.starRender()}
             {this.moneyRating()}
           </div>
-          <div>
+          <div className='cat-result'>
             {this.props.rest.category}
           </div>
           <div>

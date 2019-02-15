@@ -74,7 +74,7 @@ import {Link} from 'react-router-dom';
       
       return (
       <div className='res-info'>
-        <img src={this.props.restaurant.photoURL}/>
+        <Link to={`/restaurants/${this.props.restaurant.id}`}><img src={this.props.restaurant.photoURL} /></Link>
         <Link to={`/restaurants/${this.props.restaurant.id}`}>{this.props.restaurant.name}</Link>
         <div className="star-ratings">
             {this.starRender()}

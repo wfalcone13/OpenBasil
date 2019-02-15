@@ -12,11 +12,11 @@ class SearchResults extends React.Component{
   
 
   render(){
-    
+    debugger
     return(
-    <div className="hello">
-      
+    <div className="results">
       <ul>
+        <h2>Results Returned {this.props.rests.length} Restaurants</h2>
         <li>
           {this.props.rests.map(rest =>{
             return <SearchResultItem rest={rest}
