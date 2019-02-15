@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResultItem from './search_show_item'
 
 
 
@@ -11,14 +12,19 @@ class SearchResults extends React.Component{
   
 
   render(){
-    debugger
+    
     return(
     <div className="hello">
-      <div>
-
-      hello
-      <p>{this.props.rests[0].name}</p>
-      </div>
+      
+      <ul>
+        <li>
+          {this.props.rests.map(rest =>{
+            return <SearchResultItem rest={rest}
+            key={rest.id}
+            />
+          })}
+        </li>
+      </ul>
       
     </div>
     )}

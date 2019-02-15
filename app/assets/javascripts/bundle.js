@@ -2306,6 +2306,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _search_show_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_show_item */ "./frontend/components/search/search_show_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2326,6 +2327,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var SearchResults =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2340,10 +2342,14 @@ function (_React$Component) {
   _createClass(SearchResults, [{
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hello"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "hello", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.rests[0].name)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.rests.map(function (rest) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_show_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          rest: rest,
+          key: rest.id
+        });
+      }))));
     }
   }]);
 
@@ -2376,7 +2382,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     rests: Object.values(state.entities.restaurants)
   };
@@ -2392,6 +2397,164 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_search_show__WEBPACK_IMPORTED_MODULE_4__["default"])));
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_show_item.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/search/search_show_item.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SearchResultItem =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchResultItem, _React$Component);
+
+  function SearchResultItem(props) {
+    _classCallCheck(this, SearchResultItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchResultItem).call(this, props));
+  }
+
+  _createClass(SearchResultItem, [{
+    key: "starRender",
+    value: function starRender() {
+      switch (this.props.rest.rating) {
+        case 1:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), " ");
+
+        case 2:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        case 3:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        case 4:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        case 5:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        default:
+          break;
+      }
+    }
+  }, {
+    key: "moneyRating",
+    value: function moneyRating() {
+      switch (this.props.rest.price) {
+        case 1:
+          return "$";
+
+        case 2:
+          return "$";
+
+        case 3:
+          return "$$";
+
+        case 4:
+          return "$$";
+
+        case 5:
+          return "$$$";
+
+        case 6:
+          return "$$$";
+
+        case 7:
+          return "$$$$";
+
+        case 8:
+          return "$$$$$ ";
+
+        default:
+          break;
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.rest.photoURL
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.rest.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.starRender(), this.moneyRating()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.rest.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)));
+    }
+  }]);
+
+  return SearchResultItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchResultItem);
 
 /***/ }),
 
