@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index'
-import { fetchReviews} from '../../actions/review_actions'
+import { fetchReviews, deleteReview} from '../../actions/review_actions'
 
 const mapStateToProps = (state, ownProps) => {
   
@@ -22,8 +22,10 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch =>{
+  
   return {
-    fetchReviews: reviews => dispatch(fetchReviews(reviews))
+    fetchReviews: reviews => dispatch(fetchReviews(reviews)),
+    deleteReview: reviewId => dispatch(deleteReview(reviewId))
   }
 }
 

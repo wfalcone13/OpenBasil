@@ -12,7 +12,6 @@ class SearchResults extends React.Component{
   
 
   render(){
-    debugger
     return(
     <div className="results">
       <ul>

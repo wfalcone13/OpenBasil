@@ -20,7 +20,7 @@ class ReviewIndex extends React.Component{
               return <ReviewIndexItem review={review}
               key={review.id}
                 // user_email={this.props.user_email}
-              
+              deleteReview={this.props.deleteReview}
               />
             })}
           </li>

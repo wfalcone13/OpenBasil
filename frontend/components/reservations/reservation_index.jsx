@@ -26,7 +26,6 @@ class ReservationIndex extends React.Component{
   }
 
   upcomingtResv(resDate){
-    debugger
     let today = new Date()
     // let mnth = (today.getMonth())+1;
     // let yar = today.getFullYear();

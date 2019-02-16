@@ -4,10 +4,19 @@ import React from 'react';
 class ReviewIndexItem extends React.Component{
   constructor(props){
     super(props)
+    this.handleDelete = this.handleDelete.bind(this)
+  }
+
+  handleDelete(e){
+    e.preventDefault();
+    this.props.deleteReview(this.props.review.id).then(result =>{
+      this.props.history.push(`restaurants/${this.props.review.restaurant_id}`)
+    })
   }
 
 
   render(){
+    
     
     return(
       <div className="user-review">
@@ -26,7 +35,7 @@ class ReviewIndexItem extends React.Component{
             {this.props.review.body}
           </div>
         </div>
-
+        <button onClick={this.handleDelete}>Delete</button>
       </div>
     )
   }

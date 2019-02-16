@@ -270,19 +270,22 @@ var searchRestaurants = function searchRestaurants(query) {
 /*!********************************************!*\
   !*** ./frontend/actions/review_actions.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_REVIEWS, RECEIVE_REVIEW, fetchReviews, createReview */
+/*! exports provided: RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW, fetchReviews, createReview, deleteReview */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEWS", function() { return RECEIVE_REVIEWS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW", function() { return RECEIVE_REVIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_REVIEW", function() { return REMOVE_REVIEW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchReviews", function() { return fetchReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteReview", function() { return deleteReview; });
 /* harmony import */ var _util_review_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/review_api_util */ "./frontend/util/review_api_util.js");
 
 var RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 var RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+var REMOVE_REVIEW = 'REMOVE_REVIEW';
 
 var receiveReviews = function receiveReviews(reviews) {
   return {
@@ -301,6 +304,13 @@ var recieveReview = function recieveReview(_ref) {
   };
 };
 
+var removeReview = function removeReview(reviewId) {
+  return {
+    type: REMOVE_REVIEW,
+    reviewId: reviewId
+  };
+};
+
 var fetchReviews = function fetchReviews() {
   return function (dispatch) {
     return _util_review_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchReviews"]().then(function (reviews) {
@@ -312,6 +322,13 @@ var createReview = function createReview(review) {
   return function (dispatch) {
     return _util_review_api_util__WEBPACK_IMPORTED_MODULE_0__["createReview"](review).then(function (review) {
       return dispatch(recieveReview(review));
+    });
+  };
+};
+var deleteReview = function deleteReview(reviewId) {
+  return function (dispatch) {
+    return _util_review_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](reviewId).then(function (review) {
+      return dispatch(removeReview(reviewId));
     });
   };
 };
@@ -1298,7 +1315,6 @@ function (_React$Component) {
   }, {
     key: "upcomingtResv",
     value: function upcomingtResv(resDate) {
-      debugger;
       var today = new Date(); // let mnth = (today.getMonth())+1;
       // let yar = today.getFullYear();
       // let rsvpMonth = resDate.split("-")[1];
@@ -1974,6 +1990,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-reviews"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1982,7 +2000,8 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           review: review,
           key: review.id // user_email={this.props.user_email}
-
+          ,
+          deleteReview: _this.props.deleteReview
         });
       }))));
     }
@@ -2033,6 +2052,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchReviews: function fetchReviews(reviews) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["fetchReviews"])(reviews));
+    },
+    deleteReview: function deleteReview(reviewId) {
+      return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["deleteReview"])(reviewId));
     }
   };
 };
@@ -2062,13 +2084,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -2078,12 +2100,26 @@ function (_React$Component) {
   _inherits(ReviewIndexItem, _React$Component);
 
   function ReviewIndexItem(props) {
+    var _this;
+
     _classCallCheck(this, ReviewIndexItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndexItem).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndexItem).call(this, props));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
   }
 
   _createClass(ReviewIndexItem, [{
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.deleteReview(this.props.review.id).then(function (result) {
+        _this2.props.history.push("restaurants/".concat(_this2.props.review.restaurant_id));
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2095,7 +2131,9 @@ function (_React$Component) {
         id: "red-circ"
       }), this.props.review.email, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title: ", this.props.review.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.review.body)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title: ", this.props.review.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.review.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleDelete
+      }, "Delete"));
     }
   }]);
 
@@ -2344,7 +2382,6 @@ function (_React$Component) {
   _createClass(SearchResults, [{
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "results"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Results Returned ", this.props.rests.length, " Restaurants"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.rests.map(function (rest) {
@@ -2550,7 +2587,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-result"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3178,6 +3214,12 @@ var reviewReducer = function reviewReducer() {
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_RESTAURANT"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, action.reviews);
 
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
+      debugger;
+      var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state);
+      delete newState[action.reviewId];
+      return newState;
+
     default:
       return state;
   }
@@ -3487,13 +3529,14 @@ var fetchRestaurant = function fetchRestaurant(id) {
 /*!******************************************!*\
   !*** ./frontend/util/review_api_util.js ***!
   \******************************************/
-/*! exports provided: fetchReviews, createReview */
+/*! exports provided: fetchReviews, createReview, deleteReview */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchReviews", function() { return fetchReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteReview", function() { return deleteReview; });
 var fetchReviews = function fetchReviews() {
   return $.ajax({
     method: 'GET',
@@ -3507,6 +3550,12 @@ var createReview = function createReview(review) {
     data: {
       review: review
     }
+  });
+};
+var deleteReview = function deleteReview(id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "/api/reviews/".concat(id)
   });
 };
 
