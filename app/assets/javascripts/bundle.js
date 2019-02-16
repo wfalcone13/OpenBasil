@@ -1674,6 +1674,16 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "reviewCount",
+    value: function reviewCount() {
+      if (this.props.restaurant.review_ids.length === undefined) {
+        return 0;
+      } else {
+        this.props.restaurant.review_ids.length;
+        return;
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1711,7 +1721,7 @@ function (_React$Component) {
         className: "quick-facs-reviews"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-comment-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.restaurant.review_count, " reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "5 reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quick-facs-money"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-money-bill"
@@ -1731,7 +1741,7 @@ function (_React$Component) {
         className: "rest-tag-option"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Good Food"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-descrip"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.name, " is a neighborhood, ", this.props.restaurant.category, "  inspired restaurant. We use the best ingredients and provide a great atmosphere. Looking forward to hosting you soon!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "resvp-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservations_reservation_create_container__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
@@ -1762,7 +1772,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    restaurant: state.entities.restaurants[ownProps.match.params.restaurantId] || {}
+    restaurant: state.entities.restaurants[ownProps.match.params.restaurantId] || {},
+    reviews: state.entities.reviews || {}
   };
 };
 
@@ -2093,6 +2104,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
+var month = [0, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 var ReviewIndexItem =
 /*#__PURE__*/
@@ -2120,6 +2132,82 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "starRender",
+    value: function starRender() {
+      switch (this.props.review.stars) {
+        case 1:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), " ");
+
+        case 2:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        case 3:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        case 4:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        case 5:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "res-stars"
+          }));
+
+        default:
+          break;
+      }
+    }
+  }, {
+    key: "dinedOn",
+    value: function dinedOn() {
+      var d = this.props.review.created_at.split("-")[2].slice(0, 2);
+      var m = this.props.review.created_at.split("-")[1];
+      var y = this.props.review.created_at.split("-")[0];
+      return month[parseInt(m)] + " " + d + ", " + y;
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2129,11 +2217,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-circle",
         id: "red-circ"
-      }), this.props.review.email, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-bottom-email"
+      }, this.props.review.email.split(" ")[0], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title: ", this.props.review.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.review.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleDelete
-      }, "Delete"));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dined-when"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.starRender()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Dined on ", this.dinedOn(), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title: ", this.props.review.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.review.body)));
     }
   }]);
 

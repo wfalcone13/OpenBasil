@@ -51,10 +51,22 @@ class RestaurantShow extends React.Component{
 
   }
 
+  reviewCount(){
+    
+    if (this.props.restaurant.review_ids.length === undefined){
+      return 0 
+    } else {
+      this.props.restaurant.review_ids.length
+      return 
+    }
+
+  }
+
 
   
 
   render(){
+    
     return (
     
       <div className="rests-container">
@@ -101,7 +113,8 @@ class RestaurantShow extends React.Component{
               </div>
               <div className="quick-facs-reviews">
                 <i className="far fa-comment-alt"></i>
-                <p>{this.props.restaurant.review_count} reviews</p>
+                <p>5 reviews</p>
+                
               </div>
               <div className="quick-facs-money">
                 <i className="fas fa-money-bill"></i>
@@ -128,9 +141,7 @@ class RestaurantShow extends React.Component{
               </div>
               <div className='rest-descrip'>
                 <div>
-                  {this.props.restaurant.name} is a 
-                  neighborhood, {this.props.restaurant.category}  inspired restaurant. We use the best ingredients and provide a great atmosphere. 
-                  Looking forward to hosting you soon!
+                  {this.props.restaurant.description}
                 </div>
               </div>
           </div>

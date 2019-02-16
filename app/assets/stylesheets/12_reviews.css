@@ -1,25 +1,17 @@
 .review-box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 150px;
-  margin-right: 190px;
+ 
 }
 
 .review-box h3{
-  font-size: 19px;
+ 
 }
 
 .rev-form{
-  display: flex;
-  flex-direction: column;
-  width: 275px;
-  margin-top: 12px;
+ 
 }
 
 .rev-form input{
-  height: 18px;
-  margin-bottom: 7px;
+ 
 }
 
 .review-body{
@@ -27,13 +19,9 @@
 }
 
 .review-sub{
-  background: #da3743;
-  color: white;
-}
 
+}
 .all-reviews{
-  margin-top: 40px;
-  margin-right: 197px;
   display: flex;
   justify-content: center;
 }
@@ -42,48 +30,54 @@
 
 .all-reviews-lis{
   display: flex;
-  justify-content: center;
-  width: 576px;
-  margin-right: 162px;
+  margin-right: 201px;
 }
 
 .all-reviews li{
   display: flex;
-  justify-content: center;
   flex-direction: column-reverse;
+  align-items: center;
+  margin-right: 151px;
 }
 
 
 .user-review{
-  display: flex;
+  width: 580px;
+  height: 200px;
   border-bottom: 1px solid rgba(0,0,0,.08);
-  margin-bottom: 20px;
-  align-items: center
+  display: flex;
+  align-items: center;
+  align-items: inherit;
 }
 
 .user-rev-email{
-  margin-right: 15px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  width: 101px;
   align-items: center;
-  margin-bottom: 23px;
+  justify-content: center;
+  margin-right: 11px;
 }
 
 
 .user-rev-info{
-  margin-left: 7px;
+
 }
 
 .user-rev-info p{
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
-.user-rev-info div{
-  margin-top: 5px;
+.dined-when{
+  display: flex;
+  
+}
+
+.user-bottom-email{
+
 }
 
 #red-circ{
-  color: red;
-  font-size: 45px;
-  margin-bottom: 5px;
+ font-size: 40px;
+  color: cornflowerblue;
 }

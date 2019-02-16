@@ -9,20 +9,22 @@
 # rest_1.photo.attach(io: file1, filename: 'lilia.jpeg')
 # rest_1.save!
 
-
+User.destroy_all
+Review.destroy_all
 Restaurant.destroy_all
-rest_1 = Restaurant.new({name: 'Lilia', category: 'Pasta', long: 40.717558, lad: -73.952730, location: '567 Union Ave, Brooklyn, NY 11222', price: 7, rating: 5, review_count: 120 })
-rest_2 = Restaurant.new({name: 'Best Pizza', category: 'Pizza', long: 40.715573, lad: -73.953513, location: '33 Havemeyer St, Brooklyn, NY 11211', price: 1, rating: 5, review_count: 300  })
-rest_3 = Restaurant.new({name: 'Naked Dog', category: 'Pasta' , long: 40.731220, lad: -73.959429, location: '47 Java St, Brooklyn, NY 11222', price: 6, rating: 3, review_count: 90  })
-rest_4 = Restaurant.new({name: 'Barano', category: 'Pasta', long: 40.710734, lad: -73.967502, location: '26 Broadway, Brooklyn, NY 11249', price: 7, rating: 3, review_count: 220  })
-rest_5 = Restaurant.new({name: "Joe's Pizza", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "150 E 14th St, New York, NY 10003", price: 1, rating: 5, review_count: 500 })
-rest_6 = Restaurant.new({name: "Via Carota", category: 'Pasta', long: 40.73363, lad: -73.98744, location: "51 Groove St, New York, NY 10014", price: 4, rating: 5, review_count: 280 })
-rest_7 = Restaurant.new({name: "Johns of 12th Street", category: 'Red Sauce', long: 40.73363, lad: -73.98744, location: "302 E 12th St, New York, NY 10003", price: 4, rating: 5, review_count: 19 })
-rest_8 = Restaurant.new({name: "Bar Primi", category: 'Pasta', long: 40.73363, lad: -73.98744, location: "325 Bowery, New York, NY 10003", price: 7, rating: 5, review_count: 80 })
-rest_9 = Restaurant.new({name: "Sorbillo NYC", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "334 Bowery, New York, NY 10012", price: 4, rating: 3, review_count: 2 })
-rest_10 = Restaurant.new({name: "Rubirosa", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "235 Mulberry St, New York, NY 10012", price: 3, rating: 5, review_count: 100 })
-rest_11 = Restaurant.new({name: "Misi", category: 'Pasta', long: 40.73363, lad: -73.98744, location: "329 Kent Ave, Brooklyn, NY 11249", price: 7, rating: 4, review_count: 200 })
-rest_12 = Restaurant.new({name: "Robertas", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "261 Moore St, Brooklyn, NY 11206", price: 3, rating: 3, review_count: 12 })
+rest_1 = Restaurant.new({name: 'Lilia', category: 'Pasta', long: 40.717558, lad: -73.952730, location: '567 Union Ave, Brooklyn, NY 11222', price: 7, rating: 5, review_count: 120, description: Faker::Restaurant.description })
+rest_2 = Restaurant.new({name: 'Best Pizza', category: 'Pizza', long: 40.715573, lad: -73.953513, location: '33 Havemeyer St, Brooklyn, NY 11211', price: 1, rating: 5, review_count: 300, description: Faker::Restaurant.description  })
+rest_3 = Restaurant.new({name: 'Naked Dog', category: 'Pasta' , long: 40.731220, lad: -73.959429, location: '47 Java St, Brooklyn, NY 11222', price: 6, rating: 3, review_count: 90, description: Faker::Restaurant.description })
+rest_4 = Restaurant.new({name: 'Barano', category: 'Pasta', long: 40.710734, lad: -73.967502, location: '26 Broadway, Brooklyn, NY 11249', price: 7, rating: 3, review_count: 220, description: Faker::Restaurant.description  })
+rest_5 = Restaurant.new({name: "Joe's Pizza", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "150 E 14th St, New York, NY 10003", price: 1, rating: 5, review_count: 500, description: Faker::Restaurant.description })
+rest_6 = Restaurant.new({name: "Via Carota", category: 'Pasta', long: 40.73363, lad: -73.98744, location: "51 Groove St, New York, NY 10014", price: 4, rating: 5, review_count: 280, description: Faker::Restaurant.description })
+rest_7 = Restaurant.new({name: "Johns of 12th Street", category: 'Red Sauce', long: 40.73363, lad: -73.98744, location: "302 E 12th St, New York, NY 10003", price: 4, rating: 5, review_count: 19, description: Faker::Restaurant.description })
+rest_8 = Restaurant.new({name: "Bar Primi", category: 'Pasta', long: 40.73363, lad: -73.98744, location: "325 Bowery, New York, NY 10003", price: 7, rating: 5, review_count: 80, description: Faker::Restaurant.description })
+rest_9 = Restaurant.new({name: "Sorbillo NYC", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "334 Bowery, New York, NY 10012", price: 4, rating: 3, review_count: 2, description: Faker::Restaurant.description })
+rest_10 = Restaurant.new({name: "Rubirosa", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "235 Mulberry St, New York, NY 10012", price: 3, rating: 5, review_count: 100, description: Faker::Restaurant.description })
+rest_11 = Restaurant.new({name: "Misi", category: 'Pasta', long: 40.73363, lad: -73.98744, location: "329 Kent Ave, Brooklyn, NY 11249", price: 7, rating: 4, review_count: 200, description: Faker::Restaurant.description })
+rest_12 = Restaurant.new({name: "Robertas", category: 'Pizza', long: 40.73363, lad: -73.98744, location: "261 Moore St, Brooklyn, NY 11206", price: 3, rating: 3, review_count: 12, description: Faker::Restaurant.description })
+
 
 
 file1 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/lilia.jpeg')
@@ -75,6 +77,150 @@ rest_6.save!
 file12 = EzDownload.open('https://s3.amazonaws.com/open-basil-dev/newrest/roberts.jpeg')
 rest_12.photo.attach(io: file12, filename: 'roberts.jpeg')
 rest_12.save!
+
+
+
+User.create!(
+  first_name: 'Demo',
+  last_name: 'User',
+  email: 'demo@gmail.com',
+  password: '123456',
+  primary_location: 'New York'
+)
+
+
+5.times do 
+  char = Faker::Movies::HarryPotter.character
+  User.create!(
+  first_name: char.split(" ")[0],
+  last_name: char.split(" ")[1],
+  email: (char+'@gmail.com'),
+  password: '123456',
+  primary_location: 'New York'
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id:([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_1.id ,
+    body: Faker::Restaurant.review , 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id,
+    restaurant_id: rest_2.id,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample,
+    title: Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_3.id,
+    body: Faker::Restaurant.review , 
+    stars: [1,2,3,4,5].sample,
+    title: Faker::Movies::GratefulDead.song
+  )
+end
+
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_4.id ,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_5.id,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample ,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id:([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_6.id ,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id:([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_7.id,
+    body: Faker::Restaurant.review , 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_8.id,
+    body:Faker::Restaurant.review , 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id,
+    restaurant_id: rest_9.id,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id:([User.first, User.second, User.third, User.fourth, User.last].sample).id ,
+    restaurant_id: rest_10.id,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id,
+    restaurant_id: rest_11.id,
+    body: Faker::Restaurant.review, 
+    stars:[1,2,3,4,5].sample ,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
+5.times do 
+  Review.create!(
+    user_id: ([User.first, User.second, User.third, User.fourth, User.last].sample).id,
+    restaurant_id: rest_12.id,
+    body: Faker::Restaurant.review, 
+    stars: [1,2,3,4,5].sample,
+    title:  Faker::Movies::GratefulDead.song
+  )
+end
+
 
 
 
