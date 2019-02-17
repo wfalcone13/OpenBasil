@@ -483,14 +483,6 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _popular_restaurants_popular_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/",
-    component: _components_additional_top_near__WEBPACK_IMPORTED_MODULE_12__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/",
-    component: _components_additional_featured_internation__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "foot-box"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Discover Will"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -3276,7 +3268,7 @@ var reservationReducer = function reservationReducer() {
 
   switch (action.type) {
     case _actions_reservation_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_RESERVATIONS"]:
-      return action.reservations;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.reservations);
 
     case _actions_reservation_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESERVATION"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, action.reservation);

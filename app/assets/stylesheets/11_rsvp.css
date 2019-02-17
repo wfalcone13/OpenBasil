@@ -137,8 +137,12 @@
 .bottom-side{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
+.bottom-middle{
+  width: 60%;
+}
 .bottom-left{
   width: 367px;
   background-color: whitesmoke;

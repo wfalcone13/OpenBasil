@@ -43,8 +43,8 @@ const App = () => {
       < Route exact path ='/' component={SearchContainer}/>
       < Route path='/search' component={SearchResults}/>
       < Route exact path='/' component={PopularIndexContainer}/>
-      < Route exact path='/' component={topNear} />
-      < Route exact path='/' component={featureInt} />
+      {/* < Route exact path='/' component={topNear} />
+      < Route exact path='/' component={featureInt} /> */}
    
       <footer>
         <div className="foot-box">

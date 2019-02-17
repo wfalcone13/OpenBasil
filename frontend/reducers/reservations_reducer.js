@@ -5,7 +5,7 @@ const reservationReducer = (state = {}, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_ALL_RESERVATIONS:
-      return action.reservations 
+      return merge({}, state, action.reservations )
     case RECEIVE_RESERVATION:
       return merge({}, state, action.reservation)
     case REMOVE_RESERVATION:
