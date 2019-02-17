@@ -9,17 +9,29 @@ class SearchResultItem extends React.Component{
      starRender(){
       switch (this.props.rest.rating) {
         case 1:
-          return <p> <i className = "fas fa-star" id = "res-stars" ></i > </p>;
+          return <p> <i className = "fas fa-star" id = "res-stars" ></i > 
+            <i className="fas fa-star" id="grey-stars" ></i > 
+            <i className="fas fa-star" id="grey-stars" ></i > 
+            <i className="fas fa-star" id="grey-stars" ></i > 
+            <i className="fas fa-star" id="grey-stars" ></i > 
+          
+          </p>;
+              
         case 2:
           return( <p>
                   <i className="fas fa-star" id="res-stars" ></i >
                   <i className="fas fa-star" id="res-stars" ></i >
+                  <i className="fas fa-star" id="grey-stars" ></i >
+                  <i className="fas fa-star" id="grey-stars" ></i >
+                  <i className="fas fa-star" id="grey-stars" ></i > 
           </p>)
         case 3:
           return (<p>
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="grey-stars" ></i >
+            <i className="fas fa-star" id="grey-stars" ></i > 
           </p>) 
         case 4:
           return (<p>
@@ -27,6 +39,7 @@ class SearchResultItem extends React.Component{
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="grey-stars" ></i > 
           </p>)  
         case 5:
           return (<p>
@@ -59,8 +72,6 @@ class SearchResultItem extends React.Component{
         return "$$$"
       case 7:
         return "$$$$"
-      case 8:
-        return "$$$$$ "
       default:
         break;
     }

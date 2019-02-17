@@ -11,17 +11,28 @@ import {Link} from 'react-router-dom';
     starRender(){
       switch (this.props.restaurant.rating) {
         case 1:
-          return <p> <i className = "fas fa-star" id = "res-stars" ></i > </p>;
+          return <p> <i className = "fas fa-star" id = "res-stars" ></i > 
+                    <i className="fas fa-star" id="grey-stars" ></i >
+                    <i className="fas fa-star" id="grey-stars" ></i >
+                    <i className="fas fa-star" id="grey-stars" ></i >
+                    <i className="fas fa-star" id="grey-stars" ></i > 
+          
+          </p>;
         case 2:
           return( <p>
                   <i className="fas fa-star" id="res-stars" ></i >
                   <i className="fas fa-star" id="res-stars" ></i >
+                  <i className="fas fa-star" id="grey-stars" ></i >
+                  <i className="fas fa-star" id="grey-stars" ></i >
+                  <i className="fas fa-star" id="grey-stars" ></i >   
           </p>)
         case 3:
           return (<p>
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="grey-stars" ></i >
+            <i className="fas fa-star" id="grey-stars" ></i >   
           </p>) 
         case 4:
           return (<p>
@@ -29,6 +40,7 @@ import {Link} from 'react-router-dom';
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
             <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="grey-stars" ></i >  
           </p>)  
         case 5:
           return (<p>
@@ -74,11 +86,12 @@ import {Link} from 'react-router-dom';
       
       return (
       <div className='res-info'>
-        <Link to={`/restaurants/${this.props.restaurant.id}`}><img src={this.props.restaurant.photoURL} /></Link>
-        <Link to={`/restaurants/${this.props.restaurant.id}`}>{this.props.restaurant.name}</Link>
+        <Link to={`/restaurants/${this.props.restaurant.id}`}> 
+            <img src={this.props.restaurant.photoURL} />
+            <p className='rest-title'>{this.props.restaurant.name}</p>
         <div className="star-ratings">
             {this.starRender()}
-          <p className='star-ps'>Reviews {this.props.restaurant.review_count}</p>
+          <p className='star-ps'>{this.props.restaurant.review_count} reviews</p>
         </div>
           <div className="ratings">
             {this.props.restaurant.category}
@@ -86,6 +99,7 @@ import {Link} from 'react-router-dom';
           {this.props.restaurant.location.split(',')[1]}
          </div> 
      
+          </Link>
       </div>
       )
 

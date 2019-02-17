@@ -1,11 +1,13 @@
 import React from 'react'
+import {connect} from 'react-redux';
+import { searchRestaurants} from '../../actions/restaurant_actions'
 
 const topNear = () => {
   return(
 
     <div className="top-c">
       <div className="top-c-head">
-        <p>Top Cusines near Manhattan </p>
+        <p >Top Cusines near Manhattan </p>
       </div>
       <div className='top-buckets'>
           <div className="cat-1">
@@ -31,4 +33,11 @@ const topNear = () => {
   )
 }
 
-export default topNear;
+const mapDispatchToProps = dispatch =>{
+  
+  return {
+    search: (pizza) => dispatch(searchRestaurants(pizza))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(topNear);
