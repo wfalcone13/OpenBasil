@@ -28,22 +28,11 @@ render(){
     <div className="search-container">
       <h1>Find your table for any occasion</h1>
       <div className="search-bar-main">
-
-        <form action="" className="search-date">
-          <input type="date" name="date"  defaultValue="2019-02-22"/>
-          
-        </form>
-
-        <form action="" className="search-time"> 
-          <input type="time" name="time" defaultValue="10:00"/>
-        </form> 
-
-        <form action="" className="search-bar-number">
-          <input type="number" name="number" min='1' max='15' defaultValue="2"/>
-        </form>  
-
-        <form action="" className="search-bar" onSubmit={this.handleSubmit}>
-          <input type="text" name="search" placeholder="  New York City...." value={this.state.query} onChange={this.update('query')}/>
+          <form action="" className="search-bar" onSubmit={this.handleSubmit} >
+            <input type="date" name="date" defaultValue="2019-02-22" className="search-date"/>
+            <input type="time" name="time" defaultValue="10:00" className="search-time" />
+            <input type="number" name="number" min='1' max='15' defaultValue="2" className="search-bar-number" />
+          <input type="text" name="search" placeholder="  New York City...." value={this.state.query} onChange={this.update('query')} className="search-search"/>
           <button className="search-button">Let's go</button>
         </form>
       </div>

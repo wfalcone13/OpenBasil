@@ -92,8 +92,8 @@ User.create!(
 5.times do 
   char = Faker::Movies::HarryPotter.character
   User.create!(
-  first_name: char.split(" ")[0],
-  last_name: char.split(" ")[1],
+  first_name: char,
+  last_name: char,
   email: (char+'@gmail.com'),
   password: '123456',
   primary_location: 'New York'

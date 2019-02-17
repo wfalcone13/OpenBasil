@@ -2219,7 +2219,7 @@ function (_React$Component) {
         id: "red-circ"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-bottom-email"
-      }, this.props.review.email.split(" ")[0], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.review.user_first, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dined-when"
@@ -2347,37 +2347,32 @@ function (_React$Component) {
         className: "search-bar-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         action: "",
-        className: "search-date"
+        className: "search-bar",
+        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "date",
         name: "date",
-        defaultValue: "2019-02-22"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        action: "",
-        className: "search-time"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        defaultValue: "2019-02-22",
+        className: "search-date"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
         name: "time",
-        defaultValue: "10:00"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        action: "",
-        className: "search-bar-number"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        defaultValue: "10:00",
+        className: "search-time"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "number",
         name: "number",
         min: "1",
         max: "15",
-        defaultValue: "2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        action: "",
-        className: "search-bar",
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        defaultValue: "2",
+        className: "search-bar-number"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "search",
         placeholder: "  New York City....",
         value: this.state.query,
-        onChange: this.update('query')
+        onChange: this.update('query'),
+        className: "search-search"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "search-button"
       }, "Let's go")))));

@@ -12,8 +12,8 @@ json.reviews do
     json.set! review.id do 
     json.extract! review, :id, :user_id, :restaurant_id, :body, :stars, :title, :created_at
     json.email review.user.email
-    json.user_first review.user.first_name[0]
-    json.user_last review.user.first_name[0]
+    json.user_first review.user.first_name
+    json.user_last review.user.last_name
 
     end
   end

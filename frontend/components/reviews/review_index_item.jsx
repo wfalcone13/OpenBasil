@@ -70,7 +70,7 @@ class ReviewIndexItem extends React.Component{
             {/* <p>{this.props.review.user_first}{this.props.review.user_last}</p> */}
             </i>
             <div className='user-bottom-email'>
-              {this.props.review.email.split(" ")[0]}
+              {this.props.review.user_first}
               <p> New York Area </p>
             </div>
         </div>
