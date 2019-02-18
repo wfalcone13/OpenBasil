@@ -1566,9 +1566,7 @@ function (_React$Component) {
         className: "rsvp-buttons-change"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(this.props.restaurant.id)
-      }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "`"
-      }, "Modify"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleDelete
       }, "Cancel"))));
     }
@@ -1647,7 +1645,19 @@ function (_React$Component) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
-          }), " ");
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }));
 
         case 2:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -1656,6 +1666,15 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 3:
@@ -1668,6 +1687,12 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 4:
@@ -1683,6 +1708,9 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 5:
@@ -2248,12 +2276,18 @@ function (_React$Component) {
         className: "user-review"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-email"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "email-name-over"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-circle",
         id: "red-circ"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "email-names"
+      }, this.props.review.user_first[0], this.props.review.user_last[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-bottom-email"
-      }, this.props.review.user_first, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " New York Area "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.review.user_first, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "city"
+      }, " New York Area "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-rev-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dined-when"

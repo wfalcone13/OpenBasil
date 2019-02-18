@@ -49,7 +49,7 @@ class ReservationIndexItem extends React.Component{
               <p>Table for {this.props.reservation.seating_number} people</p>
             <div className='rsvp-buttons-change'>
             <Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link>
-              <a href="`">Modify</a>
+              {/* <a href="`">Modify</a> */}
               <button onClick={this.handleDelete}>Cancel</button>
 
               

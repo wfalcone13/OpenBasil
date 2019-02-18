@@ -18,17 +18,28 @@ class RestaurantShow extends React.Component{
   starRender() {
     switch (this.props.restaurant.rating) {
       case 1:
-        return <p> <i className="fas fa-star" id="res-stars" ></i > </p>;
+        return <p> <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+
+        </p>;
       case 2:
         return (<p>
           <i className="fas fa-star" id="res-stars" ></i >
           <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
         </p>)
       case 3:
         return (<p>
           <i className="fas fa-star" id="res-stars" ></i >
           <i className="fas fa-star" id="res-stars" ></i >
           <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
         </p>)
       case 4:
         return (<p>
@@ -36,6 +47,7 @@ class RestaurantShow extends React.Component{
           <i className="fas fa-star" id="res-stars" ></i >
           <i className="fas fa-star" id="res-stars" ></i >
           <i className="fas fa-star" id="res-stars" ></i >
+          <i className="fas fa-star" id="grey-stars" ></i >
         </p>)
       case 5:
         return (<p>

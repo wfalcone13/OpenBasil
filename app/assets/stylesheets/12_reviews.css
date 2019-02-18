@@ -74,10 +74,30 @@
 }
 
 .user-bottom-email{
+    font-size: 14px;
 
+}
+
+#city{
+      font-size: 12px;
+    color: #6f737b;
+
+}
+
+.email-name-over{
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 #red-circ{
  font-size: 40px;
   color: cornflowerblue;
+}
+
+.email-names{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
