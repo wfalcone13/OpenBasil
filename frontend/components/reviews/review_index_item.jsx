@@ -56,6 +56,7 @@ class ReviewIndexItem extends React.Component{
     let m = this.props.review.created_at.split("-")[1];
     let y = this.props.review.created_at.split("-")[0];
     return month[parseInt(m)] + " " + d + ", " + y;
+    
   }
 
 
