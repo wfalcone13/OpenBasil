@@ -4,6 +4,7 @@ import { Link, Redirect, withRouter } from 'react-router-dom'
 
 let month = ['0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 let days = ['Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday','Friday','Saturday']
+let MONTH = ['0', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 class ReservationIndexItem extends React.Component{
   constructor(props){
@@ -17,6 +18,17 @@ class ReservationIndexItem extends React.Component{
     const mth = month[parseInt(date_arr[1])];
     const day = days[Math.floor(Math.random() * days.length)];
     return day  + ",  " + mth + " " + date_arr[2] + ",   "+ date_arr[0] +", ";
+  }
+
+  cancelOrReview() {
+    debugger
+    let td = new Date()
+    
+    if (td < new Date(this.props.reservation.reservation_date)){
+      return (<button onClick={this.handleDelete}>Cancel</button>)
+    } else {
+      return (<button onClick={this.handleDelete}>Leave Review</button>)
+    }
   }
 
   handleDelete(e){
@@ -38,6 +50,7 @@ class ReservationIndexItem extends React.Component{
  
 
   render(){
+    debugger
     return(
       <div className='namebox'>
           <div className='name-photo'>
@@ -50,8 +63,8 @@ class ReservationIndexItem extends React.Component{
             <div className='rsvp-buttons-change'>
             <Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link>
               {/* <a href="`">Modify</a> */}
-              <button onClick={this.handleDelete}>Cancel</button>
-
+              {/* <button onClick={this.handleDelete}>Cancel</button> */}
+            <p>{this.cancelOrReview()}</p>
               
             </div>
           </div>

@@ -1504,6 +1504,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 var month = ['0', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var MONTH = ['0', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 var ReservationIndexItem =
 /*#__PURE__*/
@@ -1530,6 +1531,22 @@ function (_React$Component) {
       return day + ",  " + mth + " " + date_arr[2] + ",   " + date_arr[0] + ", ";
     }
   }, {
+    key: "cancelOrReview",
+    value: function cancelOrReview() {
+      debugger;
+      var td = new Date();
+
+      if (td < new Date(this.props.reservation.reservation_date)) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.handleDelete
+        }, "Cancel");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.handleDelete
+        }, "Leave Review");
+      }
+    }
+  }, {
     key: "handleDelete",
     value: function handleDelete(e) {
       var _this2 = this;
@@ -1553,6 +1570,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "namebox"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1566,9 +1584,7 @@ function (_React$Component) {
         className: "rsvp-buttons-change"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(this.props.restaurant.id)
-      }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleDelete
-      }, "Cancel"))));
+      }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.cancelOrReview()))));
     }
   }]);
 
@@ -2043,6 +2059,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var MONTH = [0, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 var ReviewIndex =
 /*#__PURE__*/
