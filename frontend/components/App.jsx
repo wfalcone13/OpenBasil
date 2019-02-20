@@ -50,17 +50,17 @@ const App = () => {
         <div className="foot-box">
           <div>
             <p>Discover Will</p>
-            <a href="https://www.linkedin.com/in/wfalcone/">LinkedIn</a>
-            <a href="https://github.com/wfalcone13">GitHub</a>
-            <a href="https://wfalcone13.github.io/">Professional Site</a>
+            <a href="https://www.linkedin.com/in/wfalcone/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/wfalcone13" target="_blank">GitHub</a>
+            <a href="https://wfalcone13.github.io/" target="_blank">Professional Site</a>
           </div>
           <div>
             <p>OPENBASIL</p>
-            <a href="https://github.com/wfalcone13/OpenBasil">About</a>
+            <a href="https://github.com/wfalcone13/OpenBasil" target="_blank">About</a>
           </div>
           <div>
             <p>More</p>
-            <a href="https://wfalcone13.github.io/JerryShakedown/">Check out my game!</a>
+            <a href="https://wfalcone13.github.io/JerryShakedown/" target="_blank">Check out my game!</a>
           </div>
         </div>
       </footer>

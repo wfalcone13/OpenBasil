@@ -7,7 +7,7 @@
 .signup-form-box{
   padding: 27px ;
   width: 450px;
-  height: 600px;
+  height: 100%;
   background-color: white;
 }
 
@@ -96,6 +96,13 @@
   height: 45px;
   width: 190px;
 
+}
+
+.social-signups a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
 }
 
 .social-signups img{
