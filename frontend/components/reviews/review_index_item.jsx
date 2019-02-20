@@ -59,6 +59,8 @@ class ReviewIndexItem extends React.Component{
     
   }
 
+ 
+
 
   render(){
     
@@ -85,6 +87,8 @@ class ReviewIndexItem extends React.Component{
           <p>Title: {this.props.review.title}</p>
           <div>
             {this.props.review.body}
+          
+
           </div>
         </div>
 

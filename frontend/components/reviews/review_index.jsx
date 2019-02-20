@@ -1,6 +1,9 @@
 import React from 'react'
 import ReviewIndexItem from './review_index_item'
 
+const MONTH = [0, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+
 class ReviewIndex extends React.Component{
   constructor(props){
     super(props)
@@ -9,6 +12,9 @@ class ReviewIndex extends React.Component{
   componentDidMount(){
     this.props.fetchReviews
   }
+
+
+  
 
   render(){
     

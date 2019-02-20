@@ -702,6 +702,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
+/* harmony import */ var _reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reviews/review_create_contianer */ "./frontend/components/reviews/review_create_contianer.jsx");
+
 
 
 
@@ -725,6 +727,10 @@ function Modal(_ref) {
 
     case 'signup':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      break;
+
+    case 'review':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       break;
 
     default:
@@ -1259,13 +1265,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.updateResDate.bind(this),
         type: "date",
-        placeholder: "Wed"
+        defaultValue: "2019-02-22"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "time-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.updateResTime.bind(this),
         type: "time",
-        placeholder: "7:00 PM"
+        defaultValue: "10:00"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         name: "",
@@ -1419,6 +1425,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/reservation_actions */ "./frontend/actions/reservation_actions.js");
 /* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -1462,6 +1470,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deleteReservation: function deleteReservation(id) {
       return dispatch(Object(_actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__["deleteReservation"])(id));
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])(modal));
     }
   };
 };
@@ -1530,6 +1541,21 @@ function (_React$Component) {
       return day + ",  " + mth + " " + date_arr[2] + ",   " + date_arr[0] + ", ";
     }
   }, {
+    key: "cancelOrReview",
+    value: function cancelOrReview() {
+      var td = new Date();
+
+      if (td < new Date(this.props.reservation.reservation_date)) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.handleDelete
+        }, "Cancel");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/restaurants/".concat(this.props.restaurant.id)
+        }, "Leave Review");
+      }
+    }
+  }, {
     key: "handleDelete",
     value: function handleDelete(e) {
       var _this2 = this;
@@ -1564,11 +1590,9 @@ function (_React$Component) {
         className: "rsvp-info-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.dateFormat(this.props.reservation.reservation_date), " ", this.timeFormat()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Table for ", this.props.reservation.seating_number, " people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rsvp-buttons-change"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(this.props.restaurant.id)
-      }, "View"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleDelete
-      }, "Cancel"))));
+      }, "View")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.cancelOrReview()))));
     }
   }]);
 
@@ -1862,7 +1886,9 @@ var mapDistpatchToProps = function mapDistpatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
-/* harmony import */ var _review_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./review_form */ "./frontend/components/reviews/review_form.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _review_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./review_form */ "./frontend/components/reviews/review_form.jsx");
+
 
 
 
@@ -1883,11 +1909,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createReview: function createReview(review) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_1__["createReview"])(review));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_review_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_review_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -2043,6 +2072,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var MONTH = [0, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 var ReviewIndex =
 /*#__PURE__*/
@@ -2649,7 +2679,7 @@ function (_React$Component) {
         case 1:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2667,10 +2697,10 @@ function (_React$Component) {
         case 2:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2685,13 +2715,13 @@ function (_React$Component) {
         case 3:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2703,16 +2733,16 @@ function (_React$Component) {
         case 4:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2721,19 +2751,19 @@ function (_React$Component) {
         case 5:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }));
 
         default:
@@ -2745,25 +2775,81 @@ function (_React$Component) {
     value: function moneyRating() {
       switch (this.props.rest.price) {
         case 1:
-          return "$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 2:
-          return "$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 3:
-          return "$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 4:
-          return "$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 5:
-          return "$$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 6:
-          return "$$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 7:
-          return "$$$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"));
 
         default:
           break;
@@ -2788,7 +2874,7 @@ function (_React$Component) {
         to: "/restaurants/".concat(this.props.rest.id)
       }, " ", this.props.rest.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rat-result"
-      }, this.starRender(), this.moneyRating()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.starRender(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.moneyRating())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cat-result"
       }, this.props.rest.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)));
     }

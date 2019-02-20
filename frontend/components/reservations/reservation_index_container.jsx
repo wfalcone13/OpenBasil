@@ -3,6 +3,7 @@ import ReservationIndex from './reservation_index';
 import { fetchReservation, fetchReservations, deleteReservation} from '../../actions/reservation_actions'
 import {fetchRestaurants} from '../../actions/restaurant_actions'
 import {withRouter} from 'react-router-dom'
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = ({session, entities: { users, reservations, restaurants }}) => {
@@ -29,7 +30,8 @@ const mapDispatchToProps = dispatch => {
     fetchRestaurants: () => dispatch(fetchRestaurants()),
     fetchReservation: id => dispatch(fetchReservation(id)),
     fetchReservations: () => dispatch(fetchReservations()),
-    deleteReservation: (id) => dispatch(deleteReservation(id))
+    deleteReservation: (id) => dispatch(deleteReservation(id)),
+    openModal: modal => dispatch(openModal(modal))
   }
 }
 

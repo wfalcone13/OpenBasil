@@ -53,15 +53,14 @@
 .user-rev-email{
   display: flex;
   flex-direction: column;
-  width: 101px;
   align-items: center;
-  justify-content: center;
-  margin-right: 11px;
+  width: 29%;
+  margin-right: 7px;
 }
 
 
 .user-rev-info{
-
+  width:100%;
 }
 
 .user-rev-info p{
@@ -70,12 +69,19 @@
 
 .dined-when{
   display: flex;
+  margin-bottom: 5px;
   
+}
+
+.dined-when h1{
+  margin-right: 19px;
 }
 
 .user-bottom-email{
     font-size: 14px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #city{
@@ -100,4 +106,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#more{
+  display: none
 }

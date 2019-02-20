@@ -53,6 +53,10 @@
   padding-top: 10px;
 }
 
+
+::placeholder{
+  color: black
+}
 .seating-inputs input{
   border: none;
   margin-bottom: 6px;
@@ -72,11 +76,15 @@
 }
 
 
+
 .date-section input{
   border: none;
   margin-top: 4px;
   border-bottom: 1px solid rgba(0,0,0,.08);
   margin-right: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  font-size: 12px;
 
 }
 
@@ -89,6 +97,9 @@
   border: none;
   margin-top: 4px;
   border-bottom: 1px solid rgba(0,0,0,.08);
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  font-size: 12px;
 }
 
 .submit-rsvp{
@@ -211,6 +222,8 @@
 
 .rsvp-buttons-change{
   margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .rsvp-buttons-change a{
@@ -227,4 +240,10 @@
   margin-left: 3px;
   font-size: 13px;
   color: #237b98;
+  margin-top: 2px;
+  padding-top: 3px;
+}
+
+.rsvp-buttons-change span{
+  margin-bottom: 1px;
 }

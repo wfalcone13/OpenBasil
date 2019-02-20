@@ -5,6 +5,7 @@ import { Link, Redirect, withRouter } from 'react-router-dom'
 let month = ['0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 let days = ['Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday','Friday','Saturday']
 
+
 class ReservationIndexItem extends React.Component{
   constructor(props){
     super(props)
@@ -17,6 +18,17 @@ class ReservationIndexItem extends React.Component{
     const mth = month[parseInt(date_arr[1])];
     const day = days[Math.floor(Math.random() * days.length)];
     return day  + ",  " + mth + " " + date_arr[2] + ",   "+ date_arr[0] +", ";
+  }
+
+  cancelOrReview() {
+    
+    let td = new Date()
+    
+    if (td < new Date(this.props.reservation.reservation_date)){
+      return (<button onClick={this.handleDelete}>Cancel</button>)
+    } else {
+      return (<Link to={`/restaurants/${this.props.restaurant.id}`}>Leave Review</Link>)
+    }
   }
 
   handleDelete(e){
@@ -38,6 +50,7 @@ class ReservationIndexItem extends React.Component{
  
 
   render(){
+    
     return(
       <div className='namebox'>
           <div className='name-photo'>
@@ -48,10 +61,10 @@ class ReservationIndexItem extends React.Component{
               <p>{this.dateFormat(this.props.reservation.reservation_date)} {this.timeFormat()}</p>
               <p>Table for {this.props.reservation.seating_number} people</p>
             <div className='rsvp-buttons-change'>
-            <Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link>
+            <span><Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link></span>
               {/* <a href="`">Modify</a> */}
-              <button onClick={this.handleDelete}>Cancel</button>
-
+              {/* <button onClick={this.handleDelete}>Cancel</button> */}
+            <span>{this.cancelOrReview()}</span>
               
             </div>
           </div>

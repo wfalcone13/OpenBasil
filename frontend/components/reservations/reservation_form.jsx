@@ -48,11 +48,11 @@ class ReservationForm extends React.Component {
               <div className='d-t-section'>
                 <div className='date-section'>
                   <p>Date</p>  
-                  <input onChange={this.updateResDate.bind(this)} type="date"  placeholder="Wed"/>
+                  <input onChange={this.updateResDate.bind(this)} type="date" defaultValue="2019-02-22"/>
                 </div>
                 <div className='time-section'>
                   <p>Time</p>
-                  <input onChange={this.updateResTime.bind(this)} type="time"  placeholder="7:00 PM"/>
+                  <input onChange={this.updateResTime.bind(this)} type="time" defaultValue="10:00"/>
                 </div>
               </div>
               <input type="submit" name="" value="Find Table" className='submit-rsvp'/>

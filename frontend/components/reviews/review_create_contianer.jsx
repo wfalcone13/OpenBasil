@@ -1,5 +1,6 @@
 import {connect } from 'react-redux';
 import { createReview} from '../../actions/review_actions'
+import { openModal, closeModal } from '../../actions/modal_actions'
 import ReviewForm from './review_form'
 
 
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createReview: review => dispatch(createReview(review))
+    createReview: review => dispatch(createReview(review)),
+    closeModal: () => dispatch(closeModal())
   }
 }
 
