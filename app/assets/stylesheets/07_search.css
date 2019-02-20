@@ -92,6 +92,7 @@
   cursor: pointer;
   height: 50px;
   width: 150px;
+  padding-left: 10px;
 }
 
 .search-time {
@@ -104,6 +105,7 @@
   font-weight: 500;
   color: #2d333f;
   cursor: pointer;
+  padding-left: 10px;
 }
 
 .search-bar-number {
@@ -121,6 +123,7 @@
   cursor: pointer;
   height: 48px;
   width: 150px;
+  padding-left: 10px;
 }
 
 .search-bar{
@@ -128,6 +131,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   align-items: center;
+  
 }
 
 /* .search-bar input{
@@ -145,6 +149,10 @@
     border: none;
     border-radius: 4px;
     width: 300px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+    cursor: pointer;
 }
 
 .search-button{
@@ -158,6 +166,7 @@
   font-size: 15px;
   font-weight: 700;
   font-family: sans-serif;
+  cursor: pointer;
 }
 
 .search_categories{

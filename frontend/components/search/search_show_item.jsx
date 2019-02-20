@@ -9,7 +9,7 @@ class SearchResultItem extends React.Component{
      starRender(){
       switch (this.props.rest.rating) {
         case 1:
-          return <p> <i className = "fas fa-star" id = "res-stars" ></i > 
+          return <p> <i className = "fas fa-star" id = "res-stars-search" ></i > 
             <i className="fas fa-star" id="grey-stars" ></i > 
             <i className="fas fa-star" id="grey-stars" ></i > 
             <i className="fas fa-star" id="grey-stars" ></i > 
@@ -19,35 +19,35 @@ class SearchResultItem extends React.Component{
               
         case 2:
           return( <p>
-                  <i className="fas fa-star" id="res-stars" ></i >
-                  <i className="fas fa-star" id="res-stars" ></i >
+                  <i className="fas fa-star" id="res-stars-search" ></i >
+                  <i className="fas fa-star" id="res-stars-search" ></i >
                   <i className="fas fa-star" id="grey-stars" ></i >
                   <i className="fas fa-star" id="grey-stars" ></i >
                   <i className="fas fa-star" id="grey-stars" ></i > 
           </p>)
         case 3:
           return (<p>
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
             <i className="fas fa-star" id="grey-stars" ></i >
             <i className="fas fa-star" id="grey-stars" ></i > 
           </p>) 
         case 4:
           return (<p>
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
             <i className="fas fa-star" id="grey-stars" ></i > 
           </p>)  
         case 5:
           return (<p>
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
-            <i className="fas fa-star" id="res-stars" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
+            <i className="fas fa-star" id="res-stars-search" ></i >
           </p>)   
         default:
           break;
@@ -59,19 +59,54 @@ class SearchResultItem extends React.Component{
   moneyRating() {
     switch (this.props.rest.price) {
       case 1:
-        return "$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='gray-dol'>$</i>
+          <i id='gray-dol'>$</i>
+          <i id='gray-dol'>$</i>    
+          </p>)
       case 2:
-        return "$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='gray-dol'>$</i>
+          <i id='gray-dol'>$</i>
+          <i id='gray-dol'>$</i>
+        </p>)
       case 3:
-        return "$$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='gray-dol'>$</i>
+          <i id='gray-dol'>$</i>
+        </p>)
       case 4:
-        return "$$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='gray-dol'>$</i>
+          <i id='gray-dol'>$</i>
+        </p>)
       case 5:
-        return "$$$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='gray-dol'>$</i>
+        </p>)
       case 6:
-        return "$$$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='gray-dol'>$</i>
+        </p>)
       case 7:
-        return "$$$$"
+        return (<p>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+          <i id='black-dol'>$</i>
+        </p>)
       default:
         break;
     }
@@ -91,7 +126,7 @@ class SearchResultItem extends React.Component{
           </div>
           <div className='rat-result'>
             {this.starRender()}
-            {this.moneyRating()}
+            <p>{this.moneyRating()}</p>
           </div>
           <div className='cat-result'>
             {this.props.rest.category}

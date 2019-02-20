@@ -2679,7 +2679,7 @@ function (_React$Component) {
         case 1:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2697,10 +2697,10 @@ function (_React$Component) {
         case 2:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2715,13 +2715,13 @@ function (_React$Component) {
         case 3:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2733,16 +2733,16 @@ function (_React$Component) {
         case 4:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "grey-stars"
@@ -2751,19 +2751,19 @@ function (_React$Component) {
         case 5:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
-            id: "res-stars"
+            id: "res-stars-search"
           }));
 
         default:
@@ -2775,25 +2775,81 @@ function (_React$Component) {
     value: function moneyRating() {
       switch (this.props.rest.price) {
         case 1:
-          return "$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 2:
-          return "$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 3:
-          return "$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 4:
-          return "$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 5:
-          return "$$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 6:
-          return "$$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "gray-dol"
+          }, "$"));
 
         case 7:
-          return "$$$$";
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            id: "black-dol"
+          }, "$"));
 
         default:
           break;
@@ -2818,7 +2874,7 @@ function (_React$Component) {
         to: "/restaurants/".concat(this.props.rest.id)
       }, " ", this.props.rest.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rat-result"
-      }, this.starRender(), this.moneyRating()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.starRender(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.moneyRating())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cat-result"
       }, this.props.rest.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)));
     }
