@@ -223,6 +223,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchRestaurants", function() { return searchRestaurants; });
 /* harmony import */ var _util_restaurant_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/restaurant_api_util */ "./frontend/util/restaurant_api_util.js");
 /* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/search_api_util */ "./frontend/util/search_api_util.js");
+/* harmony import */ var _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/reservation_api_util */ "./frontend/util/reservation_api_util.js");
+
 
 
 var RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
@@ -2440,6 +2442,9 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Search).call(this, props));
     _this.state = {
+      seating_number: '',
+      reservation_time: '',
+      reservation_date: '',
       query: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -2451,6 +2456,7 @@ function (_React$Component) {
     value: function update(field) {
       var _this2 = this;
 
+      debugger;
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.target.value));
       };
@@ -2460,6 +2466,7 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this3 = this;
 
+      debugger;
       e.preventDefault();
       e.stopPropagation();
       this.props.search(this.state.query.toLowerCase()).then(function () {
@@ -2474,6 +2481,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find your table for any occasion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2486,19 +2494,22 @@ function (_React$Component) {
         type: "date",
         name: "date",
         defaultValue: "2019-02-22",
-        className: "search-date"
+        className: "search-date",
+        onChange: this.update('reservation_date')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
         name: "time",
         defaultValue: "10:00",
-        className: "search-time"
+        className: "search-time",
+        onChange: this.update('reservation_time')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "number",
         name: "number",
         min: "1",
         max: "15",
         placeholder: "2 People",
-        className: "search-bar-number"
+        className: "search-bar-number",
+        onChange: this.update('seating_number')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "search",
@@ -2537,11 +2548,15 @@ __webpack_require__.r(__webpack_exports__);
  // const mapStateToProps = state =>{
 //   debugger
 //   return {
-//     restaurants: Object.values(state.entities.restaurants) 
+//     reservation: {
+//       user_id: state.session.id,
+//       reservation_time: '', reservation_date: '', seating_number: ''
+//     },
 //   }
 // }
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  debugger;
   return {
     search: function search(query) {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["searchRestaurants"])(query));
@@ -2639,9 +2654,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
-    rests: Object.values(state.entities.restaurants)
+    rests: Object.values(state.entities.restaurants),
+    reservation: {
+      user_id: state.session.id,
+      restaurant_id: ownProps.match.params.restaurantId,
+      reservation_time: '',
+      reservation_date: '',
+      seating_number: ''
+    }
   };
 };
 
@@ -2888,6 +2911,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-result"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

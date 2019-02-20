@@ -6,15 +6,17 @@ import {withRouter} from 'react-router-dom';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {query: ''};
+    this.state = { seating_number: '', reservation_time: '', reservation_date: '', query: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field){
+    debugger
     return (e) => this.setState({ [field]: e.target.value});
   }
 
   handleSubmit(e){
+    debugger
     e.preventDefault();
     e.stopPropagation();
     this.props.search(this.state.query.toLowerCase()).then(() => {
@@ -27,15 +29,16 @@ class Search extends React.Component {
   }
 
 render(){
+  debugger
   return(
     <div>
     <div className="search-container">
       <h1>Find your table for any occasion</h1>
       <div className="search-bar-main">
           <form action="" className="search-bar" onSubmit={this.handleSubmit} >
-            <input type="date" name="date" defaultValue="2019-02-22" className="search-date"/>
-            <input type="time" name="time" defaultValue="10:00" className="search-time" />
-            <input type="number" name="number" min='1' max='15' placeholder="2 People" className="search-bar-number" />
+            <input type="date" name="date" defaultValue="2019-02-22" className="search-date"  onChange={this.update('reservation_date')}/>
+            <input type="time" name="time" defaultValue="10:00" className="search-time" onChange={this.update('reservation_time')} />
+            <input type="number" name="number" min='1' max='15' placeholder="2 People" className="search-bar-number" onChange={this.update('seating_number')}/>
             {/* <div className="search_categories">
               <div className='select'>
                 <select name="search_categories" id="search_categories">

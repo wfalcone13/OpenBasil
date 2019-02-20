@@ -6,13 +6,16 @@ import Search from './search';
 // const mapStateToProps = state =>{
 //   debugger
 //   return {
-//     restaurants: Object.values(state.entities.restaurants) 
+//     reservation: {
+//       user_id: state.session.id,
+//       reservation_time: '', reservation_date: '', seating_number: ''
+//     },
   
 //   }
 // }
 
 const mapDispatchToProps = dispatch => {
-  
+  debugger
   return {
     search: (query) => dispatch(searchRestaurants(query))
   };
