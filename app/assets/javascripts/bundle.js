@@ -2228,10 +2228,22 @@ function (_React$Component) {
     value: function starRender() {
       switch (this.props.review.stars) {
         case 1:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
-          }), " ");
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }));
 
         case 2:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -2240,6 +2252,15 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 3:
@@ -2252,6 +2273,12 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 4:
@@ -2267,6 +2294,9 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 5:
