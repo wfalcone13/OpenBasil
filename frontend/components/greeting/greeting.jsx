@@ -21,8 +21,8 @@ const Greeting = ({currentUser, logout, openModal}) => {
         <div className="nav-dropdown">
           <button className="drop-b">⌄</button>
             <div className="drop-content">
-            <button className="header-button" onClick={logout}>Sign Out</button>
-          </div>
+              <button className="header-button" onClick={logout}>Sign Out</button>
+            </div>
         </div>
       </div>
     )

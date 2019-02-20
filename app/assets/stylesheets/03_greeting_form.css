@@ -76,7 +76,7 @@
 .header-right{
   display: flex;
   align-items: center;
-  margin-right: 25px;
+  margin-right: 100px;
 }
 
 .header-right a{
@@ -86,39 +86,37 @@
 }
 
 .name-display{
-
+  margin-right: 5px;
 }
 
 .nav-dropdown{
   position: relative;
   display: inline-block;
-  padding-right: 5px;
+  margin-bottom: 6px;
 }
 
 .drop-b{
-  color: gray;
-  padding: 16px;
-  font-size: 24px;
   border: none;
-  padding-bottom: 23px;
+  font-size: 40px;
+    color: lightgray;
 }
 
 .drop-content{
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color:white;
+  width: 226%;
+  padding-left: 10px;
+  margin-right: 19px;
   z-index: 1;
 }
 
 
 .header-button{
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-
+  border: none;
+  margin-top: 17px;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .header-button:hover{
