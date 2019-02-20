@@ -30,7 +30,7 @@ class ReviewForm extends React.Component{
 
 
   render(){
-
+    debugger
     return(
       <div className="review-box">
         <h3>Leave Review</h3>

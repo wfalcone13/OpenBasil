@@ -4,10 +4,13 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 import ReviewForm from './review_form'
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
+  debugger
   return{
-    review: { user_id: state.session.id, restaurant_id: ownProps.match.params.restaurantId,
-    title: "", body: "", stars: "" }
+    review: {
+      user_id: state.session.id, 
+    title: "", body: "", stars: "" },
+   
   }
 }
 

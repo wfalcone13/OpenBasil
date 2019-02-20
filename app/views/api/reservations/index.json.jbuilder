@@ -15,3 +15,4 @@ json.restaurants do
     end
   end
 end
+

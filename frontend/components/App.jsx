@@ -34,11 +34,11 @@ const App = () => {
       </header>
 
       < Route path='/restaurants/:restaurantId' component={RestaurantShowContainer}/>
-      {/* < Route path='/restaurants/:restaurantId' component={ReviewCreateContainer} /> */}
       < Route path='/restaurants/:restaurantId' component={ReviewIndexContainer} />
 
 
       < Route path='/resvp' component={ReservationIndex} />
+      {/* < Route path='/resvp' component={ReviewCreateContainer} /> */}
 
       < Route exact path ='/' component={SearchContainer}/>
       < Route path='/search' component={SearchResults}/>

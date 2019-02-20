@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
+import ReviewCreateContainer from '../reviews/review_create_contianer'
 
 
 let month = ['0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -21,13 +22,13 @@ class ReservationIndexItem extends React.Component{
   }
 
   cancelOrReview() {
-    
+    debugger
     let td = new Date()
     
     if (td < new Date(this.props.reservation.reservation_date)){
       return (<button onClick={this.handleDelete}>Cancel</button>)
     } else {
-      return (<Link to={`/restaurants/${this.props.restaurant.id}`}>Leave Review</Link>)
+      return (<button onClick={() => this.props.openModal('review')} >Leave Review</button>)
     }
   }
 
@@ -50,7 +51,7 @@ class ReservationIndexItem extends React.Component{
  
 
   render(){
-    
+    debugger
     return(
       <div className='namebox'>
           <div className='name-photo'>
@@ -62,9 +63,8 @@ class ReservationIndexItem extends React.Component{
               <p>Table for {this.props.reservation.seating_number} people</p>
             <div className='rsvp-buttons-change'>
             <span><Link to={`/restaurants/${this.props.restaurant.id}`}>View</Link></span>
-              {/* <a href="`">Modify</a> */}
-              {/* <button onClick={this.handleDelete}>Cancel</button> */}
             <span>{this.cancelOrReview()}</span>
+
               
             </div>
           </div>
@@ -76,4 +76,3 @@ class ReservationIndexItem extends React.Component{
 }
 
 export default ReservationIndexItem
-{/* <p> {this.props.restaurant[this.props.reservation.restaurant_id]}  </p> */}

@@ -1305,6 +1305,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reservation_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reservation_index_item */ "./frontend/components/reservations/reservation_index_item.jsx");
+/* harmony import */ var _reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reviews/review_create_contianer */ "./frontend/components/reviews/review_create_contianer.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1322,6 +1323,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1399,13 +1401,20 @@ function (_React$Component) {
           reservation: reservation,
           key: reservation.id,
           restaurant: _this.props.restaurants[reservation.restaurant_id] || {},
-          deleteReservation: _this.props.deleteReservation
+          deleteReservation: _this.props.deleteReservation,
+          openModal: _this.props.openModal,
+          fetchReservation: _this.props.fetchReservation
         });
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-bottom"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-right"
-      })));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.openModal("review");
+        },
+        className: "signup-button"
+      }, "review"));
     }
   }]);
 
@@ -1453,6 +1462,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
       rsvps.push(res);
     }
   });
+  debugger;
   return {
     restaurants: restaurants,
     rsvps: rsvps,
@@ -1498,6 +1508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _reviews_review_create_contianer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reviews/review_create_contianer */ "./frontend/components/reviews/review_create_contianer.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1515,6 +1526,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -1548,6 +1560,9 @@ function (_React$Component) {
   }, {
     key: "cancelOrReview",
     value: function cancelOrReview() {
+      var _this2 = this;
+
+      debugger;
       var td = new Date();
 
       if (td < new Date(this.props.reservation.reservation_date)) {
@@ -1555,19 +1570,21 @@ function (_React$Component) {
           onClick: this.handleDelete
         }, "Cancel");
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/restaurants/".concat(this.props.restaurant.id)
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this2.props.openModal('review');
+          }
         }, "Leave Review");
       }
     }
   }, {
     key: "handleDelete",
     value: function handleDelete(e) {
-      var _this2 = this;
+      var _this3 = this;
 
       e.preventDefault();
       this.props.deleteReservation(this.props.reservation.id).then(function (result) {
-        _this2.props.history.push("resvp/");
+        _this3.props.history.push("resvp/");
       });
     }
   }, {
@@ -1584,6 +1601,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "namebox"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1605,9 +1623,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ReservationIndexItem);
-{
-  /* <p> {this.props.restaurant[this.props.reservation.restaurant_id]}  </p> */
-}
 
 /***/ }),
 
@@ -1898,11 +1913,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state, ownProps) {
+var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
     review: {
       user_id: state.session.id,
-      restaurant_id: ownProps.match.params.restaurantId,
       title: "",
       body: "",
       stars: ""
@@ -2010,6 +2025,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Leave Review"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {

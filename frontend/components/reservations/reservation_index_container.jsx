@@ -16,6 +16,7 @@ const mapStateToProps = ({session, entities: { users, reservations, restaurants 
     }    
       
   })
+  debugger
   return {
     restaurants: restaurants,
     rsvps,

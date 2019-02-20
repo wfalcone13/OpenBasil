@@ -19,7 +19,7 @@ function Modal({modal, closeModal}){
       component = <SignupFormContainer/>;
       break;
     case 'review':
-      component = <ReviewCreateContainer/>
+      component = <ReviewCreateContainer />
       break;
     default:
       return null;
@@ -35,7 +35,7 @@ function Modal({modal, closeModal}){
 
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = (state) =>{
   return{
     modal: state.ui.modal
   };

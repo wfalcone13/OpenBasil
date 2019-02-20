@@ -1,5 +1,7 @@
 import React from 'react'
 import ReservationIndexItem from './reservation_index_item'
+import ReviewCreateContainer from '../reviews/review_create_contianer'
+
 
 class ReservationIndex extends React.Component{
   constructor(props){
@@ -68,6 +70,8 @@ class ReservationIndex extends React.Component{
                       key={reservation.id}
                       restaurant={this.props.restaurants[reservation.restaurant_id] || {}}
                         deleteReservation={this.props.deleteReservation}
+                        openModal={this.props.openModal}
+                        fetchReservation={this.props.fetchReservation}
                       />
                       
                     })}
@@ -82,6 +86,8 @@ class ReservationIndex extends React.Component{
 
         </div>
      </div>
+       <button onClick={() => this.props.openModal("review")} className='signup-button'>review</button>
+       {/* <ReviewCreateContainer/> */}
     </div>
    )
   }
