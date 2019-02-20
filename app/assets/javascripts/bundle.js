@@ -2456,7 +2456,6 @@ function (_React$Component) {
     value: function update(field) {
       var _this2 = this;
 
-      debugger;
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.target.value));
       };
@@ -2466,7 +2465,6 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this3 = this;
 
-      debugger;
       e.preventDefault();
       e.stopPropagation();
       this.props.search(this.state.query.toLowerCase()).then(function () {
@@ -2481,7 +2479,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find your table for any occasion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2546,7 +2543,7 @@ __webpack_require__.r(__webpack_exports__);
  // import { searchRestaurants} from '../../actions/search_actions'
 
  // const mapStateToProps = state =>{
-//   debugger
+//   
 //   return {
 //     reservation: {
 //       user_id: state.session.id,
@@ -2556,7 +2553,6 @@ __webpack_require__.r(__webpack_exports__);
 // }
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     search: function search(query) {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["searchRestaurants"])(query));
@@ -2655,7 +2651,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     rests: Object.values(state.entities.restaurants),
     reservation: {
@@ -2911,7 +2906,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-result"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3540,7 +3534,6 @@ var reviewReducer = function reviewReducer() {
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, action.reviews);
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
-      debugger;
       var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state);
       delete newState[action.reviewId];
       return newState;
@@ -3761,13 +3754,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var middlewares = [redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]];
+
+if (true) {
+  // must use 'require' (import only allowed at top of file)
+  var _require = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js"),
+      _logger = _require.logger;
+
+  middlewares.push(_logger);
+}
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"].apply(void 0, middlewares));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (configureStore);
+/* harmony default export */ __webpack_exports__["default"] = (configureStore); // const configureStore = (preloadedState = {}) => {
+//   return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
+// }
+// export default configureStore;
 
 /***/ }),
 

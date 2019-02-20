@@ -6,7 +6,7 @@ import SearchResults from './search_show'
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   return {
     rests: Object.values(state.entities.restaurants),
     reservation: {

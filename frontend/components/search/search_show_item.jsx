@@ -114,7 +114,7 @@ class SearchResultItem extends React.Component{
 
 
   render(){
-    debugger
+    
     return(
       <div className='rest-result'>
         <div className='img-result'>

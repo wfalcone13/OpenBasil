@@ -11,12 +11,12 @@ class Search extends React.Component {
   }
 
   update(field){
-    debugger
+    
     return (e) => this.setState({ [field]: e.target.value});
   }
 
   handleSubmit(e){
-    debugger
+    
     e.preventDefault();
     e.stopPropagation();
     this.props.search(this.state.query.toLowerCase()).then(() => {
@@ -29,7 +29,7 @@ class Search extends React.Component {
   }
 
 render(){
-  debugger
+  
   return(
     <div>
     <div className="search-container">

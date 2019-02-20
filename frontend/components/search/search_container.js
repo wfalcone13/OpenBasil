@@ -4,7 +4,7 @@ import { fetchRestaurants, fetchRestaurant, searchRestaurants } from '../../acti
 import Search from './search';
 
 // const mapStateToProps = state =>{
-//   debugger
+//   
 //   return {
 //     reservation: {
 //       user_id: state.session.id,
@@ -15,7 +15,7 @@ import Search from './search';
 // }
 
 const mapDispatchToProps = dispatch => {
-  debugger
+  
   return {
     search: (query) => dispatch(searchRestaurants(query))
   };
