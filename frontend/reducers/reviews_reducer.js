@@ -13,7 +13,7 @@ const reviewReducer = (state = {}, action) => {
     case RECEIVE_RESTAURANT:
       return merge({}, state, action.reviews)
     case REMOVE_REVIEW:
-    debugger
+    
       let newState = merge({}, state);
       delete newState[action.reviewId]
       return newState 

@@ -223,6 +223,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchRestaurants", function() { return searchRestaurants; });
 /* harmony import */ var _util_restaurant_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/restaurant_api_util */ "./frontend/util/restaurant_api_util.js");
 /* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/search_api_util */ "./frontend/util/search_api_util.js");
+/* harmony import */ var _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/reservation_api_util */ "./frontend/util/reservation_api_util.js");
+
 
 
 var RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
@@ -2228,10 +2230,22 @@ function (_React$Component) {
     value: function starRender() {
       switch (this.props.review.stars) {
         case 1:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
-          }), " ");
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }));
 
         case 2:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -2240,6 +2254,15 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 3:
@@ -2252,6 +2275,12 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 4:
@@ -2267,6 +2296,9 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
             id: "res-stars"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-star",
+            id: "grey-stars"
           }));
 
         case 5:
@@ -2410,6 +2442,9 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Search).call(this, props));
     _this.state = {
+      seating_number: '',
+      reservation_time: '',
+      reservation_date: '',
       query: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -2456,19 +2491,22 @@ function (_React$Component) {
         type: "date",
         name: "date",
         defaultValue: "2019-02-22",
-        className: "search-date"
+        className: "search-date",
+        onChange: this.update('reservation_date')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
         name: "time",
         defaultValue: "10:00",
-        className: "search-time"
+        className: "search-time",
+        onChange: this.update('reservation_time')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "number",
         name: "number",
         min: "1",
         max: "15",
         placeholder: "2 People",
-        className: "search-bar-number"
+        className: "search-bar-number",
+        onChange: this.update('seating_number')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "search",
@@ -2505,9 +2543,12 @@ __webpack_require__.r(__webpack_exports__);
  // import { searchRestaurants} from '../../actions/search_actions'
 
  // const mapStateToProps = state =>{
-//   debugger
+//   
 //   return {
-//     restaurants: Object.values(state.entities.restaurants) 
+//     reservation: {
+//       user_id: state.session.id,
+//       reservation_time: '', reservation_date: '', seating_number: ''
+//     },
 //   }
 // }
 
@@ -2609,9 +2650,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    rests: Object.values(state.entities.restaurants)
+    rests: Object.values(state.entities.restaurants),
+    reservation: {
+      user_id: state.session.id,
+      restaurant_id: ownProps.match.params.restaurantId,
+      reservation_time: '',
+      reservation_date: '',
+      seating_number: ''
+    }
   };
 };
 
@@ -3486,7 +3534,6 @@ var reviewReducer = function reviewReducer() {
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, action.reviews);
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
-      debugger;
       var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state);
       delete newState[action.reviewId];
       return newState;
@@ -3707,13 +3754,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var middlewares = [redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]];
+
+if (true) {
+  // must use 'require' (import only allowed at top of file)
+  var _require = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js"),
+      _logger = _require.logger;
+
+  middlewares.push(_logger);
+}
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"].apply(void 0, middlewares));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (configureStore);
+/* harmony default export */ __webpack_exports__["default"] = (configureStore); // const configureStore = (preloadedState = {}) => {
+//   return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))
+// }
+// export default configureStore;
 
 /***/ }),
 

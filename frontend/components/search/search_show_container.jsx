@@ -5,10 +5,15 @@ import { fetchRestaurants, searchRestaurants } from '../../actions/restaurant_ac
 import SearchResults from './search_show'
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   
   return {
-    rests: Object.values(state.entities.restaurants)
+    rests: Object.values(state.entities.restaurants),
+    reservation: {
+      user_id: state.session.id, restaurant_id: ownProps.match.params.restaurantId,
+      reservation_time: '', reservation_date: '', seating_number: ''
+    }
+
   }
 }
 
