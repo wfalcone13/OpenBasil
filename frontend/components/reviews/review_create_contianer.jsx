@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom'
 
 
 const mapStateToProps = (state) => {
-  debugger
   return{
     review: {
       user_id: state.session.id, restaurant_id: state.ui.modal.id,

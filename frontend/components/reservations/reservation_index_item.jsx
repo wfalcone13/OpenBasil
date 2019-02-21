@@ -15,14 +15,17 @@ class ReservationIndexItem extends React.Component{
   }
 
   dateFormat(date){
+    
     const date_arr = date.split('-');
     const mth = month[parseInt(date_arr[1])];
-    const day = days[Math.floor(Math.random() * days.length)];
+    const a = new Date(`${mth}, ${date_arr[2]}, ${date_arr[0]}`);
+    const b = a.getDay();
+    const day = days[b]
     return day  + ",  " + mth + " " + date_arr[2] + ",   "+ date_arr[0] +", ";
   }
 
   cancelOrReview() {
-    debugger
+    
     let td = new Date()
     
     if (td < new Date(this.props.reservation.reservation_date)){

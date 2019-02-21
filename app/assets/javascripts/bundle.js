@@ -1466,7 +1466,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
       rsvps.push(res);
     }
   });
-  debugger;
   return {
     restaurants: restaurants,
     rsvps: rsvps,
@@ -1558,13 +1557,14 @@ function (_React$Component) {
     value: function dateFormat(date) {
       var date_arr = date.split('-');
       var mth = month[parseInt(date_arr[1])];
-      var day = days[Math.floor(Math.random() * days.length)];
+      var a = new Date("".concat(mth, ", ").concat(date_arr[2], ", ").concat(date_arr[0]));
+      var b = a.getDay();
+      var day = days[b];
       return day + ",  " + mth + " " + date_arr[2] + ",   " + date_arr[0] + ", ";
     }
   }, {
     key: "cancelOrReview",
     value: function cancelOrReview() {
-      debugger;
       var td = new Date();
 
       if (td < new Date(this.props.reservation.reservation_date)) {
@@ -1924,7 +1924,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     review: {
       user_id: state.session.id,
