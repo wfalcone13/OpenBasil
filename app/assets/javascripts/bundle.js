@@ -102,9 +102,13 @@ __webpack_require__.r(__webpack_exports__);
 var OPEN_MODAL = 'OPEN_MODAL';
 var CLOSE_MODAL = 'CLOSE_MODAL';
 var openModal = function openModal(modal) {
+  var rest_id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    id: null
+  };
   return {
     type: OPEN_MODAL,
-    modal: modal
+    modal: modal,
+    rest_id: rest_id
   };
 };
 var closeModal = function closeModal() {
@@ -725,7 +729,7 @@ function Modal(_ref) {
 
   var component;
 
-  switch (modal) {
+  switch (modal.modal) {
     case 'login':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_form_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       break;
@@ -1486,8 +1490,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     deleteReservation: function deleteReservation(id) {
       return dispatch(Object(_actions_reservation_actions__WEBPACK_IMPORTED_MODULE_2__["deleteReservation"])(id));
     },
-    openModal: function openModal(modal) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])(modal));
+    openModal: function openModal(modal, id) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])(modal, id));
     }
   };
 };
@@ -1560,8 +1564,6 @@ function (_React$Component) {
   }, {
     key: "cancelOrReview",
     value: function cancelOrReview() {
-      var _this2 = this;
-
       debugger;
       var td = new Date();
 
@@ -1571,20 +1573,26 @@ function (_React$Component) {
         }, "Cancel");
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this2.props.openModal('review');
-          }
+          onClick: this.openModal.bind(this)
         }, "Leave Review");
       }
     }
   }, {
+    key: "openModal",
+    value: function openModal(e) {
+      e.preventDefault();
+      this.props.openModal('review', {
+        id: this.props.restaurant.id
+      });
+    }
+  }, {
     key: "handleDelete",
     value: function handleDelete(e) {
-      var _this3 = this;
+      var _this2 = this;
 
       e.preventDefault();
       this.props.deleteReservation(this.props.reservation.id).then(function (result) {
-        _this3.props.history.push("resvp/");
+        _this2.props.history.push("resvp/");
       });
     }
   }, {
@@ -1908,6 +1916,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _review_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./review_form */ "./frontend/components/reviews/review_form.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
 
 
 
@@ -1918,6 +1928,7 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     review: {
       user_id: state.session.id,
+      restaurant_id: state.ui.modal.id,
       title: "",
       body: "",
       stars: ""
@@ -1936,7 +1947,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_review_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_review_form__WEBPACK_IMPORTED_MODULE_3__["default"])));
 
 /***/ }),
 
@@ -2014,13 +2025,14 @@ function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
+      debugger;
       this.props.createReview(this.state).then(function () {
         _this2.setState({
           title: "",
           body: '',
           stars: ""
         });
-      });
+      }).then(this.props.closeModal);
     }
   }, {
     key: "render",
@@ -3400,7 +3412,10 @@ function modalReducer() {
 
   switch (action.type) {
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
-      return action.modal;
+      return {
+        modal: action.modal,
+        id: action.rest_id.id
+      };
 
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["CLOSE_MODAL"]:
       return null;

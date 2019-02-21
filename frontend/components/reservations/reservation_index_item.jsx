@@ -28,8 +28,13 @@ class ReservationIndexItem extends React.Component{
     if (td < new Date(this.props.reservation.reservation_date)){
       return (<button onClick={this.handleDelete}>Cancel</button>)
     } else {
-      return (<button onClick={() => this.props.openModal('review')} >Leave Review</button>)
+      return (<button onClick={this.openModal.bind(this)} >Leave Review</button>)
     }
+  }
+
+  openModal(e) {
+    e.preventDefault()
+    this.props.openModal('review', { id: this.props.restaurant.id })
   }
 
   handleDelete(e){

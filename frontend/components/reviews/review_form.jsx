@@ -22,9 +22,10 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
+    debugger
     this.props.createReview(this.state).then( () => {
-      this.setState({title: "", body: '', stars: ""})
-    })
+      this.setState({ title: "", body: '', stars: "" })
+    }).then(this.props.closeModal);
   }
 
 

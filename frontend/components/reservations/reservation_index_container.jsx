@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
     fetchReservation: id => dispatch(fetchReservation(id)),
     fetchReservations: () => dispatch(fetchReservations()),
     deleteReservation: (id) => dispatch(deleteReservation(id)),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal, id) => dispatch(openModal(modal, id))
   }
 }
 
