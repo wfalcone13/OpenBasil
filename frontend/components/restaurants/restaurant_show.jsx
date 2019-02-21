@@ -65,13 +65,15 @@ class RestaurantShow extends React.Component{
 
   reviewCount(){
     
-    if (this.props.restaurant.review_ids.length === undefined){
-      return 0 
+   let count = 0 
+    if (this.props.restaurant.review_ids === undefined){
+      return <p>0 Reviews</p>
     } else {
-      this.props.restaurant.review_ids.length
-      return 
+    this.props.restaurant.review_ids.forEach(rev => {
+      count +=1 
+    })
+    return (<p>{`${count} Reviews`} </p>  )
     }
-
   }
 
   
@@ -80,9 +82,9 @@ class RestaurantShow extends React.Component{
   
 
   render(){
-    
+    debugger  
     return (
-    
+  
       <div className="rests-container">
 
         <div className='rests-photo' >
@@ -127,8 +129,8 @@ class RestaurantShow extends React.Component{
               </div>
               <div className="quick-facs-reviews">
                 <i className="far fa-comment-alt"></i>
-                <p>5 reviews</p>
-                
+                {/* <p>5 reviews</p> */}
+                {this.reviewCount()}
               </div>
               <div className="quick-facs-money">
                 <i className="fas fa-money-bill"></i>

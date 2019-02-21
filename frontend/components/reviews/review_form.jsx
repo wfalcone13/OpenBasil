@@ -34,8 +34,8 @@ class ReviewForm extends React.Component{
     
     return(
       <div className="review-box">
-        <h3>Leave Review</h3>
           <form onSubmit={this.handleSubmit} className="rev-form">
+            <h3>Leave Review</h3>
             <input onChange={this.updateTitle.bind(this)} type="text" placeholder='title' />
             <input onChange={this.updateBody.bind(this)} type="text" placeholder="Body" className="review-body"/>
             <input onChange={this.updateStar.bind(this)} type="number" placeholder="Stars"  max='5' min='1'/>

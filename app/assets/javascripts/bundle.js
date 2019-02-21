@@ -1789,16 +1789,21 @@ function (_React$Component) {
   }, {
     key: "reviewCount",
     value: function reviewCount() {
-      if (this.props.restaurant.review_ids.length === undefined) {
-        return 0;
+      var count = 0;
+
+      if (this.props.restaurant.review_ids === undefined) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "0 Reviews");
       } else {
-        this.props.restaurant.review_ids.length;
-        return;
+        this.props.restaurant.review_ids.forEach(function (rev) {
+          count += 1;
+        });
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "".concat(count, " Reviews"), " ");
       }
     }
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rests-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1834,7 +1839,7 @@ function (_React$Component) {
         className: "quick-facs-reviews"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-comment-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "5 reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), this.reviewCount()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quick-facs-money"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-money-bill"
@@ -2036,10 +2041,10 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Leave Review"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "rev-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Leave Review"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.updateTitle.bind(this),
         type: "text",
         placeholder: "title"
