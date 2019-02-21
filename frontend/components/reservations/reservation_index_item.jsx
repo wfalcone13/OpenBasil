@@ -59,7 +59,6 @@ class ReservationIndexItem extends React.Component{
  
 
   render(){
-    debugger
     return(
       <div className='namebox'>
           <div className='name-photo'>

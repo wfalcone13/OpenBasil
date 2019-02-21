@@ -1609,7 +1609,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "namebox"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2024,7 +2023,6 @@ function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      debugger;
       this.props.createReview(this.state).then(function () {
         _this2.setState({
           title: "",
@@ -2036,7 +2034,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Leave Review"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {

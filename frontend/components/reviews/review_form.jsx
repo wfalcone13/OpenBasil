@@ -22,7 +22,7 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    debugger
+    
     this.props.createReview(this.state).then( () => {
       this.setState({ title: "", body: '', stars: "" })
     }).then(this.props.closeModal);
@@ -31,7 +31,7 @@ class ReviewForm extends React.Component{
 
 
   render(){
-    debugger
+    
     return(
       <div className="review-box">
         <h3>Leave Review</h3>
