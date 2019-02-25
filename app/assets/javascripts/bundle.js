@@ -1422,7 +1422,7 @@ function (_React$Component) {
       if (pastArr.length >= 1) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "full-rs-list"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Past Reservations"), pastArr.map(function (reservation) {
+        }, pastArr.map(function (reservation) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             reservation: reservation,
             key: reservation.id,
@@ -1432,6 +1432,12 @@ function (_React$Component) {
             fetchReservation: _this2.props.fetchReservation
           });
         }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "full-rs-list"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          id: "no-rsvps"
+        }, "No Past Reservations"));
       }
     }
   }, {
@@ -1451,9 +1457,11 @@ function (_React$Component) {
         className: "middle-top"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-rsvps"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.upcomingtResv()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.pastReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.upcomingtResv())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-bottom"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "all-rsvps"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Past Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.pastReservations()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-right"
       })));
     }

@@ -81,7 +81,6 @@ class ReservationIndex extends React.Component{
     
     if (pastArr.length >= 1) {
       return (<li className='full-rs-list'>
-      <h1>Past Reservations</h1>
         {pastArr.map(reservation => {
           return <ReservationIndexItem reservation={reservation}
             key={reservation.id}
@@ -94,7 +93,13 @@ class ReservationIndex extends React.Component{
         })}
       </li>
       )
-      }
+    } else {
+      return (
+        <li className='full-rs-list'>
+          <h1 id='no-rsvps'>No Past Reservations</h1>
+        </li>
+      )
+    }
   }
 
 
@@ -121,28 +126,21 @@ class ReservationIndex extends React.Component{
                 <h2>Upcoming Reservations</h2>
                   {/* {this.todayDate()} */}
                 <ul>
-                  {/* <li className='full-rs-list'>   
-                    {this.props.rsvps.map(reservation => {
-                      return <ReservationIndexItem reservation={reservation} 
-                      key={reservation.id}
-                      restaurant={this.props.restaurants[reservation.restaurant_id] || {}}
-                        deleteReservation={this.props.deleteReservation}
-                        openModal={this.props.openModal}
-                        fetchReservation={this.props.fetchReservation}
-                      />
-                      
-                    })}
-                  </li> */}
+                
 
                   {this.upcomingtResv()}
+                  
                 </ul>
+            </div>
+            <div className='middle-bottom'></div>
+          
+             <div className='all-rsvps'>
+                  <h2>Past Reservations</h2>
                 <ul>
                   {this.pastReservations()}
                 </ul>
-            </div>
-            <div className='middle-bottom'>
-
-            </div>
+             </div>  
+            
         </div>
         <div className='bottom-right'>
 
