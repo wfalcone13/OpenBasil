@@ -1365,25 +1365,78 @@ function (_React$Component) {
     }
   }, {
     key: "upcomingtResv",
-    value: function upcomingtResv(resDate) {
-      var today = new Date(); // let mnth = (today.getMonth())+1;
-      // let yar = today.getFullYear();
-      // let rsvpMonth = resDate.split("-")[1];
-      // console.log(resDate.split("-")[1])
-      // let rsvpYear = resDate.split("-")[1];
-      // console.log(resDate.split("-")[1])
-      // rsvpYear < yar && rsvpMonth <=mnth
+    value: function upcomingtResv() {
+      var _this = this;
 
-      var rsvpDate = new Date(resDate);
-      console.log(rsvpDate);
-      rsvpDate >= today;
-      console.log(rsvpDate >= today);
+      var td = new Date(); // find the res. times that are after today and rthen pass to maps
+
+      var upcomingArr = [];
+
+      if (this.props.rsvps.length >= 1) {
+        this.props.rsvps.forEach(function (res) {
+          if (td <= new Date(res.reservation_date)) {
+            upcomingArr.push(res);
+          }
+        });
+      }
+
+      if (upcomingArr.length >= 1) {
+        debugger;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "full-rs-list"
+        }, upcomingArr.map(function (reservation) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            reservation: reservation,
+            key: reservation.id,
+            restaurant: _this.props.restaurants[reservation.restaurant_id] || {},
+            deleteReservation: _this.props.deleteReservation,
+            openModal: _this.props.openModal,
+            fetchReservation: _this.props.fetchReservation
+          });
+        }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "full-rs-list"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          id: "no-rsvps"
+        }, "No Upcoming Reservations"));
+      }
+    }
+  }, {
+    key: "pastReservations",
+    value: function pastReservations() {
+      var _this2 = this;
+
+      var td = new Date(); // find the res. times that are after today and rthen pass to maps
+
+      var pastArr = [];
+
+      if (this.props.rsvps.length >= 1) {
+        this.props.rsvps.forEach(function (res) {
+          if (td > new Date(res.reservation_date)) {
+            pastArr.push(res);
+          }
+        });
+      }
+
+      if (pastArr.length >= 1) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "full-rs-list"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Past Reservations"), pastArr.map(function (reservation) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            reservation: reservation,
+            key: reservation.id,
+            restaurant: _this2.props.restaurants[reservation.restaurant_id] || {},
+            deleteReservation: _this2.props.deleteReservation,
+            openModal: _this2.props.openModal,
+            fetchReservation: _this2.props.fetchReservation
+          });
+        }));
+      }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "whole-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1398,27 +1451,11 @@ function (_React$Component) {
         className: "middle-top"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-rsvps"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "full-rs-list"
-      }, this.props.rsvps.map(function (reservation) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          reservation: reservation,
-          key: reservation.id,
-          restaurant: _this.props.restaurants[reservation.restaurant_id] || {},
-          deleteReservation: _this.props.deleteReservation,
-          openModal: _this.props.openModal,
-          fetchReservation: _this.props.fetchReservation
-        });
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.upcomingtResv()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.pastReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-bottom"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-right"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this.props.openModal("review");
-        },
-        className: "signup-button"
-      }, "review"));
+      })));
     }
   }]);
 

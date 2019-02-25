@@ -27,21 +27,78 @@ class ReservationIndex extends React.Component{
     }
   }
 
-  upcomingtResv(resDate){
-    let today = new Date()
-    // let mnth = (today.getMonth())+1;
-    // let yar = today.getFullYear();
-    // let rsvpMonth = resDate.split("-")[1];
-    // console.log(resDate.split("-")[1])
-    // let rsvpYear = resDate.split("-")[1];
-    // console.log(resDate.split("-")[1])
-    // rsvpYear < yar && rsvpMonth <=mnth
+  upcomingtResv(){
+    let td = new Date()
+    // find the res. times that are after today and rthen pass to maps
+    
+    let upcomingArr = []
+    if (this.props.rsvps.length >= 1 ){
+      
+      this.props.rsvps.forEach(res => {
+        if( td <= new Date(res.reservation_date)){
+          upcomingArr.push(res)
+        }
+      })
+    }
+    if (upcomingArr.length >= 1){
+      debugger
+    return ( <li className='full-rs-list'>
+       {upcomingArr.map(reservation => {
+         return <ReservationIndexItem reservation={reservation}
+           key={reservation.id}
+           restaurant={this.props.restaurants[reservation.restaurant_id] || {}}
+           deleteReservation={this.props.deleteReservation}
+           openModal={this.props.openModal}
+           fetchReservation={this.props.fetchReservation}
+         />
 
-    let rsvpDate = new Date(resDate);
-    console.log(rsvpDate);
-    rsvpDate >= today;
-    console.log(rsvpDate >= today)
+       })}
+     </li>
+    )
+      
+      } else {
+        return (
+      <li className='full-rs-list'>
+         <h1 id='no-rsvps'>No Upcoming Reservations</h1>
+      </li>
+        )}
+    
   }
+
+  pastReservations(){
+    let td = new Date()
+    // find the res. times that are after today and rthen pass to maps
+
+    let pastArr = []
+    if (this.props.rsvps.length >= 1) {
+      
+      this.props.rsvps.forEach(res => {
+        if (td > new Date(res.reservation_date)) {
+          pastArr.push(res)
+        }
+      })
+    }
+    
+    if (pastArr.length >= 1) {
+      return (<li className='full-rs-list'>
+      <h1>Past Reservations</h1>
+        {pastArr.map(reservation => {
+          return <ReservationIndexItem reservation={reservation}
+            key={reservation.id}
+            restaurant={this.props.restaurants[reservation.restaurant_id] || {}}
+            deleteReservation={this.props.deleteReservation}
+            openModal={this.props.openModal}
+            fetchReservation={this.props.fetchReservation}
+          />
+
+        })}
+      </li>
+      )
+      }
+  }
+
+
+
 
 
  
@@ -64,7 +121,7 @@ class ReservationIndex extends React.Component{
                 <h2>Upcoming Reservations</h2>
                   {/* {this.todayDate()} */}
                 <ul>
-                  <li className='full-rs-list'>   
+                  {/* <li className='full-rs-list'>   
                     {this.props.rsvps.map(reservation => {
                       return <ReservationIndexItem reservation={reservation} 
                       key={reservation.id}
@@ -75,7 +132,12 @@ class ReservationIndex extends React.Component{
                       />
                       
                     })}
-                  </li>
+                  </li> */}
+
+                  {this.upcomingtResv()}
+                </ul>
+                <ul>
+                  {this.pastReservations()}
                 </ul>
             </div>
             <div className='middle-bottom'>
@@ -86,7 +148,7 @@ class ReservationIndex extends React.Component{
 
         </div>
      </div>
-       <button onClick={() => this.props.openModal("review")} className='signup-button'>review</button>
+       {/* <button onClick={() => this.props.openModal("review")} className='signup-button'>review</button> */}
        {/* <ReviewCreateContainer/> */}
     </div>
    )
