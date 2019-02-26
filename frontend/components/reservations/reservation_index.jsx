@@ -140,7 +140,7 @@ class ReservationIndex extends React.Component{
                   {this.pastReservations()}
                 </ul>
              </div>  
-            
+           <div className='middle-bottom'></div>
         </div>
         <div className='bottom-right'>
 

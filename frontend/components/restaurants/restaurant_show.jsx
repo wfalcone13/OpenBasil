@@ -82,7 +82,7 @@ class RestaurantShow extends React.Component{
   
 
   render(){
-    debugger  
+      
     return (
   
       <div className="rests-container">
@@ -97,7 +97,7 @@ class RestaurantShow extends React.Component{
 
           <div className="rest-info-display">
 
-            <div className='rests-links'>
+            {/* <div className='rests-links'>
 
               <ul className='rest-links-list'>
                 <li>Overview</li>
@@ -108,7 +108,7 @@ class RestaurantShow extends React.Component{
                 <li>Twitter</li>
               </ul>
 
-            </div>
+            </div> */}
 
             <div className="rest-info-cont">
 

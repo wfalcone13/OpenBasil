@@ -1461,7 +1461,9 @@ function (_React$Component) {
         className: "middle-bottom"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "all-rsvps"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Past Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.pastReservations()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Past Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.pastReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-bottom"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-right"
       })));
     }
@@ -1848,7 +1850,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rests-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1869,10 +1870,6 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-display"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "rests-links"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "rest-links-list"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Specials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Twitter"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-cont"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info"
