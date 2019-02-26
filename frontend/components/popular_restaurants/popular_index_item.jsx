@@ -91,7 +91,7 @@ import {Link} from 'react-router-dom';
             <p className='rest-title'>{this.props.restaurant.name}</p>
         <div className="star-ratings">
             {this.starRender()}
-          <p className='star-ps'>{this.props.restaurant.review_count} reviews</p>
+          <p className='star-ps'>{this.props.restaurant.review_ids.length} reviews</p>
         </div>
           <div className="ratings">
             {this.props.restaurant.category}

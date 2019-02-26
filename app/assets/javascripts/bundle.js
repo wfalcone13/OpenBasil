@@ -1104,7 +1104,7 @@ function (_React$Component) {
         className: "star-ratings"
       }, this.starRender(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "star-ps"
-      }, this.props.restaurant.review_count, " reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.restaurant.review_ids.length, " reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ratings"
       }, this.props.restaurant.category, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.moneyRating()), this.props.restaurant.location.split(',')[1])));
     }
