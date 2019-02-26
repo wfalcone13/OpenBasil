@@ -7,11 +7,18 @@ import { withRouter } from 'react-router-dom'
 
 
 const mapStateToProps = (state) => {
+
+   
+  let fName = state.entities.users[state.session.id].first_name;
+  let lName = state.entities.users[state.session.id].last_name;
+
   return{
     review: {
       user_id: state.session.id, restaurant_id: state.ui.modal.id,
-    title: "", body: "", stars: "" },
-   
+      title: "", body: "", stars: "", user_first: fName, user_last: lName } 
+    
+    
+
   }
 }
 

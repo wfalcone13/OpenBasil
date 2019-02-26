@@ -41,7 +41,7 @@ class ReservationIndex extends React.Component{
       })
     }
     if (upcomingArr.length >= 1){
-      debugger
+      
     return ( <li className='full-rs-list'>
        {upcomingArr.map(reservation => {
          return <ReservationIndexItem reservation={reservation}
