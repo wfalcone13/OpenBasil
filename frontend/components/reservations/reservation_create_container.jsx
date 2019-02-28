@@ -7,6 +7,8 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) =>{
+
+  
   
   return{
     reservation: { user_id: state.session.id, restaurant_id: ownProps.match.params.restaurantId,  

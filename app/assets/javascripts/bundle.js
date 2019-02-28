@@ -1208,6 +1208,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 2;
+var yyyy = today.getFullYear();
 
 var ReservationForm =
 /*#__PURE__*/
@@ -1220,6 +1224,9 @@ function (_React$Component) {
     _classCallCheck(this, ReservationForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationForm).call(this, props));
+    _this.props.reservation.reservation_date = "".concat(yyyy, "-").concat(mm, "-").concat(dd);
+    _this.props.reservation.reservation_time = "10:00";
+    _this.props.reservation.seating_number = 4;
     _this.state = _this.props.reservation;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
@@ -1262,6 +1269,17 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "returnToday",
+    value: function returnToday() {
+      var t = new Date();
+      var d = t.getDate();
+      var m = t.getMonth() + 2;
+      var y = t.getFullYear();
+      var v = "".concat(m, "-").concat(d, "-").concat(y); // return v 
+
+      return "2019-03-28";
+    }
+  }, {
     key: "renderErrors",
     value: function renderErrors() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1298,7 +1316,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.updateResDate.bind(this),
         type: "date",
-        defaultValue: "2019-02-22"
+        defaultValue: "".concat(this.returnToday())
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "time-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
