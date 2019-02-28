@@ -908,11 +908,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // // const rateIds = state.entities.restaurants.review_ids;
-  // let rates = [];
-  // rateIds.forEach(i =>{
-  // })
-  debugger;
   return {
     restaurants: Object.values(state.entities.restaurants),
     currentUser: state.entities.users[state.session.id]
@@ -2865,7 +2860,13 @@ function (_React$Component) {
   _createClass(SearchResultItem, [{
     key: "starRender",
     value: function starRender() {
-      switch (this.props.rest.rating) {
+      var star = 0;
+      this.props.rest.reviewRating.forEach(function (r) {
+        star += r.stars;
+      });
+      star = Math.round(star / this.props.rest.reviewRating.length);
+
+      switch (star) {
         case 1:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",

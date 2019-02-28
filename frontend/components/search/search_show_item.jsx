@@ -7,7 +7,16 @@ class SearchResultItem extends React.Component{
   }
 
      starRender(){
-      switch (this.props.rest.rating) {
+        
+       let star = 0;
+       this.props.rest.reviewRating.forEach(r => {
+         star += r.stars;
+       })
+
+
+       star = Math.round(star / this.props.rest.reviewRating.length)
+       
+      switch (star) {
         case 1:
           return <p> <i className = "fas fa-star" id = "res-stars-search" ></i > 
             <i className="fas fa-star" id="grey-stars" ></i > 

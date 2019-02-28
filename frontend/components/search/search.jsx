@@ -39,22 +39,6 @@ render(){
             <input type="date" name="date" defaultValue="2019-02-22" className="search-date"  onChange={this.update('reservation_date')}/>
             <input type="time" name="time" defaultValue="10:00" className="search-time" onChange={this.update('reservation_time')} />
             <input type="number" name="number" min='1' max='15' placeholder="2 People" className="search-bar-number" onChange={this.update('seating_number')}/>
-            {/* <div className="search_categories">
-              <div className='select'>
-                <select name="search_categories" id="search_categories">
-                  <option value="1" defaultValue="selected">2 People </option>
-                  <option value="2"> 3 People </option>
-                  <option value="2"> 4 People</option>
-                  <option value="2"> 5 People</option>
-                  <option value="2"> 6 People</option>
-                  <option value="2"> 7 People</option>
-                  <option value="2"> 8 People</option>
-                  <option value="2"> 9 People</option>
-                  <option value="2"> 10 People</option>
-                  <option value="2"> 11 People</option>
-                </select>
-              </div>
-            </div> */}
           <input type="text" name="search" placeholder="  New York City...." value={this.state.query} onChange={this.update('query')} className="search-search"/>
           <button className="search-button">Let's go</button>
         </form>
