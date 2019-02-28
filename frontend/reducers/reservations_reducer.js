@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_RESERVATIONS, RECEIVE_RESERVATION, REMOVE_RESERVATION} from '../actions/reservation_actions'
+import { RECEIVE_ALL_RESERVATIONS, RECEIVE_RESERVATION, REMOVE_RESERVATION, RECEIVE_RES_ERRORS} from '../actions/reservation_actions'
 import merge from 'lodash/merge';
 
 const reservationReducer = (state = {}, action) => {

@@ -33,6 +33,19 @@ class ReservationForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return (
+      <ul className="session-errors-ul">
+        {this.props.errors.map((error, i) => {
+          return <li key={`error-${i}`} className="session-error">
+            {error}
+          </li>
+        })}
+      </ul>
+    )
+  }
+
+
   render(){
     
     return(
@@ -40,6 +53,7 @@ class ReservationForm extends React.Component {
         <div className='res-border'>
           <div className='res-form-info'> 
             <h3>Make a Reservation</h3>
+            {this.renderErrors()}
             <form onSubmit={this.handleSubmit} className='res-form'>
               <div className='seating-inputs'>
                 <p>Party Size</p>

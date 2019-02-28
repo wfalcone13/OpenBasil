@@ -3,6 +3,7 @@ import * as reservationAPIUtil from '../util/reservation_api_util'
 export const RECEIVE_ALL_RESERVATIONS = 'RECEIVE_ALL_RESERVATIONS';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
+export const RECEIVE_RES_ERRORS = 'RECEIVE_RES_ERRORS';
 
 const receiveAllReservations = ({ reservations, restaurants}) => {
   return{
@@ -28,6 +29,13 @@ const removeReservation = (reservationId) => {
   }
 }
 
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_RES_ERRORS,
+    errors
+  }
+}
+
 export const fetchReservations = () => dispatch =>{
   return reservationAPIUtil.fetchReservations()
     .then(reservations => dispatch(receiveAllReservations(reservations)))
@@ -40,7 +48,9 @@ export const fetchReservation = (reservation) => dispatch => {
 
 export const createReservation = (reservation) => dispatch => {
   return reservationAPIUtil.createReservation(reservation)
-    .then(reservation => dispatch(receiveReservation(reservation)))
+    .then(reservation => dispatch(receiveReservation(reservation)), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
 }
 
 export const updateReservation = (reservation) => dispatch => {

@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) =>{
     reservation: { user_id: state.session.id, restaurant_id: ownProps.match.params.restaurantId,  
       reservation_time: '', reservation_date: '', seating_number: ''},
       
-   
+    errors: state.errors.resError
 
   }
 }
