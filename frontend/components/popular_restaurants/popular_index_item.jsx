@@ -9,7 +9,17 @@ import {Link} from 'react-router-dom';
       }
 
     starRender(){
-      switch (this.props.restaurant.rating) {
+      
+      let star = 0 ;
+      this.props.restaurant.reviewRating.forEach(r =>{
+        star += r.stars;
+      })
+
+      
+      star = Math.round(star / this.props.restaurant.reviewRating.length)
+
+      
+      switch (star) {
         case 1:
           return <p> <i className = "fas fa-star" id = "res-stars" ></i > 
                     <i className="fas fa-star" id="grey-stars" ></i >
@@ -78,6 +88,9 @@ import {Link} from 'react-router-dom';
           break;
       }
     }
+
+
+
 
 
   

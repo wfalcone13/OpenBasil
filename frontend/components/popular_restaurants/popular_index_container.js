@@ -3,10 +3,18 @@ import { fetchRestaurants, fetchRestaurant} from '../../actions/restaurant_actio
 import PopularIndex from './popular_index'
 
 const mapStateToProps = state => {
-  
+
+  // // const rateIds = state.entities.restaurants.review_ids;
+  // let rates = [];
+
+  // rateIds.forEach(i =>{
+
+  // })
+  debugger
   return {
     restaurants: Object.values(state.entities.restaurants),
-    currentUser: state.entities.users[state.session.id]  
+    currentUser: state.entities.users[state.session.id],
+    
   };
 };
 
