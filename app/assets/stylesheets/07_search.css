@@ -1,7 +1,7 @@
 .search-container{
   display: flex;
   flex-direction: column;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3.amazonaws.com/open-basil-dev/Olmsted_20interior_20copy.0.0.jpg);
   animation-name: change-photo;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -22,28 +22,28 @@
 
 @keyframes change-photo{
   0% {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/4/12/5043d14f1-mobile.jpeg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3.amazonaws.com/open-basil-dev/Olmsted_20interior_20copy.0.0.jpg);
   background-repeat: no-repeat;
   background-size: cover;  
   background-position: center;
   } 
 
   25% {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.vox-cdn.com/uploads/chorus_image/image/62568601/Olmsted_20interior_20copy.0.0.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3.amazonaws.com/open-basil-dev/misi.jpg);
   background-repeat: no-repeat;
   background-size: cover;  
   background-position: center;
   } 
 
   50%{
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3.amazonaws.com/open-basil-dev/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg);
   background-repeat: no-repeat;
   background-size: cover;  
   background-position: center;
   }
 
   100%{
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.vox-cdn.com/uploads/chorus_image/image/62568601/Olmsted_20interior_20copy.0.0.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3.amazonaws.com/open-basil-dev/5043d14f1-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;  
   background-position: center;
