@@ -1764,6 +1764,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 var tags = ['Special Occasion', 'Fun', 'Good Food', 'Great Service', 'Yum!'];
+var star = -1;
 
 var RestaurantShow =
 /*#__PURE__*/
@@ -1779,13 +1780,24 @@ function (_React$Component) {
   _createClass(RestaurantShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // 
       this.props.fetchRestaurant(this.props.match.params.restaurantId);
+      star += 1;
     }
   }, {
     key: "starRender",
     value: function starRender() {
-      switch (this.props.restaurant.rating) {
+      // let star = 0;
+      // this.props.restaurant.reviewRating.forEach(r => {
+      //   star += r.stars;
+      // })
+      if (star === 0) {
+        this.props.restaurant.reviewRating.forEach(function (r) {
+          star += r.stars;
+        });
+        star = Math.round(star / this.props.restaurant.reviewRating.length);
+      }
+
+      switch (star) {
         case 1:
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-star",
@@ -1924,7 +1936,7 @@ function (_React$Component) {
         className: "rest-quick-facts"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.starRender()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quick-facs-rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.restaurant.rating)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, star)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quick-facs-reviews"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-comment-alt"

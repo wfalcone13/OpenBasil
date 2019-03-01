@@ -4,6 +4,7 @@ import ReservationCreateContainer from '../reservations/reservation_create_conta
 import ReviewIndexContainer from '../reviews/review_index_container'
 
 let tags = ['Special Occasion', 'Fun', 'Good Food', 'Great Service', 'Yum!']
+let star = -1;
 
 class RestaurantShow extends React.Component{
   constructor(props){
@@ -11,12 +12,31 @@ class RestaurantShow extends React.Component{
   }
 
   componentDidMount(){
-    // 
+    
+    
     this.props.fetchRestaurant(this.props.match.params.restaurantId)
+    star += 1
+    
+    
   }
 
   starRender() {
-    switch (this.props.restaurant.rating) {
+
+    
+
+    // let star = 0;
+    // this.props.restaurant.reviewRating.forEach(r => {
+    //   star += r.stars;
+    // })
+
+    if (star === 0){
+      this.props.restaurant.reviewRating.forEach(r => {
+      star += r.stars;
+    })
+    star = Math.round(star / this.props.restaurant.reviewRating.length)
+    }
+
+    switch (star) {
       case 1:
         return <p> <i className="fas fa-star" id="res-stars" ></i >
           <i className="fas fa-star" id="grey-stars" ></i >
@@ -125,7 +145,7 @@ class RestaurantShow extends React.Component{
               </div>
 
               <div className="quick-facs-rating">
-                <p>{this.props.restaurant.rating}</p>
+                <p>{star}</p>
               </div>
               <div className="quick-facs-reviews">
                 <i className="far fa-comment-alt"></i>
