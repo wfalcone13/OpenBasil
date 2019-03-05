@@ -53,6 +53,8 @@ const App = () => {
             <a href="https://www.linkedin.com/in/wfalcone/" target="_blank">LinkedIn</a>
             <a href="https://github.com/wfalcone13" target="_blank">GitHub</a>
             <a href="https://wfalcone13.github.io/" target="_blank">Professional Site</a>
+            <a href="https://angel.co/william-falcone" target="_blank">Angel List</a>
+
           </div>
           <div>
             <p>OPENBASIL</p>

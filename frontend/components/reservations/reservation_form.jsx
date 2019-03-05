@@ -91,7 +91,7 @@ class ReservationForm extends React.Component {
                   <input onChange={this.updateResTime.bind(this)} type="time" defaultValue="10:00"/>
                 </div>
               </div>
-              <input type="submit" name="" value="Find Table" className='submit-rsvp'/>
+              <input type="submit" name="" value="Book Table" className='submit-rsvp'/>
             </form>
           </div>
         </div>

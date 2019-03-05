@@ -511,7 +511,10 @@ var App = function App() {
   }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://wfalcone13.github.io/",
     target: "_blank"
-  }, "Professional Site")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OPENBASIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Professional Site"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://angel.co/william-falcone",
+    target: "_blank"
+  }, "Angel List")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "OPENBASIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/wfalcone13/OpenBasil",
     target: "_blank"
   }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "More"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1332,7 +1335,7 @@ function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         name: "",
-        value: "Find Table",
+        value: "Book Table",
         className: "submit-rsvp"
       })))));
     }
