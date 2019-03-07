@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   const restaurant = state.entities.restaurants[ownProps.match.params.restaurantId] || { review_ids: []}
   const reviewIds = restaurant.review_ids;
   let reviewInfo = [];
+  if(reviewIds !== undefined){
   reviewIds.forEach(id => {
     const rev = state.entities.reviews[id];
     if (rev) {
@@ -15,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
   }
   )
+}
   
   return{
     reviews: reviewInfo 

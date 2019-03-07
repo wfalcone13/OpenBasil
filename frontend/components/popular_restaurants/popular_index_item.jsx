@@ -11,9 +11,11 @@ import {Link} from 'react-router-dom';
     starRender(){
       
       let star = 0 ;
+      if (this.props.restaurant.reviewRating !== undefined){
       this.props.restaurant.reviewRating.forEach(r =>{
         star += r.stars;
       })
+    }
 
       
       star = Math.round(star / this.props.restaurant.reviewRating.length)

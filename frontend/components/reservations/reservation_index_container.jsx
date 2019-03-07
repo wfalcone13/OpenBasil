@@ -7,7 +7,8 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = ({session, entities: { users, reservations, restaurants }}) => {
-  const reservationIds = users[session.id].reservation_ids
+  
+  const reservationIds = users[session.id].reservation_ids 
   let rsvps = [];
   reservationIds.forEach(id => {
    const res = reservations[id];

@@ -977,9 +977,13 @@ function (_React$Component) {
     key: "starRender",
     value: function starRender() {
       var star = 0;
-      this.props.restaurant.reviewRating.forEach(function (r) {
-        star += r.stars;
-      });
+
+      if (this.props.restaurant.reviewRating !== undefined) {
+        this.props.restaurant.reviewRating.forEach(function (r) {
+          star += r.stars;
+        });
+      }
+
       star = Math.round(star / this.props.restaurant.reviewRating.length);
 
       switch (star) {
@@ -2146,7 +2150,9 @@ function (_React$Component) {
           body: '',
           stars: ""
         });
-      }).then(this.props.closeModal);
+      }).then(this.props.closeModal).then(function () {
+        _this2.props.history.push("resvp");
+      });
     }
   }, {
     key: "render",
@@ -2293,13 +2299,17 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   };
   var reviewIds = restaurant.review_ids;
   var reviewInfo = [];
-  reviewIds.forEach(function (id) {
-    var rev = state.entities.reviews[id];
 
-    if (rev) {
-      reviewInfo.push(rev);
-    }
-  });
+  if (reviewIds !== undefined) {
+    reviewIds.forEach(function (id) {
+      var rev = state.entities.reviews[id];
+
+      if (rev) {
+        reviewInfo.push(rev);
+      }
+    });
+  }
+
   return {
     reviews: reviewInfo
   };
@@ -3660,7 +3670,10 @@ var restaurantReducer = function restaurantReducer() {
       return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.restaurants);
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_REVIEW"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.restaurant);
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.reviews);
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_REVIEWS"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.reviews);
 
     default:
       return state;
